@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A115F0728762B4C00C0837D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A115F0628762B4C00C0837D /* Main.storyboard */; };
 		0A35BE2B2875C50A00855E02 /* PackagePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */; };
 		0A35BE2F2875E37D00855E02 /* CreateNewTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */; };
 		0A35BE312875E8F500855E02 /* CreateNewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35BE302875E8F500855E02 /* CreateNewTripViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A115F0628762B4C00C0837D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlanViewController.swift; sourceTree = "<group>"; };
 		0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewTrip.storyboard; sourceTree = "<group>"; };
 		0A35BE302875E8F500855E02 /* CreateNewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				0A38EE8828732EBB003F397A /* Plans.storyboard */,
+				0A115F0628762B4C00C0837D /* Main.storyboard */,
 				0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */,
 				0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */,
 			);
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35BE2F2875E37D00855E02 /* CreateNewTrip.storyboard in Resources */,
+				0A115F0728762B4C00C0837D /* Main.storyboard in Resources */,
 				0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */,
 				0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */,
 				0A38EE8A28732EBB003F397A /* Plans.storyboard in Resources */,
@@ -343,7 +347,7 @@
 				INFOPLIST_FILE = EasyTravel/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = CreateNewTrip;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -371,7 +375,7 @@
 				INFOPLIST_FILE = EasyTravel/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = CreateNewTrip;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
