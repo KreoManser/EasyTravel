@@ -170,7 +170,7 @@
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="czs-8i-sVh">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="backToMainPressed" destination="NZt-OF-1O0" id="Y7A-vR-KYr"/>
+                                <action selector="backToMainPressed" destination="NZt-OF-1O0" id="bgl-iY-3mx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
