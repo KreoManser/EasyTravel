@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Structures
 struct Plan {
     let title: String
     let package: Package
@@ -33,6 +34,7 @@ struct Plan {
     }
 }
 
+// MARK: Enumerations
 enum Package {
     case hiking
     case trip
