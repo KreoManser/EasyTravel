@@ -41,6 +41,9 @@
                                                     </label>
                                                     <datePicker autoresizesSubviews="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-CC-TIn">
                                                         <rect key="frame" x="147.5" y="0.0" width="140.5" height="31"/>
+                                                        <connections>
+                                                            <action selector="currentDatePickerAction:" destination="CTu-2V-w6s" eventType="valueChanged" id="0kf-NY-5xo"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
