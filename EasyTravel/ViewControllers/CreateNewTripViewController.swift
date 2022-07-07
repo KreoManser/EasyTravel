@@ -11,6 +11,7 @@ class CreateNewTripViewController: UIViewController {
     
     @IBOutlet weak var currentDatePicker: UIDatePicker!
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
+    @IBOutlet weak var goToPlans: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,4 +35,21 @@ class CreateNewTripViewController: UIViewController {
         lastDateDatePicker.minimumDate = currentDatePicker.date
     }
     
+    
+    @IBAction func dismissCreateNewTrip(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func goToPlansButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Plans", bundle: nil)
+        guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanViewController") as? PackagePlanViewController else { return }
+        
+        navigationController?.pushViewController(plansVC, animated: true)
+        
+    }
+    
+}
+
+class CreateNewTripNavigationController: UINavigationController {
+
 }

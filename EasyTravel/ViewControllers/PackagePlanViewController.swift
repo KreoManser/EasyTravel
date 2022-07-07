@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: -UIPageViewController
 class PackagePlanViewController: UIPageViewController {
+    
     // Initialize the list of storyboards
     var viewControllersList: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
@@ -76,4 +77,12 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
         
         return viewControllersList[nextIndex]
     }
+    
+    @IBAction func backToMainPressed() {
+        dismiss(animated: true)
+    }
+}
+
+class PackagePlanNavigationContoller: UINavigationController {
+
 }

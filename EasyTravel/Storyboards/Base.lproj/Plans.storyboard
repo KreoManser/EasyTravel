@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Package Plan Navigation Contoller-->
         <scene sceneID="IZF-18-Fjj">
             <objects>
-                <navigationController id="742-Ac-LDt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PackagePlanNavigationContoller" id="742-Ac-LDt" customClass="PackagePlanNavigationContoller" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXW-1r-gQB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -170,7 +170,7 @@
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="czs-8i-sVh">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BTY-QA-zbX" kind="presentation" identifier="ToMainSegue" modalPresentationStyle="fullScreen" id="ZoM-dm-8E5"/>
+                                <action selector="backToMainPressed" destination="NZt-OF-1O0" id="Y7A-vR-KYr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -183,16 +183,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bb-YP-Kq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="-110"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="CCZ-Zh-G30">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="BTY-QA-zbX" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="MAM-td-4RD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5nt-JJ-PS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637" y="-111"/>
         </scene>
     </scenes>
     <resources>
