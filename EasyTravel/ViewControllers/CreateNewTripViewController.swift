@@ -7,18 +7,24 @@
 
 import UIKit
 
+// MARK: - CreateNewTripViewController
+
 class CreateNewTripViewController: UIViewController {
+    // MARK: - IBOutlets
     
     @IBOutlet weak var currentDatePicker: UIDatePicker!
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
     @IBOutlet weak var goToPlans: UIButton!
     
     // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupDatePickers()
     }
+    
+    // MARK: - Private methods
     
     private func setupDatePickers() {
         let currentDate = Date()
@@ -32,6 +38,8 @@ class CreateNewTripViewController: UIViewController {
         lastDateDatePicker.date = currentDate
     }
 
+    // MARK: - IBActions
+    
     @IBAction func currentDatePickerAction(_ sender: Any) {
         lastDateDatePicker.minimumDate = currentDatePicker.date
     }
@@ -50,6 +58,8 @@ class CreateNewTripViewController: UIViewController {
     }
     
 }
+
+// MARK: - CreateNewTripNavigationController - empty class for storyboard
 
 class CreateNewTripNavigationController: UINavigationController {
 

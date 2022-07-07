@@ -7,7 +7,8 @@
 
 import UIKit
 
-// MARK: -UIPageViewController
+// MARK: - UIPageViewController
+
 class PackagePlanViewController: UIPageViewController {
     
     // Initialize the list of storyboards
@@ -28,6 +29,7 @@ class PackagePlanViewController: UIPageViewController {
     }()
 
     // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,15 +44,21 @@ class PackagePlanViewController: UIPageViewController {
             )
         }
     }
-
+    
+    // MARK: - IBActions
+    
+    @IBAction func backToMainPressed() {
+        dismiss(animated: true)
+    }
 }
 
 // MARK: -UIPageViewControllerDataSource
+
 extension PackagePlanViewController: UIPageViewControllerDataSource {
     // Before pageViewController
     func pageViewController(
-        _ pageViewController: UIPageViewController,
-        viewControllerBefore viewController: UIViewController
+                            _ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController
     ) -> UIViewController? {
         guard let vcIndex = viewControllersList.firstIndex(of: viewController)
         else { return nil }
@@ -65,8 +73,8 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
     
     // After pageViewController
     func pageViewController(
-        _ pageViewController: UIPageViewController,
-        viewControllerAfter viewController: UIViewController
+                            _ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController
     ) -> UIViewController? {
         guard let vcIndex = viewControllersList.firstIndex(of: viewController)
         else { return nil }
@@ -78,12 +86,9 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
         
         return viewControllersList[nextIndex]
     }
-    
-    @IBAction func backToMainPressed() {
-        dismiss(animated: true)
-    }
 }
 
+// MARK: - PackagePlanNavigationContoller - empty class for storyboard
 class PackagePlanNavigationContoller: UINavigationController {
 
 }
