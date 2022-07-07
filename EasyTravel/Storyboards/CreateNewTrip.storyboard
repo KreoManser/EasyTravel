@@ -3,7 +3,6 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,8 +83,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Создать новую поездку" largeTitleDisplayMode="never" id="S9u-w2-vP5">
-                                        <barButtonItem key="leftBarButtonItem" title="Назад" style="plain" id="RxC-W0-GL4">
-                                            <imageReference key="image" image="arrow.backward.circle" catalog="system" symbolScale="medium" renderingMode="original"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="RxC-W0-GL4">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -125,7 +124,6 @@
     </scenes>
     <resources>
         <image name="NewTripImage" width="900" height="900"/>
-        <image name="arrow.backward.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

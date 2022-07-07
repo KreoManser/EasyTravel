@@ -17,20 +17,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="vB9-Vh-nCy">
-                                <rect key="frame" x="16" y="30" width="288" height="522"/>
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trip" translatesAutoresizingMaskIntoConstraints="NO" id="EQt-fi-I66">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="321"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-ha-Qp9">
-                                        <rect key="frame" x="0.0" y="354" width="288" height="104"/>
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-CQ-mvy">
-                                        <rect key="frame" x="103" y="491" width="82" height="31"/>
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Выбрать">
                                             <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,13 +38,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwL-4y-Arh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Путешествие" id="qdd-RF-Mt5">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="EQb-TW-Uhc">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fqa-tk-vFf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vB9-Vh-nCy" secondAttribute="trailing" constant="16" id="015-Df-h0b"/>
                             <constraint firstItem="vB9-Vh-nCy" firstAttribute="leading" secondItem="Fqa-tk-vFf" secondAttribute="leading" constant="16" id="aBQ-7D-3HW"/>
-                            <constraint firstItem="vB9-Vh-nCy" firstAttribute="top" secondItem="Fqa-tk-vFf" secondAttribute="top" constant="30" id="ckX-KW-QqB"/>
+                            <constraint firstItem="vB9-Vh-nCy" firstAttribute="top" secondItem="sfL-vK-gtz" secondAttribute="top" constant="44" id="ceK-Rg-vzM"/>
+                            <constraint firstItem="gwL-4y-Arh" firstAttribute="leading" secondItem="Fqa-tk-vFf" secondAttribute="leading" id="gqK-an-6vx"/>
+                            <constraint firstItem="gwL-4y-Arh" firstAttribute="trailing" secondItem="Fqa-tk-vFf" secondAttribute="trailing" id="m34-qH-iI7"/>
+                            <constraint firstItem="gwL-4y-Arh" firstAttribute="top" secondItem="Fqa-tk-vFf" secondAttribute="top" id="rrO-n0-417"/>
                             <constraint firstItem="Fqa-tk-vFf" firstAttribute="bottom" secondItem="vB9-Vh-nCy" secondAttribute="bottom" constant="16" id="rwk-Zb-NpC"/>
                         </constraints>
                     </view>
@@ -62,20 +75,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="jw3-Uc-2qG">
-                                <rect key="frame" x="16" y="30" width="288" height="522"/>
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Visit" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-LX-lJC">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="321"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H7g-BR-GOl">
-                                        <rect key="frame" x="0.0" y="354" width="288" height="104"/>
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nu-6h-VDC">
-                                        <rect key="frame" x="103" y="491" width="82" height="31"/>
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Выбрать">
                                             <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,14 +96,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSJ-wj-KIl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Поездка" id="PAh-zq-sT6">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Hly-Ns-QbD">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZXa-K7-ckX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZXa-K7-ckX" firstAttribute="bottom" secondItem="jw3-Uc-2qG" secondAttribute="bottom" constant="16" id="1Et-zb-wbN"/>
+                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="top" secondItem="YwF-ZB-PGv" secondAttribute="top" id="BvZ-RO-5ca"/>
                             <constraint firstAttribute="trailing" secondItem="jw3-Uc-2qG" secondAttribute="trailing" constant="16" id="P1m-uj-1ZT"/>
                             <constraint firstItem="jw3-Uc-2qG" firstAttribute="leading" secondItem="YwF-ZB-PGv" secondAttribute="leading" constant="16" id="RBe-VR-0bv"/>
-                            <constraint firstItem="jw3-Uc-2qG" firstAttribute="top" secondItem="ZXa-K7-ckX" secondAttribute="top" constant="30" id="keE-lC-NNy"/>
+                            <constraint firstItem="jw3-Uc-2qG" firstAttribute="top" secondItem="YwF-ZB-PGv" secondAttribute="top" constant="44" id="ggA-ce-faI"/>
+                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="leading" secondItem="ZXa-K7-ckX" secondAttribute="leading" id="ptx-CR-g3D"/>
+                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="trailing" secondItem="ZXa-K7-ckX" secondAttribute="trailing" id="vPK-8m-fy9"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -107,20 +133,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="q5U-W6-G3H">
-                                <rect key="frame" x="16" y="30" width="288" height="522"/>
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hikking" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-KL-Xt9">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="321"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Nk-D3-r7E">
-                                        <rect key="frame" x="0.0" y="354" width="288" height="104"/>
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-BD-rWr">
-                                        <rect key="frame" x="103" y="491" width="82" height="31"/>
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Выбрать">
                                             <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,13 +154,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-vs-liQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Поход" id="7wy-bS-CdL">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="ZFF-V8-ucf">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kq6-ia-iCn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Kq6-ia-iCn" firstAttribute="trailing" secondItem="Qlk-vs-liQ" secondAttribute="trailing" id="3aR-lg-I5J"/>
                             <constraint firstAttribute="trailing" secondItem="q5U-W6-G3H" secondAttribute="trailing" constant="16" id="434-yF-wZl"/>
+                            <constraint firstItem="Qlk-vs-liQ" firstAttribute="leading" secondItem="TcP-bs-D3Y" secondAttribute="leading" id="T02-m7-iBA"/>
+                            <constraint firstItem="q5U-W6-G3H" firstAttribute="top" secondItem="TcP-bs-D3Y" secondAttribute="top" constant="44" id="aBX-JS-6cb"/>
                             <constraint firstItem="Kq6-ia-iCn" firstAttribute="bottom" secondItem="q5U-W6-G3H" secondAttribute="bottom" constant="16" id="dzS-ic-yGe"/>
-                            <constraint firstItem="q5U-W6-G3H" firstAttribute="top" secondItem="Kq6-ia-iCn" secondAttribute="top" constant="30" id="muk-mo-qFN"/>
+                            <constraint firstItem="Qlk-vs-liQ" firstAttribute="top" secondItem="TcP-bs-D3Y" secondAttribute="top" id="oWm-Qm-Iea"/>
                             <constraint firstItem="q5U-W6-G3H" firstAttribute="leading" secondItem="TcP-bs-D3Y" secondAttribute="leading" constant="16" id="xAr-dq-eOr"/>
                         </constraints>
                     </view>
