@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CTu-2V-w6s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SH5-va-cBa">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create New Trip View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="2Rk-yD-L9e">
+            <objects>
+                <navigationController id="SH5-va-cBa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBH-re-WRU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CTu-2V-w6s" kind="relationship" relationship="rootViewController" id="Waj-TD-V0D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJG-Ch-HYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="123"/>
+        </scene>
+        <!--Создать новую поездку-->
         <scene sceneID="UBy-ei-3Sc">
             <objects>
                 <viewController id="CTu-2V-w6s" customClass="CreateNewTripViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,32 +92,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rut-xT-q7g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Создать новую поездку" largeTitleDisplayMode="never" id="S9u-w2-vP5">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="RxC-W0-GL4">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4S-3T-1JJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="955-rZ-MUc" secondAttribute="bottom" constant="40" id="Qyj-7k-RqW"/>
-                            <constraint firstItem="Rut-xT-q7g" firstAttribute="leading" secondItem="R4S-3T-1JJ" secondAttribute="leading" id="Sqa-KG-rG4"/>
                             <constraint firstItem="955-rZ-MUc" firstAttribute="top" secondItem="VRo-Tk-Wr4" secondAttribute="top" constant="44" id="U5y-JM-aI3"/>
-                            <constraint firstItem="Rut-xT-q7g" firstAttribute="trailing" secondItem="R4S-3T-1JJ" secondAttribute="trailing" id="ZZJ-ge-LKM"/>
-                            <constraint firstItem="Rut-xT-q7g" firstAttribute="top" secondItem="R4S-3T-1JJ" secondAttribute="top" id="qa3-S5-FvE"/>
                             <constraint firstAttribute="trailing" secondItem="955-rZ-MUc" secondAttribute="trailing" constant="16" id="vGk-l8-kTA"/>
                             <constraint firstItem="955-rZ-MUc" firstAttribute="leading" secondItem="VRo-Tk-Wr4" secondAttribute="leading" constant="16" id="xv4-9x-LXw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Создать новую поездку" id="j2f-59-Jwf">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="6pL-qO-YAd">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Dcp-BF-TwD" kind="presentation" modalPresentationStyle="fullScreen" id="aSR-On-veB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentDatePicker" destination="BSc-CC-TIn" id="LEI-hT-0XO"/>
                         <outlet property="lastDateDatePicker" destination="Y22-rb-tlH" id="s7U-Za-aOR"/>
@@ -110,6 +118,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMQ-ha-e2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="782" y="168"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="GZj-EQ-HOP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Dcp-BF-TwD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LC1-aG-5JT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="56"/>
         </scene>
         <!--Plans-->
         <scene sceneID="TAu-f1-5mq">
@@ -124,6 +140,7 @@
     </scenes>
     <resources>
         <image name="NewTripImage" width="900" height="900"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

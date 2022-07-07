@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZt-OF-1O0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="742-Ac-LDt">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="IZF-18-Fjj">
+            <objects>
+                <navigationController id="742-Ac-LDt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXW-1r-gQB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NZt-OF-1O0" kind="relationship" relationship="rootViewController" id="qu8-KU-QQd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKH-Ma-fwo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1286" y="-111"/>
+        </scene>
+        <!--Путешествие-->
         <scene sceneID="oKW-kh-5Hy">
             <objects>
                 <viewController storyboardIdentifier="TripVC" id="tGz-qd-uXf" sceneMemberID="viewController">
@@ -38,16 +54,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwL-4y-Arh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Путешествие" id="qdd-RF-Mt5">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="EQb-TW-Uhc">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fqa-tk-vFf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,18 +61,16 @@
                             <constraint firstAttribute="trailing" secondItem="vB9-Vh-nCy" secondAttribute="trailing" constant="16" id="015-Df-h0b"/>
                             <constraint firstItem="vB9-Vh-nCy" firstAttribute="leading" secondItem="Fqa-tk-vFf" secondAttribute="leading" constant="16" id="aBQ-7D-3HW"/>
                             <constraint firstItem="vB9-Vh-nCy" firstAttribute="top" secondItem="sfL-vK-gtz" secondAttribute="top" constant="44" id="ceK-Rg-vzM"/>
-                            <constraint firstItem="gwL-4y-Arh" firstAttribute="leading" secondItem="Fqa-tk-vFf" secondAttribute="leading" id="gqK-an-6vx"/>
-                            <constraint firstItem="gwL-4y-Arh" firstAttribute="trailing" secondItem="Fqa-tk-vFf" secondAttribute="trailing" id="m34-qH-iI7"/>
-                            <constraint firstItem="gwL-4y-Arh" firstAttribute="top" secondItem="Fqa-tk-vFf" secondAttribute="top" id="rrO-n0-417"/>
                             <constraint firstItem="Fqa-tk-vFf" firstAttribute="bottom" secondItem="vB9-Vh-nCy" secondAttribute="bottom" constant="16" id="rwk-Zb-NpC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Путешествие" id="bUn-UY-PQP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYe-sk-bET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-219.375" y="641.19718309859161"/>
         </scene>
-        <!--View Controller-->
+        <!--Поездка-->
         <scene sceneID="4Gb-mv-BO5">
             <objects>
                 <viewController storyboardIdentifier="VisitVC" id="oQr-xM-bB2" sceneMemberID="viewController">
@@ -96,35 +100,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSJ-wj-KIl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Поездка" id="PAh-zq-sT6">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Hly-Ns-QbD">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZXa-K7-ckX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZXa-K7-ckX" firstAttribute="bottom" secondItem="jw3-Uc-2qG" secondAttribute="bottom" constant="16" id="1Et-zb-wbN"/>
-                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="top" secondItem="YwF-ZB-PGv" secondAttribute="top" id="BvZ-RO-5ca"/>
                             <constraint firstAttribute="trailing" secondItem="jw3-Uc-2qG" secondAttribute="trailing" constant="16" id="P1m-uj-1ZT"/>
                             <constraint firstItem="jw3-Uc-2qG" firstAttribute="leading" secondItem="YwF-ZB-PGv" secondAttribute="leading" constant="16" id="RBe-VR-0bv"/>
                             <constraint firstItem="jw3-Uc-2qG" firstAttribute="top" secondItem="YwF-ZB-PGv" secondAttribute="top" constant="44" id="ggA-ce-faI"/>
-                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="leading" secondItem="ZXa-K7-ckX" secondAttribute="leading" id="ptx-CR-g3D"/>
-                            <constraint firstItem="uSJ-wj-KIl" firstAttribute="trailing" secondItem="ZXa-K7-ckX" secondAttribute="trailing" id="vPK-8m-fy9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Поездка" id="Ktc-6B-KU1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cR-0s-iJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609.375" y="640.14084507042253"/>
         </scene>
-        <!--View Controller-->
+        <!--Поход-->
         <scene sceneID="uKh-5t-QDJ">
             <objects>
                 <viewController storyboardIdentifier="HikkingVC" id="jY6-l7-fi3" sceneMemberID="viewController">
@@ -154,47 +146,60 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-vs-liQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Поход" id="7wy-bS-CdL">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="ZFF-V8-ucf">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kq6-ia-iCn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Kq6-ia-iCn" firstAttribute="trailing" secondItem="Qlk-vs-liQ" secondAttribute="trailing" id="3aR-lg-I5J"/>
                             <constraint firstAttribute="trailing" secondItem="q5U-W6-G3H" secondAttribute="trailing" constant="16" id="434-yF-wZl"/>
-                            <constraint firstItem="Qlk-vs-liQ" firstAttribute="leading" secondItem="TcP-bs-D3Y" secondAttribute="leading" id="T02-m7-iBA"/>
                             <constraint firstItem="q5U-W6-G3H" firstAttribute="top" secondItem="TcP-bs-D3Y" secondAttribute="top" constant="44" id="aBX-JS-6cb"/>
                             <constraint firstItem="Kq6-ia-iCn" firstAttribute="bottom" secondItem="q5U-W6-G3H" secondAttribute="bottom" constant="16" id="dzS-ic-yGe"/>
-                            <constraint firstItem="Qlk-vs-liQ" firstAttribute="top" secondItem="TcP-bs-D3Y" secondAttribute="top" id="oWm-Qm-Iea"/>
                             <constraint firstItem="q5U-W6-G3H" firstAttribute="leading" secondItem="TcP-bs-D3Y" secondAttribute="leading" constant="16" id="xAr-dq-eOr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Поход" id="Xnj-aQ-xNS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snv-9V-lYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408" y="641"/>
         </scene>
-        <!--Package Plan View Controller-->
+        <!--Выбрать план-->
         <scene sceneID="fcI-b2-z9p">
             <objects>
-                <pageViewController storyboardIdentifier="PackagePlanViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NZt-OF-1O0" customClass="PackagePlanViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PackagePlanViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NZt-OF-1O0" customClass="PackagePlanViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Выбрать план" id="67k-it-l2v">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="czs-8i-sVh">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="BTY-QA-zbX" kind="presentation" identifier="ToMainSegue" modalPresentationStyle="fullScreen" id="ZoM-dm-8E5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="tGz-qd-uXf" kind="show" identifier="TripSegue" id="Fx6-AQ-jcr"/>
+                        <segue destination="oQr-xM-bB2" kind="show" identifier="VisitSegue" id="Olw-Ld-d5R"/>
+                        <segue destination="jY6-l7-fi3" kind="show" identifier="HikkingSegue" id="tcY-z6-mMM"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bb-YP-Kq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="-110"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="CCZ-Zh-G30">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="BTY-QA-zbX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MAM-td-4RD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nt-JJ-PS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="-111"/>
         </scene>
     </scenes>
     <resources>
         <image name="Hikking" width="600" height="600"/>
         <image name="Trip" width="1181" height="1181"/>
         <image name="Visit" width="1181" height="1181"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
