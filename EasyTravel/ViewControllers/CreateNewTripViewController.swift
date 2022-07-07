@@ -13,6 +13,7 @@ class CreateNewTripViewController: UIViewController {
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
     @IBOutlet weak var goToPlans: UIButton!
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

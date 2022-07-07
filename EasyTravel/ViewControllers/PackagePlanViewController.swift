@@ -27,6 +27,7 @@ class PackagePlanViewController: UIPageViewController {
         return [TripVC, VisitVC, HikkingVC]
     }()
 
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
