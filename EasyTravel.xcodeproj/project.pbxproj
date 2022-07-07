@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38EE8228732EBB003F397A /* AppDelegate.swift */; };
 		0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38EE8428732EBB003F397A /* SceneDelegate.swift */; };
-		0A38EE8728732EBB003F397A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38EE8628732EBB003F397A /* ViewController.swift */; };
+		0A38EE8728732EBB003F397A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38EE8628732EBB003F397A /* SettingsViewController.swift */; };
 		0A38EE8A28732EBB003F397A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8828732EBB003F397A /* Main.storyboard */; };
 		0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8B28732EBC003F397A /* Assets.xcassets */; };
 		0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */; };
+		7F67101E28776BAE0024E211 /* OneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67101D28776BAE0024E211 /* OneTableViewCell.swift */; };
+		7F671020287774980024E211 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F67101F287774980024E211 /* SettingModel.swift */; };
+		7F6EA2E72875DC1D00C903F2 /* ChangeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6EA2E62875DC1D00C903F2 /* ChangeSettingsViewController.swift */; };
+		7FD293782875EADE001066E9 /* Username.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD293772875EADE001066E9 /* Username.swift */; };
+		7FD2937A28761CB9001066E9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2937928761CB9001066E9 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A38EE7F28732EBB003F397A /* EasyTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A38EE8228732EBB003F397A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A38EE8428732EBB003F397A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A38EE8628732EBB003F397A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A38EE8628732EBB003F397A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0A38EE8928732EBB003F397A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A38EE8B28732EBC003F397A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A38EE8E28732EBC003F397A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A38EE9028732EBC003F397A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F67101D28776BAE0024E211 /* OneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTableViewCell.swift; sourceTree = "<group>"; };
+		7F67101F287774980024E211 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		7F6EA2E62875DC1D00C903F2 /* ChangeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSettingsViewController.swift; sourceTree = "<group>"; };
+		7FD293772875EADE001066E9 /* Username.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Username.swift; path = EasyTravel/ViewControllers/Username.swift; sourceTree = SOURCE_ROOT; };
+		7FD2937928761CB9001066E9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +97,11 @@
 		0A38EEB828739351003F397A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A38EE8628732EBB003F397A /* ViewController.swift */,
+				0A38EE8628732EBB003F397A /* SettingsViewController.swift */,
+				7F6EA2E62875DC1D00C903F2 /* ChangeSettingsViewController.swift */,
+				7FD2937928761CB9001066E9 /* AboutViewController.swift */,
+				7F67101D28776BAE0024E211 /* OneTableViewCell.swift */,
+				7F67101F287774980024E211 /* SettingModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -103,6 +117,7 @@
 		0A38EEBA28739367003F397A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7FD293772875EADE001066E9 /* Username.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A38EE8728732EBB003F397A /* ViewController.swift in Sources */,
+				7FD2937A28761CB9001066E9 /* AboutViewController.swift in Sources */,
+				0A38EE8728732EBB003F397A /* SettingsViewController.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
+				7F671020287774980024E211 /* SettingModel.swift in Sources */,
+				7F6EA2E72875DC1D00C903F2 /* ChangeSettingsViewController.swift in Sources */,
+				7F67101E28776BAE0024E211 /* OneTableViewCell.swift in Sources */,
+				7FD293782875EADE001066E9 /* Username.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,13 +348,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EasyTravel/Info.plist;
+				INFOPLIST_FILE = EasyTravel/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,7 +364,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,13 +376,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EasyTravel/Info.plist;
+				INFOPLIST_FILE = EasyTravel/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
