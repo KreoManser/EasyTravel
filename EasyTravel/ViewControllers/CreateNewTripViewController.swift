@@ -26,8 +26,12 @@ class CreateNewTripViewController: UIViewController {
         currentDatePicker.date = currentDate
         
         lastDateDatePicker.datePickerMode = UIDatePicker.Mode.date
-        lastDateDatePicker.minimumDate = currentDatePicker.date
+        lastDateDatePicker.minimumDate = currentDate
         lastDateDatePicker.date = currentDate
     }
 
+    @IBAction func currentDatePickerAction(_ sender: Any) {
+        lastDateDatePicker.minimumDate = currentDatePicker.date
+    }
+    
 }
