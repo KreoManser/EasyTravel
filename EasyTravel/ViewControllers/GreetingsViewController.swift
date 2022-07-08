@@ -34,13 +34,10 @@ class GreetingsViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-            print("App already launched")
             navigationController?.pushViewController(mainVC, animated: true)
-//            return true
         } else {
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
             print("App launched first time")
-//            return false
         }
     }
     
