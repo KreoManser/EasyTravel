@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sRt-vt-gaq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JMD-Tc-i4t">
+            <objects>
+                <navigationController id="sRt-vt-gaq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T0g-6U-XQ5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="4Ov-G3-pCg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHp-6F-mgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-987" y="98"/>
+        </scene>
+        <!--Greetings View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="GreetingsViewController" id="Y6W-OH-hqX" customClass="GreetingsViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="lXa-Tc-6no">
+                                <rect key="frame" x="22.5" y="395" width="369.5" height="106.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awd-tS-G9E">
+                                        <rect key="frame" x="0.0" y="0.0" width="369.5" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в EasyTravel!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r81-ty-YsW">
+                                                <rect key="frame" x="32" y="0.0" width="305.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приложение поможет спланировать Ваши поездки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Tf-h3-EUR">
+                                                <rect key="frame" x="0.0" y="32" width="369.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для начала выберите Ваш пол:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-Nz-ltF">
+                                        <rect key="frame" x="0.0" y="86" width="369.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-Kh-Ti3">
+                                <rect key="frame" x="40" y="551.5" width="334" height="149"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNM-gR-qic">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="149"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YNM-gR-qic" secondAttribute="height" multiplier="1:1" id="idK-vu-uXb"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="👨">
+                                                    <attributes>
+                                                        <font key="NSFont" size="72" name="AppleColorEmoji"/>
+                                                        <real key="NSKern" value="0.0"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                            <tabStops/>
+                                                        </paragraphStyle>
+                                                        <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <real key="NSStrokeWidth" value="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectMaleButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CbD-gx-I3w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8l0-mf-rA4">
+                                        <rect key="frame" x="185" y="0.0" width="149" height="149"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8l0-mf-rA4" secondAttribute="height" multiplier="1:1" id="g6O-4E-CVD"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="👩">
+                                                    <attributes>
+                                                        <font key="NSFont" size="72" name="AppleColorEmoji"/>
+                                                        <real key="NSKern" value="0.0"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                            <tabStops/>
+                                                        </paragraphStyle>
+                                                        <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <real key="NSStrokeWidth" value="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectFemaleButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CTJ-GX-Z3m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-E4-xHb">
+                                <rect key="frame" x="20" y="167" width="374" height="228"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Ov-Kh-Ti3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="F9k-6V-XRy"/>
+                            <constraint firstItem="lXa-Tc-6no" firstAttribute="top" secondItem="HaC-E4-xHb" secondAttribute="bottom" id="MEq-dy-Wkc"/>
+                            <constraint firstItem="HaC-E4-xHb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="V1m-26-Bd1"/>
+                            <constraint firstItem="lXa-Tc-6no" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="huk-r0-bOJ"/>
+                            <constraint firstItem="2Ov-Kh-Ti3" firstAttribute="top" secondItem="lXa-Tc-6no" secondAttribute="bottom" constant="50" id="lw2-py-sXW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Ov-Kh-Ti3" secondAttribute="trailing" constant="40" id="peK-dW-TaW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HaC-E4-xHb" secondAttribute="trailing" constant="20" id="qdU-OQ-AxW"/>
+                            <constraint firstItem="lXa-Tc-6no" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="wWS-eu-tOp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2nP-3B-r6x"/>
+                    <connections>
+                        <outlet property="selectFemaleButton" destination="8l0-mf-rA4" id="U7B-GV-X0Y"/>
+                        <outlet property="selectMaleButton" destination="YNM-gR-qic" id="bd9-mV-7Ei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="98"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="qlp-IA-yjm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="ZsX-vk-nfM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cve-fA-NkZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L2P-tC-e1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="-18"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="429" height="228"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -46,16 +46,23 @@ class CreateNewTripViewController: UIViewController {
     
     
     @IBAction func dismissCreateNewTrip(_ sender: Any) {
+        
         dismiss(animated: true)
     }
     
     @IBAction func goToPlansButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
-        guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanViewController") as? PackagePlanViewController else { return }
+        guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanNavigationContoller") as? PackagePlanNavigationContoller else { return }
         
-        navigationController?.pushViewController(plansVC, animated: true)
+        plansVC.modalPresentationStyle = .fullScreen
+        present(plansVC, animated: true)
+//        navigationController?.pushViewController(plansVC, animated: true)
         
     }
+    
+//    @IBAction func unwind(for segue: UIStoryboardSegue) {
+//        guard ((segue.source as? MainMenuViewController) != nil) else { return }
+//    }
     
 }
 

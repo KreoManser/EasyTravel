@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJG-Ch-HYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="123"/>
+            <point key="canvasLocation" x="-126" y="168"/>
         </scene>
         <!--Создать новую поездку-->
         <scene sceneID="UBy-ei-3Sc">
@@ -106,7 +106,7 @@
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="6pL-qO-YAd">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="dismissCreateNewTrip:" destination="CTu-2V-w6s" id="u1l-4C-oUL"/>
+                                <action selector="dismissCreateNewTrip:" destination="CTu-2V-w6s" id="vjK-O1-Zyb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
