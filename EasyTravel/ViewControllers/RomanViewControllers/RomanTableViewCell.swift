@@ -11,19 +11,16 @@ class RomanTableViewCell: UITableViewCell {
     @IBOutlet var labels: UILabel!
     @IBOutlet var lastname: UILabel!
     @IBOutlet var kolve: UILabel!
-
     @IBOutlet var imageF : UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        imageF.image = UIImage(systemName: "checkmark.seal")
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

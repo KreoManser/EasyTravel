@@ -31,15 +31,7 @@ class RomanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        score.text = String(MainMoney)
-        tableView.dataSource = self
-        tableView.delegate = self
-        viewScore.layer.cornerRadius = 20
-        saveButtton.layer.cornerRadius = 10
-        viewScore.layer.masksToBounds = true;
-        viewScore.backgroundColor = UIColor(red: 104.0 / 255, green: 109.0 / 255, blue: 224.0 / 255, alpha: 1.0)
-        saveButtton.backgroundColor = UIColor(red: 104.0 / 255, green: 109.0 / 255, blue: 224.0 / 255, alpha: 1.0)
-        
+        settingsView()
     }
     
     
@@ -49,23 +41,29 @@ class RomanViewController: UIViewController {
     }
     
     @IBAction func ClickAddButton(_ sender: Any) {
-        
-        guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController else{return}
+        guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController
+        else{
+            return
+        }
         createVc.delegate = self
-     
         present(createVc, animated: true)
         
     }
     
     func totalScore() -> (Void){
         if flag == true {
+            createAlert(
+                
+                title: "Ошибка",description: "Не удалось добавить товар! Проверте баланс"
+                
+            )
             
-            createAlert(title: "Ошибка", description: "Не удалось добавить товар! Проверте баланс")
             var sum:Double = 0
             if sumArray.count == 0 {
                 score.text = String( 0)
                 
-            }else
+            }
+            else
             {
                 for index in sumArray.count-1...sumArray.count-1{ //0,1
                 sum = (Double ( sumArray[index]) * Double (sumKolArray[index]))
@@ -85,12 +83,30 @@ class RomanViewController: UIViewController {
                 score.text = String( MainMoney)}
         }
         else{
-            
             sumArray.removeLast()
             ters.removeLast()
             sumKolArray.removeLast()
             createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверте баланс")
         }
+    }
+    
+    func settingsView(){
+        score.text = String(MainMoney)
+        tableView.dataSource = self
+        tableView.delegate = self
+        viewScore.layer.cornerRadius = 20
+        saveButtton.layer.cornerRadius = 10
+        viewScore.layer.masksToBounds = true;
+        viewScore.backgroundColor = UIColor(
+            red: 104.0 / 255,
+            green: 109.0 / 255,
+            blue: 224.0 / 255,
+            alpha: 1.0)
+        saveButtton.backgroundColor = UIColor(
+            red: 104.0 / 255,
+            green: 109.0 / 255,
+            blue: 224.0 / 255,
+            alpha: 1.0)
     }
    
         
@@ -99,23 +115,9 @@ class RomanViewController: UIViewController {
     
 extension RomanViewController: UITableViewDataSource,UITableViewDelegate{
     
-      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
-        
-//         ters.append(ters[indexPath.row])
-//         ters.remove(at: indexPath.row)
-//       //   letters.insert(indexPath.row)
-          let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! RomanTableViewCell
-          cell.imageF.image = UIImage(systemName: "")
-          tableView.reloadData()
-          
-          
-       
-        }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ters.count
-        
     }
     
     
@@ -125,10 +127,9 @@ extension RomanViewController: UITableViewDataSource,UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! RomanTableViewCell
         cell.labels.text = ters[indexPath.row].name
-        var ff = (ters[indexPath.row].lastname) * Double(ters[indexPath.row].kolve)
+        let ff = (ters[indexPath.row].lastname) * Double(ters[indexPath.row].kolve)
         cell.lastname.text =  "\(ff) руб"
         cell.kolve.text = "x\(ters[indexPath.row].kolve)"
         return cell
@@ -137,36 +138,32 @@ extension RomanViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, commit editingStyle : UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         if editingStyle == .delete {
-            
             tableView.beginUpdates()
             MainMoney += ( (sumArray[indexPath.row] ) *  Double (sumKolArray[indexPath.row]))
             if MainMoney >= 0 {
                 flag = true
             }
-            
             ters.remove(at: indexPath.row)
             sumArray.remove(at: indexPath.row)
             sumKolArray.remove(at: indexPath.row)
-           
             score.text = String( MainMoney)
             tableView.deleteRows(at: [indexPath] , with: .fade)
-            
             tableView.endUpdates()
         }
     }
     
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-        
 }
+
 
 extension RomanViewController:CreateStudentDelegate{
     func saveStudent(student: Ter) {
         ters.append(student)
         sumArray.append(student.lastname)
         sumKolArray.append(student.kolve)
-   
         totalScore()
         DispatchQueue.main.async{
             self.tableView.reloadData()
