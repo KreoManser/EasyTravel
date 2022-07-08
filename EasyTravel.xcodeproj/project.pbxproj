@@ -27,6 +27,7 @@
 		0A8BD1862878957B00562636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8BD1852878957B00562636 /* Main.storyboard */; };
 		0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7EE1A287399CA00433E88 /* PackagePlan.swift */; };
 		0ACAAC012878B36F00E05B92 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAAC002878B36F00E05B92 /* Welcome.storyboard */; };
+		0ACAAC032878BF2F00E05B92 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC022878BF2F00E05B92 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		0A8BD1852878957B00562636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0AC7EE1A287399CA00433E88 /* PackagePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlan.swift; sourceTree = "<group>"; };
 		0ACAAC002878B36F00E05B92 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		0ACAAC022878BF2F00E05B92 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				0A38EE8228732EBB003F397A /* AppDelegate.swift */,
 				0A38EE8428732EBB003F397A /* SceneDelegate.swift */,
 				0A38EE9028732EBC003F397A /* Info.plist */,
+				0ACAAC022878BF2F00E05B92 /* UserSettings.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */,
 				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
+				0ACAAC032878BF2F00E05B92 /* UserSettings.swift in Sources */,
 				0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
