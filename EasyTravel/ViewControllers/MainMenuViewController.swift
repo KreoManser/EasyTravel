@@ -73,6 +73,7 @@ class MainMenuViewController: UIViewController {
     
 }
 
+// MARK: - MainMenuViewController extension for UICollection
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,6 +96,9 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             cell.typeOfTripLabel.text = "Лес"
             cell.layer.cornerRadius = 20
             
+            cell.frame.size = CGSize(width: 107, height: 107)
+//            cell.
+            
             return cell
             
         case storiesCollectionView:
@@ -102,6 +106,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             
             cell.storiesImage.image = UIImage(named: storiesItems[indexPath.row])
             cell.layer.cornerRadius = 20
+            
         
             return cell
             
@@ -116,21 +121,21 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 cell.layer.cornerRadius = 20
                 
                 return cell
-                
             case 2:
                 let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "spentMoneyCell", for: indexPath) as! SpentCollectionViewCell
                 cell.layer.cornerRadius = 20
                 
                 return cell
-                
             case 3:
                 let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "remainedMoneyCell", for: indexPath) as! RemainedCollectionViewCell
                 cell.layer.cornerRadius = 20
                 
                 return cell
-            default: break
+            default:
+                break
             }
-        default: break
+        default:
+            break
         }
         return UICollectionViewCell()
     }
@@ -145,7 +150,8 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     // обработка нажатий на ячейки в "каруселях"
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
-        default: break
+        default:
+            break
         }
     }
 }

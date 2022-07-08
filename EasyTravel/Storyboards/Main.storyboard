@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I60-z0-1uf">
-                                <rect key="frame" x="20" y="422" width="388" height="380"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I60-z0-1uf">
+                                <rect key="frame" x="20" y="422" width="388" height="163.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Активные поездки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QgL-Qu-p0q">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="21.666666666666668"/>
@@ -28,8 +28,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9iv-0g-N4U">
-                                        <rect key="frame" x="0.0" y="36.666666666666686" width="388" height="343.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="21.666666666666686" width="388" height="142"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="142" id="N4c-sK-9LX"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f2Q-Yk-UIW">
                                             <size key="itemSize" width="100" height="100"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,7 +41,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tripCell" id="7nR-vC-8eb" customClass="TripCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="0.0" width="130" height="130"/>
+                                                <rect key="frame" x="5" y="6" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BYv-jw-bqh">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
@@ -427,7 +430,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Itc-FR-zQ9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="0pP-V5-6V9"/>
-                            <constraint firstItem="Itc-FR-zQ9" firstAttribute="top" secondItem="I60-z0-1uf" secondAttribute="bottom" constant="20" id="1q5-FJ-tdZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CU5-xo-uJe" secondAttribute="trailing" constant="20" id="7A3-XP-gIC"/>
                             <constraint firstItem="7V3-KN-mxc" firstAttribute="top" secondItem="CU5-xo-uJe" secondAttribute="bottom" constant="5" id="BBF-3j-IRE"/>
                             <constraint firstItem="CU5-xo-uJe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VD5-Gq-YFb"/>
@@ -460,7 +462,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="QLs-tR-fYa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="116"/>
+            <point key="canvasLocation" x="-102.33644859813083" y="115.98272138228943"/>
         </scene>
     </scenes>
     <resources>
