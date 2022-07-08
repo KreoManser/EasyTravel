@@ -57,7 +57,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="img" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L9q-G0-vKo">
-                                                                    <rect key="frame" x="30" y="20.333333333333332" width="37" height="24.666666666666668"/>
+                                                                    <rect key="frame" x="30" y="20.333333333333332" width="37" height="24.666666666666682"/>
                                                                     <color key="tintColor" systemColor="systemGreenColor"/>
                                                                     <accessibility key="accessibilityConfiguration">
                                                                         <accessibilityTraits key="traits" button="YES"/>
@@ -69,32 +69,29 @@
                                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imgg" translatesAutoresizingMaskIntoConstraints="NO" id="fTe-O5-cPc">
-                                                                    <rect key="frame" x="30" y="21" width="37" height="23.333333333333329"/>
-                                                                    <color key="tintColor" systemColor="systemGreenColor"/>
-                                                                    <accessibility key="accessibilityConfiguration">
-                                                                        <accessibilityTraits key="traits" button="YES"/>
-                                                                    </accessibility>
-                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPY-C4-gSK">
+                                                                    <rect key="frame" x="143" y="19" width="41.333333333333343" height="20.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="fPY-C4-gSK" firstAttribute="top" secondItem="8Td-Mp-idY" secondAttribute="topMargin" constant="8" id="1mp-Gq-VbX"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xxc-EM-BZW" secondAttribute="trailing" constant="5" id="37d-PI-FGv"/>
-                                                                <constraint firstItem="fTe-O5-cPc" firstAttribute="bottom" secondItem="L9q-G0-vKo" secondAttribute="bottom" id="5jO-Zt-NBR"/>
                                                                 <constraint firstItem="L9q-G0-vKo" firstAttribute="leading" secondItem="8Td-Mp-idY" secondAttribute="leadingMargin" constant="10" id="8FI-87-Gb3"/>
                                                                 <constraint firstItem="pWe-hG-w1C" firstAttribute="leading" secondItem="L9q-G0-vKo" secondAttribute="trailing" constant="15" id="96Z-ea-q0S"/>
-                                                                <constraint firstItem="fTe-O5-cPc" firstAttribute="leading" secondItem="L9q-G0-vKo" secondAttribute="leading" id="ECo-rq-zPY"/>
                                                                 <constraint firstItem="pWe-hG-w1C" firstAttribute="leading" secondItem="8Td-Mp-idY" secondAttribute="leading" constant="82" id="EU7-gB-pOb"/>
                                                                 <constraint firstItem="pWe-hG-w1C" firstAttribute="bottom" secondItem="L9q-G0-vKo" secondAttribute="bottom" id="HBf-WR-j7v"/>
                                                                 <constraint firstItem="xxc-EM-BZW" firstAttribute="top" secondItem="8Td-Mp-idY" secondAttribute="top" constant="18" id="IZ8-g9-W4F"/>
-                                                                <constraint firstItem="fTe-O5-cPc" firstAttribute="top" secondItem="L9q-G0-vKo" secondAttribute="top" id="M0Y-Zc-F5T"/>
                                                                 <constraint firstItem="L9q-G0-vKo" firstAttribute="top" secondItem="8Td-Mp-idY" secondAttribute="topMargin" constant="10" id="M7a-2j-YFj"/>
-                                                                <constraint firstItem="fTe-O5-cPc" firstAttribute="trailing" secondItem="L9q-G0-vKo" secondAttribute="trailing" id="b0k-SO-8LX"/>
                                                                 <constraint firstItem="pWe-hG-w1C" firstAttribute="top" secondItem="8Td-Mp-idY" secondAttribute="topMargin" constant="7" id="tnm-4M-wMY"/>
+                                                                <constraint firstItem="fPY-C4-gSK" firstAttribute="leading" secondItem="pWe-hG-w1C" secondAttribute="trailing" constant="5" id="uCf-gg-i6X"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="imageF" destination="L9q-G0-vKo" id="65t-93-eK1"/>
-                                                            <outlet property="imageG" destination="fTe-O5-cPc" id="sql-58-dgQ"/>
+                                                            <outlet property="kolve" destination="fPY-C4-gSK" id="kYY-06-Laf"/>
                                                             <outlet property="labels" destination="pWe-hG-w1C" id="Arn-zo-wmN"/>
                                                             <outlet property="lastname" destination="xxc-EM-BZW" id="bcW-wW-tKw"/>
                                                         </connections>
@@ -117,11 +114,8 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-Ay-JdR">
-                                <rect key="frame" x="190" y="822" width="218" height="50"/>
+                                <rect key="frame" x="190" y="832" width="218" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jhb-bc-ieP"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Сохранить">
@@ -168,10 +162,10 @@
                             <constraint firstItem="MHX-Ay-JdR" firstAttribute="trailing" secondItem="PlB-5t-g4b" secondAttribute="trailingMargin" id="EDm-R6-3eW"/>
                             <constraint firstItem="MHX-Ay-JdR" firstAttribute="leading" secondItem="zAq-Lt-PQR" secondAttribute="trailing" constant="70" id="OiE-0Z-Jjk"/>
                             <constraint firstItem="MHX-Ay-JdR" firstAttribute="leading" secondItem="EAd-AQ-mva" secondAttribute="leading" constant="190" id="US8-H1-AOo"/>
-                            <constraint firstItem="MHX-Ay-JdR" firstAttribute="top" secondItem="x8z-pQ-D53" secondAttribute="bottom" constant="45" id="Waw-48-0yS"/>
                             <constraint firstItem="x8z-pQ-D53" firstAttribute="top" secondItem="EAd-AQ-mva" secondAttribute="top" id="aFT-Yf-uV6"/>
                             <constraint firstItem="zAq-Lt-PQR" firstAttribute="top" secondItem="x8z-pQ-D53" secondAttribute="bottom" constant="15" id="aNG-b6-dVl"/>
                             <constraint firstItem="zAq-Lt-PQR" firstAttribute="bottom" secondItem="MHX-Ay-JdR" secondAttribute="bottom" constant="12" id="h0o-9l-h6A"/>
+                            <constraint firstItem="MHX-Ay-JdR" firstAttribute="height" secondItem="zAq-Lt-PQR" secondAttribute="height" multiplier="0.434783" id="sVi-Vc-45x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="STudent" id="pr1-F5-XNR">
@@ -281,6 +275,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonClick" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
+                        <outlet property="kolvo" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
                         <outlet property="lastname" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
                         <outlet property="name" destination="ICh-ap-st7" id="vX2-EJ-Vmt"/>
                         <outlet property="valuee" destination="dem-r0-zg7" id="dLO-xT-ONN"/>

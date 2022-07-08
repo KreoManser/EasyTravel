@@ -16,9 +16,7 @@ class CreateTripViewController: UIViewController {
     @IBOutlet weak var name:UITextField!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var valuee: UITextField!
-    
-    @IBOutlet var view1: UIView!
-    @IBOutlet var b1: UIButton!
+    @IBOutlet var kolvo: UITextField!
     @IBOutlet var buttonClick: UIButton!
     weak var delegate:CreateStudentDelegate?
     override func viewDidLoad() {
@@ -43,13 +41,15 @@ class CreateTripViewController: UIViewController {
         
         guard let name = name.text else {return}
         guard   let lastname =  lastname.text else {return}
+        guard let kolvo = kolvo.text else {return}
+        
         let score = Double(lastname)
+        let kolvoo = Int(kolvo)
       
-      
-        print(name,lastname)
-        if name != "" && lastname != ""{
-            if score != nil{
-            let terr = Ter(name: name, lastname: score!)
+    
+        if name != "" && lastname != "" && kolvo != ""{
+            if score != nil && kolvoo != nil{
+            let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
            
             delegate?.saveStudent(student: terr)
              dismiss(animated: true)

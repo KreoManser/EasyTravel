@@ -10,9 +10,10 @@ import UIKit
 class RomanTableViewCell: UITableViewCell {
     @IBOutlet var labels: UILabel!
     @IBOutlet var lastname: UILabel!
-    
+    @IBOutlet var kolve: UILabel!
+
     @IBOutlet var imageF : UIImageView!
-    @IBOutlet var imageG : UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
