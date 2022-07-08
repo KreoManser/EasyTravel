@@ -150,16 +150,6 @@
             </objects>
             <point key="canvasLocation" x="46" y="98"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="qlp-IA-yjm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="ZsX-vk-nfM" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cve-fA-NkZ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L2P-tC-e1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="658" y="-18"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="429" height="228"/>

@@ -9,12 +9,36 @@ import UIKit
 
 class GreetingsViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var selectMaleButton: UIButton!
     @IBOutlet weak var selectFemaleButton: UIButton!
+    
+    // MARK: - Life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        isAppAlreadyLaunchedOnce()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonShadow()
+    }
+    
+    // MARK: - Private methods
+    
+    private func isAppAlreadyLaunchedOnce() {
+        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let mainVC = storyboardMain.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
+            navigationController?.pushViewController(mainVC, animated: true)
+        } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+        }
     }
     
     private func setButtonShadow() {
@@ -31,18 +55,20 @@ class GreetingsViewController: UIViewController {
         
     }
     
+    // MARK: - IBActions
+    
     @IBAction func selectMaleButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let plansVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
-        navigationController?.pushViewController(plansVC, animated: true)
+        navigationController?.pushViewController(mainVC, animated: true)
     }
     
     @IBAction func selectFemaleButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let plansVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
-        navigationController?.pushViewController(plansVC, animated: true)
+        navigationController?.pushViewController(mainVC, animated: true)
     }
 
 }
