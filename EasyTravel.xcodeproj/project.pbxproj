@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A115F0728762B4C00C0837D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A115F0628762B4C00C0837D /* Main.storyboard */; };
 		0A35BE2B2875C50A00855E02 /* PackagePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */; };
 		0A35BE2F2875E37D00855E02 /* CreateNewTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */; };
 		0A35BE312875E8F500855E02 /* CreateNewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35BE302875E8F500855E02 /* CreateNewTripViewController.swift */; };
@@ -16,11 +15,20 @@
 		0A38EE8A28732EBB003F397A /* Plans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8828732EBB003F397A /* Plans.storyboard */; };
 		0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8B28732EBC003F397A /* Assets.xcassets */; };
 		0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */; };
+		0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1732878953F00562636 /* GreetingsViewController.swift */; };
+		0A8BD17D2878955000562636 /* TotalMoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */; };
+		0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1762878955000562636 /* TripCollectionViewCell.swift */; };
+		0A8BD17F2878955000562636 /* StoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1772878955000562636 /* StoriesCollectionViewCell.swift */; };
+		0A8BD1802878955000562636 /* RubleIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1782878955000562636 /* RubleIconCollectionViewCell.swift */; };
+		0A8BD1812878955000562636 /* SpentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1792878955000562636 /* SpentCollectionViewCell.swift */; };
+		0A8BD1822878955000562636 /* StoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD17A2878955000562636 /* StoriesCollectionViewController.swift */; };
+		0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD17B2878955000562636 /* MainMenuViewController.swift */; };
+		0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */; };
+		0A8BD1862878957B00562636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8BD1852878957B00562636 /* Main.storyboard */; };
 		0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7EE1A287399CA00433E88 /* PackagePlan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A115F0628762B4C00C0837D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlanViewController.swift; sourceTree = "<group>"; };
 		0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewTrip.storyboard; sourceTree = "<group>"; };
 		0A35BE302875E8F500855E02 /* CreateNewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +39,16 @@
 		0A38EE8B28732EBC003F397A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A38EE8E28732EBC003F397A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A38EE9028732EBC003F397A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A8BD1732878953F00562636 /* GreetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsViewController.swift; sourceTree = "<group>"; };
+		0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalMoneyCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD1762878955000562636 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD1772878955000562636 /* StoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD1782878955000562636 /* RubleIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubleIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD1792878955000562636 /* SpentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpentCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD17A2878955000562636 /* StoriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewController.swift; sourceTree = "<group>"; };
+		0A8BD17B2878955000562636 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainedCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A8BD1852878957B00562636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0AC7EE1A287399CA00433E88 /* PackagePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,8 +104,8 @@
 		0A38EEB728739341003F397A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				0A8BD1852878957B00562636 /* Main.storyboard */,
 				0A38EE8828732EBB003F397A /* Plans.storyboard */,
-				0A115F0628762B4C00C0837D /* Main.storyboard */,
 				0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */,
 				0A35BE2E2875E37D00855E02 /* CreateNewTrip.storyboard */,
 			);
@@ -97,7 +115,16 @@
 		0A38EEB828739351003F397A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A8BD1732878953F00562636 /* GreetingsViewController.swift */,
 				0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */,
+				0A8BD17B2878955000562636 /* MainMenuViewController.swift */,
+				0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */,
+				0A8BD1782878955000562636 /* RubleIconCollectionViewCell.swift */,
+				0A8BD1792878955000562636 /* SpentCollectionViewCell.swift */,
+				0A8BD1772878955000562636 /* StoriesCollectionViewCell.swift */,
+				0A8BD17A2878955000562636 /* StoriesCollectionViewController.swift */,
+				0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */,
+				0A8BD1762878955000562636 /* TripCollectionViewCell.swift */,
 				0A35BE302875E8F500855E02 /* CreateNewTripViewController.swift */,
 			);
 			path = ViewControllers;
@@ -178,7 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35BE2F2875E37D00855E02 /* CreateNewTrip.storyboard in Resources */,
-				0A115F0728762B4C00C0837D /* Main.storyboard in Resources */,
+				0A8BD1862878957B00562636 /* Main.storyboard in Resources */,
 				0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */,
 				0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */,
 				0A38EE8A28732EBB003F397A /* Plans.storyboard in Resources */,
@@ -192,9 +219,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8BD1822878955000562636 /* StoriesCollectionViewController.swift in Sources */,
 				0A35BE312875E8F500855E02 /* CreateNewTripViewController.swift in Sources */,
+				0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */,
+				0A8BD17D2878955000562636 /* TotalMoneyCollectionViewCell.swift in Sources */,
+				0A8BD1812878955000562636 /* SpentCollectionViewCell.swift in Sources */,
+				0A8BD17F2878955000562636 /* StoriesCollectionViewCell.swift in Sources */,
+				0A8BD1802878955000562636 /* RubleIconCollectionViewCell.swift in Sources */,
 				0A35BE2B2875C50A00855E02 /* PackagePlanViewController.swift in Sources */,
+				0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
+				0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */,
+				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
 				0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */,
 			);

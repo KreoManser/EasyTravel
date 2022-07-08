@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Package {
     case hiking
@@ -14,6 +15,7 @@ enum Package {
 }
 
 struct Plan {
+//    let image: UIImage
     let title: String
     let package: Package
     let description: String
