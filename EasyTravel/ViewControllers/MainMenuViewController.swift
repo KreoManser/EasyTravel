@@ -226,6 +226,9 @@ extension MainMenuViewController: changeBudgetDelegate {
         
         totalBudgetMoney = budget
         totalBudgetText = String(budget)
+        totalBudgetText2 = "0"
+        totalBudgetText3 = "0"
+        totalBudgetMoney2 = 0.0
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
