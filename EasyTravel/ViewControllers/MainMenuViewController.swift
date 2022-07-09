@@ -70,6 +70,20 @@ class MainMenuViewController: UIViewController {
         
         createPlanVC.modalPresentationStyle = .fullScreen
         present(createPlanVC, animated: true)
+    
+    }
+    
+    
+    @IBAction func addButtonDidTap(_ sender: Any) {
+        guard let changeBudgetVC = storyboard?.instantiateViewController(withIdentifier: "ChangeBudgetViewController") as? ChangeBudgetViewController else { return }
+        
+        changeBudgetVC.delegate = self
+        
+        present(changeBudgetVC, animated: true)
+//        
+//        TotalMoneyCollectionViewCell().totalBudgetLabel.text = String(TotalMoneyCollectionViewCell().totalBudgetMoney)
+
+        
     }
     
     @IBAction func settingsButtonDIdTap(_ sender: Any) {
@@ -80,7 +94,7 @@ class MainMenuViewController: UIViewController {
 // MARK: - MainMenuViewController extension for UICollection
 
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case storiesCollectionView:
@@ -96,6 +110,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch collectionView {
         case tripCollectionView:
             guard let cell = tripCollectionView.dequeueReusableCell(withReuseIdentifier: "tripCell", for: indexPath) as? TripCollectionViewCell else { return UICollectionViewCell() }
@@ -118,11 +133,13 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             switch indexPath.row {
             case 0:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "rubleIconCell", for: indexPath) as? RubleIconCollectionViewCell else { return UICollectionViewCell() }
+                
                 cell.layer.cornerRadius = 20
                 
                 return cell
             case 1:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "totalBudgetCell", for: indexPath) as? TotalMoneyCollectionViewCell else { return UICollectionViewCell() }
+                
                 cell.layer.cornerRadius = 20
                 
                 return cell
@@ -176,3 +193,19 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
 class CheckPlanNavigationController: UINavigationController {
     
 }
+
+extension MainMenuViewController: changeBudgetDelegate {
+    func saveBudget(budget: Double) {
+
+        let indexPath = IndexPath(item: 1, section: 0)
+
+        guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "totalBudgetCell", for: indexPath) as? TotalMoneyCollectionViewCell else { return }
+
+        cell.totalBudgetMoney = budget
+        cell.totalBudgetLabel.text = String(budget)
+
+        financeCollectionView.reloadItems(at: [indexPath])
+
+    }
+}
+

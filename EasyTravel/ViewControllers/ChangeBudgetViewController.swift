@@ -14,7 +14,7 @@ protocol changeBudget: AnyObject {
 }
 
 protocol changeBudgetDelegate: AnyObject {
-    func saveBudget(budget: Int)
+    func saveBudget(budget: Double)
 }
 
 // MARK: - ChangeBudgetViewController
@@ -30,7 +30,7 @@ class ChangeBudgetViewController: UIViewController {
     
     // MARK: - Properties
     
-//    weak var delegate: changeBudgetDelegate?
+    weak var delegate: changeBudgetDelegate?
     
     // MARK: - Life cycle
     
@@ -60,7 +60,7 @@ class ChangeBudgetViewController: UIViewController {
         // ИСПРАВИТЬ
         let stringBudget = budgetTextField.text!
         if let age = Int(stringBudget) {
-//            delegate?.saveBudget(budget: Int(age))
+            delegate?.saveBudget(budget: Double(age))
             dismiss(animated: true)
         } else {
             showAlert()

@@ -30,7 +30,7 @@ class CheckPlanViewController: UIViewController {
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-    var MainMoney: Double = 46300
+    var MainMoney: Double = TotalMoneyCollectionViewCell().totalBudgetMoney
     var flag = true
  
     override func viewDidLoad() {
@@ -69,20 +69,20 @@ class CheckPlanViewController: UIViewController {
                     ters.removeLast()
                     sumKolArray.removeLast()
                     sum = 0
-                    createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверте баланс")
+                    createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверьте баланс")
                 }
             }
                 MainMoney = MainMoney - sum
                 if  MainMoney == 0{
                     flag = false
-                    createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверте баланс")
+                    createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверьте баланс")
                 }
                 score.text = String( MainMoney)}
         } else {
             sumArray.removeLast()
             ters.removeLast()
             sumKolArray.removeLast()
-            createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверте баланс")
+            createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверьте свой баланс")
         }
     }
     
