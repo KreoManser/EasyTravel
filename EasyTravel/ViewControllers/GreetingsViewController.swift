@@ -50,6 +50,7 @@ class GreetingsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
+        UserSettings.userGender = "Мужской"
         navigationController?.pushViewController(mainVC, animated: true)
     }
     
@@ -57,6 +58,7 @@ class GreetingsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
+        UserSettings.userGender = "Женский"
         navigationController?.pushViewController(mainVC, animated: true)
     }
 
