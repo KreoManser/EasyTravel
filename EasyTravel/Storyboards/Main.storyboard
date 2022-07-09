@@ -351,7 +351,7 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.33725491169999999" green="0.35686278339999999" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="totalBudgetLabel" destination="0BF-cf-GL6" id="bc9-Pc-aNR"/>
+                                            <outlet property="totalBudgetLabel" destination="0BF-cf-GL6" id="J4o-Re-5QY"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="spentMoneyCell" id="sA8-ob-LG7" customClass="SpentCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
