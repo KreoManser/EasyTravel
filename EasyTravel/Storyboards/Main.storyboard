@@ -550,7 +550,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Sk0-Tj-aUb">
             <objects>
-                <navigationController id="8D9-wr-qck" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CellsNB" id="8D9-wr-qck" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PlW-R3-TXf">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -607,7 +607,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DQl-ON-N2l"/>
+        <segue reference="ha7-wz-irc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Hikking" width="600" height="600"/>
