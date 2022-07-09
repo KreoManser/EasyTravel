@@ -21,7 +21,6 @@ class CreateTripViewController: UIViewController {
     
     weak var delegate:CreateStudentDelegate?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonClick.layer.cornerRadius = 10
@@ -31,11 +30,7 @@ class CreateTripViewController: UIViewController {
             green: 109.0 / 255,
             blue: 224.0 / 255,
             alpha: 1.0)
-  
     }
-    
-    
-    
     
     @IBAction func clickButton(_ sender: Any) {
         guard let name = name.text else {
@@ -54,21 +49,17 @@ class CreateTripViewController: UIViewController {
         let score = Double(lastname)
         let kolvoo = Int(kolvo)
       
-        if name != "" && lastname != "" && kolvo != ""{
-            
+        if name != "" && lastname != "" && kolvo != "" {
             if score != nil && kolvoo != nil{
             let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
-           
+                
             delegate?.saveStudent(student: terr)
                 
              dismiss(animated: true)
-                
-            }
-            else {
+            } else {
                 createAlert(title: "Ошибка!", description: "Заполните корректно поле для цены")
             }
-        }
-        else {
+        } else {
             createAlert(title: "Ошибка!", description: "Заполните все поля")
         }
     }
@@ -76,23 +67,13 @@ class CreateTripViewController: UIViewController {
 
 
 extension UIViewController {
-
     func createAlert(title: String?, description: String?) {
-
         let alertController = UIAlertController(
-
             title: title, message: description, preferredStyle: .alert
-
         )
-
         alertController.addAction(
-
             UIAlertAction(title: "OK", style: .default, handler: nil)
-
         )
-
         present(alertController, animated: true, completion: nil)
-
     }
-
 }
