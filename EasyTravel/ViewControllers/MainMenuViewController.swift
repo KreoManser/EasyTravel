@@ -27,7 +27,9 @@ class MainMenuViewController: UIViewController {
     var totalBudgetText = "0"
     var totalBudgetText2 = "0"
     var totalBudgetText3 = "0"
-    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
+    var storiesItems = ["storiesImage", "storiesImage",
+                        "storiesImage", "storiesImage",
+                        "storiesImage", "storiesImage"]
     
     var totalBudgetMoney: Double = 0
     var totalBudgetMoney2: Double = 0
@@ -227,8 +229,10 @@ extension MainMenuViewController: changeBudgetDelegate {
         totalBudgetMoney = budget
         totalBudgetText = String(budget)
         totalBudgetText2 = "0"
-        totalBudgetText3 = "0"
+        totalBudgetText3 = totalBudgetText
+        
         totalBudgetMoney2 = 0.0
+        totalBudgetMoney3 = totalBudgetMoney
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
