@@ -29,12 +29,37 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        setupGesture()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setupGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        tapGesture.numberOfTapsRequired = 1
+        packageButton.addGestureRecognizer(tapGesture)
     }
     
     // MARK: - IBActions
     
     @IBAction func packageButtonDidTap(_ sender: Any) {
         // реализовать при нажатии на коробку
+    }
+    
+    // MARK: - Methods
+    
+    @objc
+    func tapped() {
+        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "popVC") else { return }
+
+        popVC.modalPresentationStyle = .popover
+        let popOverVC = popVC.popoverPresentationController
+        popOverVC?.delegate = self
+        popOverVC?.sourceView = self.packageButton
+        popOverVC?.sourceRect = CGRect(x: self.packageButton.bounds.midX, y: self.packageButton.bounds.minY, width: 0, height: 0)
+        popVC.preferredContentSize = CGSize(width: 250, height: 250)
+
+        self.present(popVC, animated: true)
     }
     
     @IBAction func addNewPackageButtonDidTap(_ sender: Any) {
@@ -48,12 +73,6 @@ class MainMenuViewController: UIViewController {
     @IBAction func settingsButtonDIdTap(_ sender: Any) {
         // реализовать при нажатии на шестеренку
     }
-    
-//    override func unwind(for segue: UIStoryboardSegue) {
-//        guard let mainVC = segue.source as? MainMenuViewController else { return }
-//
-//        mainVC.totalBudgetLabel.text =
-//    }
 }
 
 // MARK: - MainMenuViewController extension for UICollection
@@ -135,5 +154,11 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         default:
             break
         }
+    }
+}
+
+extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }

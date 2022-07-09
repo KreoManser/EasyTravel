@@ -15,6 +15,7 @@
 		0A38EE8A28732EBB003F397A /* Plans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8828732EBB003F397A /* Plans.storyboard */; };
 		0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8B28732EBC003F397A /* Assets.xcassets */; };
 		0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */; };
+		0A4EF38B287994960079CB54 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF38A287994960079CB54 /* PopTableViewController.swift */; };
 		0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1732878953F00562636 /* GreetingsViewController.swift */; };
 		0A8BD17D2878955000562636 /* TotalMoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */; };
 		0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1762878955000562636 /* TripCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 		0A38EE8B28732EBC003F397A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A38EE8E28732EBC003F397A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A38EE9028732EBC003F397A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4EF38A287994960079CB54 /* PopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
 		0A8BD1732878953F00562636 /* GreetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsViewController.swift; sourceTree = "<group>"; };
 		0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalMoneyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1762878955000562636 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				0ACAAC0C2879744400E05B92 /* ChangeBudgetViewController.swift */,
 				0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */,
 				0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */,
+				0A4EF38A287994960079CB54 /* PopTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
 				0ACAAC032878BF2F00E05B92 /* UserSettings.swift in Sources */,
+				0A4EF38B287994960079CB54 /* PopTableViewController.swift in Sources */,
 				0ACAAC112879744400E05B92 /* ShowStoryViewController.swift in Sources */,
 				0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */,
 			);
