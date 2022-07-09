@@ -34,6 +34,10 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         appendProducts()
     }
     
+    @IBAction func dismissCheckPlan(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     // MARK: - Private Methods
     
     private func configueMainView() {
