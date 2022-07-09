@@ -157,6 +157,9 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 return cell
             case 3:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "remainedMoneyCell", for: indexPath) as? RemainedCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.remainedMoneyLabel.text = totalBudgetText
+                cell.remainedMoney = totalBudgetMoney
                 cell.layer.cornerRadius = 20
                 
                 return cell
@@ -204,12 +207,13 @@ class CheckPlanNavigationController: UINavigationController {
 extension MainMenuViewController: changeBudgetDelegate {
     func saveBudget(budget: Double) {
 
-        let indexPath = IndexPath(item: 1, section: 0)
+        let indexPathTotal = IndexPath(item: 1, section: 0)
+        let indexPathRemained = IndexPath(item: 3, section: 0)
         
         totalBudgetMoney = budget
         totalBudgetText = String(budget)
         
-        financeCollectionView.reloadItems(at: [indexPath])
+        financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
     }
 }

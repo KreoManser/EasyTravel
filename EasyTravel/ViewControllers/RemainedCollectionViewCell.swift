@@ -15,5 +15,5 @@ class RemainedCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private var remainedMoney = 0
+    var remainedMoney: Double = 0
 }
