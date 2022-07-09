@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzS-Iu-st7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1453" y="-24"/>
+            <point key="canvasLocation" x="-879" y="116"/>
         </scene>
         <!--EasyTravel-->
         <scene sceneID="tne-QT-ifu">
@@ -110,6 +110,9 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="packageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Mf-f6-yHg"/>
+                                            <segue destination="h5h-QO-tem" kind="popoverPresentation" popoverAnchorView="JhZ-ma-0sk" id="DQl-ON-N2l">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62z-fo-1xI">
@@ -544,7 +547,68 @@
             </objects>
             <point key="canvasLocation" x="674" y="116"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sk0-Tj-aUb">
+            <objects>
+                <navigationController storyboardIdentifier="CellsNB" id="8D9-wr-qck" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PlW-R3-TXf">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h5h-QO-tem" kind="relationship" relationship="rootViewController" id="ha7-wz-irc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cf-8c-JUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949" y="838"/>
+        </scene>
+        <!--Pop Table View Controller-->
+        <scene sceneID="E7G-I9-Knj">
+            <objects>
+                <tableViewController storyboardIdentifier="popVC" id="h5h-QO-tem" customClass="PopTableViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="y4L-nM-aTP">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopTableViewCell" id="S6L-eo-nmL" customClass="PopTableViewCell" customModule="EasyTravel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="250" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6L-eo-nmL" id="fuL-n5-OTv">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-FO-2Z3">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabelPop" destination="Vle-FO-2Z3" id="Ft9-ib-apa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h5h-QO-tem" id="kYB-Kf-vOy"/>
+                            <outlet property="delegate" destination="h5h-QO-tem" id="iCg-GL-25t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YZi-ld-vFQ"/>
+                    <size key="freeformSize" width="250" height="250"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb1-ea-OKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="803"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ha7-wz-irc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Hikking" width="600" height="600"/>
         <image name="Logo" width="429" height="228"/>
