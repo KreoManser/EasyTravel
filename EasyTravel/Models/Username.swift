@@ -12,6 +12,25 @@ final class UserSettings {
         case userName
         case userGender
     }
+    
+    private enum SettingsKeysForFirstRun: String {
+        case newUser
+    }
+    
+    static var user: String! {
+        get {
+            return UserDefaults.standard.string(forKey: SettingsKeysForFirstRun.newUser.rawValue)
+        } set {
+            let defaults = UserDefaults.standard
+            let key = SettingsKeysForFirstRun.newUser.rawValue
+            if let sex = newValue {
+                defaults.set(sex, forKey: key)
+            } else {
+                defaults.removeObject(forKey: key)
+            }
+        }
+    }
+    
     static var userName: String! {
         get {
             return UserDefaults.standard.string(forKey: SettingsKeys.userName.rawValue)

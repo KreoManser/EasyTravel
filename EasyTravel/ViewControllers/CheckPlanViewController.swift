@@ -30,38 +30,23 @@ class CheckPlanViewController: UIViewController {
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-  
-    var MainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
+    var MainMoney: Double = 0
     var flag = true
-  
-    
-    
-
  
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsView()
-       
     }
-
     
     // MARK: - IBActions
     
     @IBAction func clickSaveButton(_ sender: Any) {
-        UserDefaults.standard.set(MainMoney, forKey: "budgetForCreateTrip")
-        
-        let storyboardStories = UIStoryboard(name: "Main", bundle: nil)
-        guard let backMainMenuVC = storyboardStories.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
-        navigationController?.pushViewController(backMainMenuVC, animated: true)
-        
+        //кнопка сохранить
     }
     
     @IBAction func ClickAddButton(_ sender: Any) {
         guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController
-        else {
-            return
-        }
-        
+        else { return }
         createVc.delegate = self
         present(createVc, animated: true)
     }
@@ -71,7 +56,7 @@ class CheckPlanViewController: UIViewController {
     func totalScore() -> (Void){
         if flag == true {
             createAlert(
-                title: "Ошибка",description: "Не удалось добавить товар! Проверте баланс"
+                title: "Ошибка", description: "Не удалось добавить товар! Проверте баланс"
             )
             var sum:Double = 0
             if sumArray.count == 0 {
@@ -102,7 +87,7 @@ class CheckPlanViewController: UIViewController {
     }
     
     func settingsView(){
-        score.text = String(MainMoney)
+        
         tableView.dataSource = self
         tableView.delegate = self
         viewScore.layer.cornerRadius = 20
@@ -172,7 +157,6 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
 
 extension CheckPlanViewController: CreateStudentDelegate {
     func saveStudent(student: Ter) {
-    
         ters.append(student)
         sumArray.append(student.lastname)
         sumKolArray.append(student.kolve)
@@ -180,8 +164,6 @@ extension CheckPlanViewController: CreateStudentDelegate {
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }
 }
-
-
 
 // MARK: - PlanNavigationController
 

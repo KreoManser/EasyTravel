@@ -7,12 +7,6 @@
 
 import UIKit
 
-
-//MARK: - protocol
-protocol CreateDeligareFromCreateTrip:AnyObject{
-    func saveValueFromVreateTrip(value:Double)
-}
-
 // MARK: - MainMenuViewController
 
 class MainMenuViewController: UIViewController {
@@ -28,32 +22,20 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var addNewPackageButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var packageButton: UIButton!
-    
-    weak var deligateFromCreateTrip : CreateDeligareFromCreateTrip?
 
     
     var totalBudgetText = "0"
-    var totalBudgetText2 = "0"
-    var totalBudgetText3 = "0"
-    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
-    
+    var storiesItems = ["storiesImage", "storiesImage",
+                        "storiesImage", "storiesImage", "storiesImage"]
     var totalBudgetMoney: Double = 0
-    var totalBudgetMoney2: Double = 0
-    var totalBudgetMoney3: Double = 0
     
-    private let packageItems: [Plan] = Plan.getPlan()
+    private var packageItems: [Plan] = Plan.getPlan()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.hidesBackButton = true
         setupGesture()
-        
-       // let indexPathRemained = IndexPath(item: 3, section: 0)
-        totalBudgetText3 = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
-        totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
-        totalBudgetText2 = String(  (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
-        
     }
     
     // MARK: - Private Methods
@@ -103,14 +85,14 @@ class MainMenuViewController: UIViewController {
         changeBudgetVC.delegate = self
         
         present(changeBudgetVC, animated: true)
-//        
-//        TotalMoneyCollectionViewCell().totalBudgetLabel.text = String(TotalMoneyCollectionViewCell().totalBudgetMoney)
-
-        
     }
     
     @IBAction func settingsButtonDIdTap(_ sender: Any) {
-        // реализовать при нажатии на шестеренку
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        guard let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsNavigationController") as? SettingsNavigationController else { return }
+        
+        settingsVC.modalPresentationStyle = .fullScreen
+        present(settingsVC, animated: true)
     }
 }
 
@@ -138,7 +120,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case tripCollectionView:
             guard let cell = tripCollectionView.dequeueReusableCell(withReuseIdentifier: "tripCell", for: indexPath) as? TripCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.tripImageView.image = UIImage(named: storiesItems[indexPath.row])
+            cell.tripImageView.image = packageItems[indexPath.row].image
             cell.typeOfTripLabel.text = packageItems[indexPath.row].title
             cell.layer.cornerRadius = 20
             
@@ -172,15 +154,13 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             case 2:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "spentMoneyCell", for: indexPath) as? SpentCollectionViewCell else { return UICollectionViewCell() }
                 cell.layer.cornerRadius = 20
-                cell.spentMoneyLabel.text = totalBudgetText2
-                cell.spentMoney = totalBudgetMoney2
                 
                 return cell
             case 3:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "remainedMoneyCell", for: indexPath) as? RemainedCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.remainedMoneyLabel.text = totalBudgetText3
-                cell.remainedMoney = totalBudgetMoney3
+                cell.remainedMoneyLabel.text = totalBudgetText
+                cell.remainedMoney = totalBudgetMoney
                 cell.layer.cornerRadius = 20
                 
                 return cell
@@ -207,6 +187,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
             navigationController?.pushViewController(storiesVC, animated: true)
+        //case tripCollectionView: нажатие на активную поездку
         default:
             break
         }
@@ -239,9 +220,6 @@ extension MainMenuViewController: changeBudgetDelegate {
         totalBudgetText = String(budget)
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
-        
-        UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
-        UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
 
     }
 }

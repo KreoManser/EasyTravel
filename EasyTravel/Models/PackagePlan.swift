@@ -11,28 +11,32 @@ import UIKit
 enum Package {
     case trip
     case visit
-    case hiking
+    case hikking
 }
 
 struct Plan {
-//    let image: UIImage
+    let image: UIImage?
     let title: String
     let package: Package
     let description: String
+
     
     static func getPlan() -> [Plan] {
         [
             Plan(
+                image: UIImage(named: "Hikking"),
                 title: "Поход",
-                package: .hiking,
+                package: .hikking,
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ),
             Plan(
+                image: UIImage(named: "Trip"),
                 title: "Путешествие",
                 package: .trip,
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ),
             Plan(
+                image: UIImage(named: "Visit"),
                 title: "Визит",
                 package: .visit,
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."

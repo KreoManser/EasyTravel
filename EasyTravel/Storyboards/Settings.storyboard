@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTb-gc-57l">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,16 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings Navigation Controller-->
+        <scene sceneID="asn-X9-JQe">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsNavigationController" id="gTb-gc-57l" customClass="SettingsNavigationController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Yw-GJ-rjV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QbY-L6-YsW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIE-vn-Vn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="29"/>
+        </scene>
+        <!--Настройки-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="BYZ-38-t0r" customClass="SettingsViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SettingsViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzG-hf-5xk">
-                                <rect key="frame" x="20" y="64" width="374" height="122"/>
+                                <rect key="frame" x="20" y="88" width="374" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="Yn9-Pe-pgp"/>
                                 </constraints>
@@ -100,7 +116,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zao-IJ-90v">
-                                <rect key="frame" x="20" y="246" width="374" height="150"/>
+                                <rect key="frame" x="20" y="270" width="374" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-wj-prb">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -213,13 +229,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-7u-MEh">
-                                <rect key="frame" x="156" y="91" width="166" height="27"/>
+                                <rect key="frame" x="156" y="115" width="166" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ut-sE-Teq">
-                                <rect key="frame" x="156" y="136" width="166" height="20"/>
+                                <rect key="frame" x="156" y="160" width="166" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CmV-58-qU8"/>
                                 </constraints>
@@ -228,14 +244,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rpl-PhotoRoom (1)" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-7n-Qqe">
-                                <rect key="frame" x="330" y="113.5" width="36" height="23"/>
+                                <rect key="frame" x="330" y="137.5" width="36" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="ExK-c1-U9d"/>
                                     <constraint firstAttribute="height" constant="23" id="JdL-TI-dxB"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-travel-11" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-ez-pyd">
-                                <rect key="frame" x="42" y="81.5" width="100" height="87"/>
+                                <rect key="frame" x="42" y="105.5" width="100" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MiJ-GK-xLc"/>
                                     <constraint firstAttribute="height" constant="87" id="qpt-St-c22"/>
@@ -257,10 +273,10 @@
                             <constraint firstItem="1Q0-ez-pyd" firstAttribute="centerY" secondItem="UkG-7n-Qqe" secondAttribute="centerY" id="KgA-Cx-1OK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w5p-D6-6cH" secondAttribute="trailing" constant="20" id="MCf-ZC-pSB"/>
                             <constraint firstItem="nwE-Pc-2IB" firstAttribute="top" secondItem="w5p-D6-6cH" secondAttribute="top" constant="20" id="VJl-Hd-Nh7"/>
-                            <constraint firstItem="nYb-7u-MEh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="W7e-QS-tuI"/>
+                            <constraint firstItem="nYb-7u-MEh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="W7e-QS-tuI"/>
                             <constraint firstItem="1Q0-ez-pyd" firstAttribute="centerY" secondItem="nzG-hf-5xk" secondAttribute="centerY" id="Yz1-ve-eey"/>
                             <constraint firstItem="nzG-hf-5xk" firstAttribute="trailing" secondItem="zao-IJ-90v" secondAttribute="trailing" id="cnP-8z-y6M"/>
-                            <constraint firstItem="nzG-hf-5xk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="emJ-wh-WvR"/>
+                            <constraint firstItem="nzG-hf-5xk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="emJ-wh-WvR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UkG-7n-Qqe" secondAttribute="trailing" constant="48" id="hxD-dH-06s"/>
                             <constraint firstItem="zao-IJ-90v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j8e-8S-iBP"/>
                             <constraint firstItem="nYb-7u-MEh" firstAttribute="leading" secondItem="1Q0-ez-pyd" secondAttribute="trailing" constant="14" id="kPp-TU-IIY"/>
@@ -274,7 +290,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nzG-hf-5xk" secondAttribute="trailing" constant="20" id="wZA-8P-Y6a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0DW-Gm-6KA"/>
+                    <navigationItem key="navigationItem" title="Настройки" id="0DW-Gm-6KA">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="BNE-vU-TTA">
+                            <connections>
+                                <action selector="dismiss" destination="BYZ-38-t0r" id="LM5-WR-Vbb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="Mzd-fw-nj1" id="hpS-MS-dHR"/>
                         <outlet property="changeSettingsButton" destination="nzG-hf-5xk" id="i2w-sF-EFN"/>
@@ -377,12 +399,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="lXp-cW-QEL" id="kfb-LD-ttV"/>
+                        <outlet property="tableView" destination="lXp-cW-QEL" id="3wG-3U-uNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeA-PX-1SU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878.2608695652175" y="675"/>
+            <point key="canvasLocation" x="1880" y="698"/>
         </scene>
         <!--Change Settings View Controller-->
         <scene sceneID="upc-Ng-cP0">
@@ -465,6 +487,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="121"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle.lefthalf.filled" catalog="system" width="128" height="121"/>
