@@ -56,7 +56,8 @@ class PopTableViewController: UITableViewController {
             guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
         case 2:
             guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
-        default
+        default:
+            break
         }
     }
 }
