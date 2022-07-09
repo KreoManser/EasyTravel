@@ -19,6 +19,7 @@ class PopTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.isScrollEnabled = false
+//        tableView.register(PopTableViewCell.self, forCellReuseIdentifier: "PopTableViewCell")
     }
     
     override func viewWillLayoutSubviews() {
@@ -38,10 +39,10 @@ class PopTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopTableViewCell", for: indexPath) as? PopTableViewCell else { return UITableViewCell() }
         
         let textData = tripsArray[indexPath.row]
-        cell.textLabel?.text = textData
+        cell.nameLabelPop.text = textData
         return cell
     }
 }

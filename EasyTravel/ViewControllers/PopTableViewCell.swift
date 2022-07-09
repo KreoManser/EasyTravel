@@ -7,8 +7,14 @@
 
 import UIKit
 
-class PopTableViewCell: UITableViewCell {
+struct Page {
+    let name: String
+}
 
+class PopTableViewCell: UITableViewCell {
+    
+    @IBOutlet var nameLabelPop: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
