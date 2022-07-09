@@ -29,7 +29,7 @@ class MainMenuViewController: UIViewController {
     var totalBudgetText3 = "0"
     var storiesItems = ["storiesImage", "storiesImage",
                         "storiesImage", "storiesImage",
-                        "storiesImage", "storiesImage"]
+                        ]
     
     var totalBudgetMoney: Double = 0
     var totalBudgetMoney2: Double = 0
