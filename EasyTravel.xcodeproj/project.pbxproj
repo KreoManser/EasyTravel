@@ -24,6 +24,10 @@
 		0A4EF3992879C1480079CB54 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF3982879C1480079CB54 /* TripViewController.swift */; };
 		0A4EF39B2879C33A0079CB54 /* VisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF39A2879C33A0079CB54 /* VisitViewController.swift */; };
 		0A4EF39D2879C34B0079CB54 /* HikkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF39C2879C34A0079CB54 /* HikkingViewController.swift */; };
+		0A4FEB0D287A168A00DC8A11 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FEB0C287A168A00DC8A11 /* AboutViewController.swift */; };
+		0A4FEB0F287A16E800DC8A11 /* ChangeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FEB0E287A16E800DC8A11 /* ChangeSettingsViewController.swift */; };
+		0A4FEB11287A171500DC8A11 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FEB10287A171500DC8A11 /* SettingsViewController.swift */; };
+		0A4FEB15287A189600DC8A11 /* Username.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FEB14287A189600DC8A11 /* Username.swift */; };
 		0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1732878953F00562636 /* GreetingsViewController.swift */; };
 		0A8BD17D2878955000562636 /* TotalMoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */; };
 		0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1762878955000562636 /* TripCollectionViewCell.swift */; };
@@ -34,10 +38,6 @@
 		0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */; };
 		0A8BD1862878957B00562636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8BD1852878957B00562636 /* Main.storyboard */; };
 		0A91E8D12879FDD000B33F7C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A91E8D02879FDD000B33F7C /* Settings.storyboard */; };
-		0A91E8D52879FDEA00B33F7C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91E8D22879FDEA00B33F7C /* AboutViewController.swift */; };
-		0A91E8D62879FDEA00B33F7C /* ChangeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91E8D32879FDEA00B33F7C /* ChangeSettingsViewController.swift */; };
-		0A91E8D72879FDEA00B33F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91E8D42879FDEA00B33F7C /* SettingsViewController.swift */; };
-		0A91E8D92879FE2D00B33F7C /* Username.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91E8D82879FE2D00B33F7C /* Username.swift */; };
 		0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7EE1A287399CA00433E88 /* PackagePlan.swift */; };
 		0ACAAC012878B36F00E05B92 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAAC002878B36F00E05B92 /* Welcome.storyboard */; };
 		0ACAAC07287973E900E05B92 /* ShowStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAAC05287973E900E05B92 /* ShowStory.storyboard */; };
@@ -69,6 +69,10 @@
 		0A4EF3982879C1480079CB54 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		0A4EF39A2879C33A0079CB54 /* VisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewController.swift; sourceTree = "<group>"; };
 		0A4EF39C2879C34A0079CB54 /* HikkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikkingViewController.swift; sourceTree = "<group>"; };
+		0A4FEB0C287A168A00DC8A11 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0A4FEB0E287A16E800DC8A11 /* ChangeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSettingsViewController.swift; sourceTree = "<group>"; };
+		0A4FEB10287A171500DC8A11 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0A4FEB14287A189600DC8A11 /* Username.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Username.swift; sourceTree = "<group>"; };
 		0A8BD1732878953F00562636 /* GreetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsViewController.swift; sourceTree = "<group>"; };
 		0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalMoneyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1762878955000562636 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -79,10 +83,6 @@
 		0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainedCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1852878957B00562636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A91E8D02879FDD000B33F7C /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		0A91E8D22879FDEA00B33F7C /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = "../../../../Downloads/EasyTravel-develop_Vadim/EasyTravel/ViewControllers/AboutViewController.swift"; sourceTree = "<group>"; };
-		0A91E8D32879FDEA00B33F7C /* ChangeSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSettingsViewController.swift; path = "../../../../Downloads/EasyTravel-develop_Vadim/EasyTravel/ViewControllers/ChangeSettingsViewController.swift"; sourceTree = "<group>"; };
-		0A91E8D42879FDEA00B33F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "../../../../Downloads/EasyTravel-develop_Vadim/EasyTravel/ViewControllers/SettingsViewController.swift"; sourceTree = "<group>"; };
-		0A91E8D82879FE2D00B33F7C /* Username.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Username.swift; path = "../../../../Downloads/EasyTravel-develop_Vadim/EasyTravel/Models/Username.swift"; sourceTree = "<group>"; };
 		0AC7EE1A287399CA00433E88 /* PackagePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlan.swift; sourceTree = "<group>"; };
 		0ACAAC002878B36F00E05B92 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		0ACAAC05287973E900E05B92 /* ShowStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowStory.storyboard; sourceTree = "<group>"; };
@@ -183,9 +183,9 @@
 				0A4EF3982879C1480079CB54 /* TripViewController.swift */,
 				0A4EF39A2879C33A0079CB54 /* VisitViewController.swift */,
 				0A4EF39C2879C34A0079CB54 /* HikkingViewController.swift */,
-				0A91E8D22879FDEA00B33F7C /* AboutViewController.swift */,
-				0A91E8D32879FDEA00B33F7C /* ChangeSettingsViewController.swift */,
-				0A91E8D42879FDEA00B33F7C /* SettingsViewController.swift */,
+				0A4FEB0C287A168A00DC8A11 /* AboutViewController.swift */,
+				0A4FEB0E287A16E800DC8A11 /* ChangeSettingsViewController.swift */,
+				0A4FEB10287A171500DC8A11 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,10 +201,10 @@
 		0A38EEBA28739367003F397A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0A91E8D82879FE2D00B33F7C /* Username.swift */,
 				0ACAAC0A2879740A00E05B92 /* Budget.swift */,
 				0ACAAC0F2879744400E05B92 /* ProductModel.swift */,
 				0AC7EE1A287399CA00433E88 /* PackagePlan.swift */,
+				0A4FEB14287A189600DC8A11 /* Username.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,22 +296,22 @@
 				0A8BD1812878955000562636 /* SpentCollectionViewCell.swift in Sources */,
 				0A8BD17F2878955000562636 /* StoriesCollectionViewCell.swift in Sources */,
 				0ACAAC102879744400E05B92 /* ChangeBudgetViewController.swift in Sources */,
-				0A91E8D92879FE2D00B33F7C /* Username.swift in Sources */,
+				0A4FEB15287A189600DC8A11 /* Username.swift in Sources */,
+				0A4FEB0D287A168A00DC8A11 /* AboutViewController.swift in Sources */,
 				0A4EF3952879A7AA0079CB54 /* CheckPlanViewController.swift in Sources */,
-				0A91E8D52879FDEA00B33F7C /* AboutViewController.swift in Sources */,
 				0A8BD1802878955000562636 /* RubleIconCollectionViewCell.swift in Sources */,
 				0A4EF39B2879C33A0079CB54 /* VisitViewController.swift in Sources */,
 				0A35BE2B2875C50A00855E02 /* PackagePlanViewController.swift in Sources */,
 				0A4EF3992879C1480079CB54 /* TripViewController.swift in Sources */,
 				0A4EF3972879A7AA0079CB54 /* CheckPlanTableViewCell.swift in Sources */,
+				0A4FEB0F287A16E800DC8A11 /* ChangeSettingsViewController.swift in Sources */,
 				0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */,
-				0A91E8D62879FDEA00B33F7C /* ChangeSettingsViewController.swift in Sources */,
 				0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
 				0A4EF3962879A7AA0079CB54 /* CreateTripViewController.swift in Sources */,
 				0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */,
+				0A4FEB11287A171500DC8A11 /* SettingsViewController.swift in Sources */,
 				0ACAAC122879744400E05B92 /* ViewPackageViewController.swift in Sources */,
-				0A91E8D72879FDEA00B33F7C /* SettingsViewController.swift in Sources */,
 				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
 				0A4EF38B287994960079CB54 /* PopTableViewController.swift in Sources */,

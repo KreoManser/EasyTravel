@@ -44,15 +44,15 @@ class SettingsViewController: UIViewController {
         if UserSettings.userName == nil {
             UserSettings.userName = "Username"
         }
-        if UserSettings.userGender == nil {
-            UserSettings.userGender = "Пол: -"
-        } else {
-            genderLabel.text = "Пол: \(UserSettings.userGender!)"
-        }
+        genderLabel.text = "Пол: \(UserSettings.userGender!)"
         usernameLabel.text = UserSettings.userName
     }
     
     // MARK: - Actions
+    
+    @IBAction func dismiss() {
+        dismiss(animated: true)
+    }
     
     @IBAction func notificationButtonDidTap(_ sender: Any) {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
@@ -87,4 +87,6 @@ extension SettingsViewController: ChangeUserInfo {
     }
 }
 
-
+class SettingsNavigationController: UINavigationController {
+    
+}
