@@ -16,6 +16,11 @@
 		0A38EE8C28732EBC003F397A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8B28732EBC003F397A /* Assets.xcassets */; };
 		0A38EE8F28732EBC003F397A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A38EE8D28732EBC003F397A /* LaunchScreen.storyboard */; };
 		0A4EF38B287994960079CB54 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF38A287994960079CB54 /* PopTableViewController.swift */; };
+		0A4EF38D2879A2890079CB54 /* PopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF38C2879A2890079CB54 /* PopTableViewCell.swift */; };
+		0A4EF3912879A79B0079CB54 /* CheckPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4EF3902879A79B0079CB54 /* CheckPlan.storyboard */; };
+		0A4EF3952879A7AA0079CB54 /* CheckPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF3922879A7A90079CB54 /* CheckPlanViewController.swift */; };
+		0A4EF3962879A7AA0079CB54 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF3932879A7AA0079CB54 /* CreateTripViewController.swift */; };
+		0A4EF3972879A7AA0079CB54 /* CheckPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EF3942879A7AA0079CB54 /* CheckPlanTableViewCell.swift */; };
 		0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1732878953F00562636 /* GreetingsViewController.swift */; };
 		0A8BD17D2878955000562636 /* TotalMoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */; };
 		0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD1762878955000562636 /* TripCollectionViewCell.swift */; };
@@ -49,6 +54,11 @@
 		0A38EE8E28732EBC003F397A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A38EE9028732EBC003F397A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4EF38A287994960079CB54 /* PopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
+		0A4EF38C2879A2890079CB54 /* PopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTableViewCell.swift; sourceTree = "<group>"; };
+		0A4EF3902879A79B0079CB54 /* CheckPlan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckPlan.storyboard; sourceTree = "<group>"; };
+		0A4EF3922879A7A90079CB54 /* CheckPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckPlanViewController.swift; sourceTree = "<group>"; };
+		0A4EF3932879A7AA0079CB54 /* CreateTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
+		0A4EF3942879A7AA0079CB54 /* CheckPlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckPlanTableViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1732878953F00562636 /* GreetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingsViewController.swift; sourceTree = "<group>"; };
 		0A8BD1752878955000562636 /* TotalMoneyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalMoneyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1762878955000562636 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0ACAAC05287973E900E05B92 /* ShowStory.storyboard */,
+				0A4EF3902879A79B0079CB54 /* CheckPlan.storyboard */,
 				0ACAAC08287973F600E05B92 /* ViewPackage.storyboard */,
 				0A8BD1852878957B00562636 /* Main.storyboard */,
 				0A38EE8828732EBB003F397A /* Plans.storyboard */,
@@ -137,6 +148,9 @@
 		0A38EEB828739351003F397A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A4EF3942879A7AA0079CB54 /* CheckPlanTableViewCell.swift */,
+				0A4EF3922879A7A90079CB54 /* CheckPlanViewController.swift */,
+				0A4EF3932879A7AA0079CB54 /* CreateTripViewController.swift */,
 				0A8BD1732878953F00562636 /* GreetingsViewController.swift */,
 				0A35BE2A2875C50A00855E02 /* PackagePlanViewController.swift */,
 				0A8BD17B2878955000562636 /* MainMenuViewController.swift */,
@@ -151,6 +165,7 @@
 				0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */,
 				0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */,
 				0A4EF38A287994960079CB54 /* PopTableViewController.swift */,
+				0A4EF38C2879A2890079CB54 /* PopTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4EF3912879A79B0079CB54 /* CheckPlan.storyboard in Resources */,
 				0A35BE2F2875E37D00855E02 /* CreateNewTrip.storyboard in Resources */,
 				0ACAAC09287973F600E05B92 /* ViewPackage.storyboard in Resources */,
 				0A8BD1862878957B00562636 /* Main.storyboard in Resources */,
@@ -249,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4EF38D2879A2890079CB54 /* PopTableViewCell.swift in Sources */,
 				0A35BE312875E8F500855E02 /* CreateNewTripViewController.swift in Sources */,
 				0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */,
 				0ACAAC0B2879740A00E05B92 /* Budget.swift in Sources */,
@@ -256,11 +273,14 @@
 				0A8BD1812878955000562636 /* SpentCollectionViewCell.swift in Sources */,
 				0A8BD17F2878955000562636 /* StoriesCollectionViewCell.swift in Sources */,
 				0ACAAC102879744400E05B92 /* ChangeBudgetViewController.swift in Sources */,
+				0A4EF3952879A7AA0079CB54 /* CheckPlanViewController.swift in Sources */,
 				0A8BD1802878955000562636 /* RubleIconCollectionViewCell.swift in Sources */,
 				0A35BE2B2875C50A00855E02 /* PackagePlanViewController.swift in Sources */,
+				0A4EF3972879A7AA0079CB54 /* CheckPlanTableViewCell.swift in Sources */,
 				0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */,
 				0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
+				0A4EF3962879A7AA0079CB54 /* CreateTripViewController.swift in Sources */,
 				0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */,
 				0ACAAC122879744400E05B92 /* ViewPackageViewController.swift in Sources */,
 				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
