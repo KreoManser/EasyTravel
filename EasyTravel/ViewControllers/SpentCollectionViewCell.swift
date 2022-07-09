@@ -17,7 +17,7 @@ class SpentCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private var spentMoney = 0
+    var spentMoney:Double = 0
     
     // MARK: - Life Cycle
     

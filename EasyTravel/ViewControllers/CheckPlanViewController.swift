@@ -30,23 +30,38 @@ class CheckPlanViewController: UIViewController {
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-    var MainMoney: Double = TotalMoneyCollectionViewCell().totalBudgetMoney
+  
+    var MainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
+  
+    
+    
+
  
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsView()
+       
     }
+
     
     // MARK: - IBActions
     
     @IBAction func clickSaveButton(_ sender: Any) {
-        //кнопка сохранить
+        UserDefaults.standard.set(MainMoney, forKey: "budgetForCreateTrip")
+        
+        let storyboardStories = UIStoryboard(name: "Main", bundle: nil)
+        guard let backMainMenuVC = storyboardStories.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        navigationController?.pushViewController(backMainMenuVC, animated: true)
+        
     }
     
     @IBAction func ClickAddButton(_ sender: Any) {
         guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController
-        else { return }
+        else {
+            return
+        }
+        
         createVc.delegate = self
         present(createVc, animated: true)
     }
@@ -157,6 +172,7 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
 
 extension CheckPlanViewController: CreateStudentDelegate {
     func saveStudent(student: Ter) {
+    
         ters.append(student)
         sumArray.append(student.lastname)
         sumKolArray.append(student.kolve)
@@ -164,6 +180,8 @@ extension CheckPlanViewController: CreateStudentDelegate {
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }
 }
+
+
 
 // MARK: - PlanNavigationController
 

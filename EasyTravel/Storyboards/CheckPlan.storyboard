@@ -27,7 +27,7 @@
         <!--Просмотр плана-->
         <scene sceneID="5av-9i-FDy">
             <objects>
-                <viewController storyboardIdentifier="CheckPlanViewController" id="d9c-Z3-i4O" customClass="CheckPlanViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckPlanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d9c-Z3-i4O" customClass="CheckPlanViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlB-5t-g4b">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
