@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Dr-pa-vZV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -504,7 +503,7 @@
         <segue reference="g1h-ix-oEO"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Logo" width="500" height="500"/>
+        <image name="Logo" width="429" height="228"/>
         <image name="RecommendationImage" width="900" height="900"/>
         <image name="Trip" width="1181" height="1181"/>
         <image name="cube.box" catalog="system" width="128" height="124"/>

@@ -25,9 +25,11 @@ class MainMenuViewController: UIViewController {
     
     let storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
     
+    private let packageItems: [Plan] = Plan.getPlan()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationItem.hidesBackButton = true
     }
     
@@ -67,7 +69,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case financeCollectionView:
             return 4
         case tripCollectionView:
-            return storiesItems.count
+            return packageItems.count
         default:
             break
         }
@@ -80,7 +82,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = tripCollectionView.dequeueReusableCell(withReuseIdentifier: "tripCell", for: indexPath) as? TripCollectionViewCell else { return UICollectionViewCell() }
             
             cell.tripImageView.image = UIImage(named: storiesItems[indexPath.row])
-            cell.typeOfTripLabel.text = "Лес"
+            cell.typeOfTripLabel.text = packageItems[indexPath.row].title
             cell.layer.cornerRadius = 20
             
             return cell
@@ -125,13 +127,21 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 && collectionView == financeCollectionView {
+            return CGSize(width: self.financeCollectionView.frame.height / 6 * 2.5, height: self.financeCollectionView.frame.height / 6 * 2.5)
+        }
         return CGSize(width: self.storiesCollectionView.frame.height / 6 * 5.2, height: self.storiesCollectionView.frame.height / 6 * 5.2)
-
     }
     
     // обработка нажатий на ячейки в "каруселях"
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
+        case storiesCollectionView:
+            let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
+            guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
+            
+            navigationController?.pushViewController(storiesVC, animated: true)
+            
         default:
             break
         }

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--Show Story View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ShowStoryViewController" id="Y6W-OH-hqX" customClass="ShowStoryViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowStoryViewController" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="ShowStoryViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,37 +23,36 @@
                                 <color key="backgroundColor" systemColor="labelColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Куда поехать отдыхать этим летом?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-0d-SgA">
-                                <rect key="frame" x="20" y="64" width="374" height="126.5"/>
+                                <rect key="frame" x="20" y="100" width="374" height="126.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KH-17-EBf">
-                                <rect key="frame" x="20" y="195.5" width="374" height="209"/>
+                                <rect key="frame" x="20" y="231.5" width="374" height="209"/>
                                 <string key="text">Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7KH-17-EBf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="72B-Ky-ciN"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="trailing" secondItem="NC5-IM-bgU" secondAttribute="trailing" id="Exq-sT-1dN"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="leading" secondItem="NC5-IM-bgU" secondAttribute="leading" id="IKa-U8-3lJ"/>
-                            <constraint firstItem="uLt-0d-SgA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="M4F-kt-zjo"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZEr-0a-QM7"/>
-                            <constraint firstItem="7KH-17-EBf" firstAttribute="top" secondItem="uLt-0d-SgA" secondAttribute="bottom" constant="5" id="cmQ-gB-Nb7"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="dIq-oS-lWH"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="bottom" secondItem="NC5-IM-bgU" secondAttribute="bottom" id="g4h-ye-XwO"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hpA-gt-dZi"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="-44" id="p5K-g5-Hxj"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uLt-0d-SgA" secondAttribute="trailing" constant="20" id="rAU-p1-Ys0"/>
-                            <constraint firstAttribute="trailing" secondItem="7KH-17-EBf" secondAttribute="trailing" constant="20" id="tJu-2M-GHm"/>
-                            <constraint firstItem="uLt-0d-SgA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="uXP-0Z-xvU"/>
-                            <constraint firstItem="6oq-jU-egi" firstAttribute="top" secondItem="NC5-IM-bgU" secondAttribute="top" id="wrV-B0-uTQ"/>
+                            <constraint firstAttribute="bottom" secondItem="NC5-IM-bgU" secondAttribute="bottom" id="3DD-aJ-nhg"/>
+                            <constraint firstItem="NC5-IM-bgU" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="CvU-HW-Vm2"/>
+                            <constraint firstAttribute="trailing" secondItem="NC5-IM-bgU" secondAttribute="trailing" id="GmP-Cn-dbD"/>
+                            <constraint firstItem="6oq-jU-egi" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="O1j-DZ-KM3"/>
+                            <constraint firstItem="uLt-0d-SgA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="100" id="Wvr-83-x6N"/>
+                            <constraint firstAttribute="trailing" secondItem="6oq-jU-egi" secondAttribute="trailing" id="YdY-jE-JNE"/>
+                            <constraint firstAttribute="bottom" secondItem="6oq-jU-egi" secondAttribute="bottom" id="Ydb-ql-q1c"/>
+                            <constraint firstItem="7KH-17-EBf" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="ZXV-c0-SZs"/>
+                            <constraint firstItem="uLt-0d-SgA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="cyV-lO-0zX"/>
+                            <constraint firstAttribute="trailing" secondItem="uLt-0d-SgA" secondAttribute="trailing" constant="20" id="eEm-nn-VXw"/>
+                            <constraint firstItem="6oq-jU-egi" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="mfn-Or-2XH"/>
+                            <constraint firstItem="NC5-IM-bgU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="nNJ-Bn-1oE"/>
+                            <constraint firstAttribute="trailing" secondItem="7KH-17-EBf" secondAttribute="trailing" constant="20" id="wWl-xV-51p"/>
+                            <constraint firstItem="7KH-17-EBf" firstAttribute="top" secondItem="uLt-0d-SgA" secondAttribute="bottom" constant="5" id="zuQ-TZ-eMq"/>
                         </constraints>
                     </view>
                     <connections>
