@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - GreetingsViewController
+
 class GreetingsViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -23,7 +25,6 @@ class GreetingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtonShadow()
     }
     
     // MARK: - Private methods
@@ -58,20 +59,6 @@ class GreetingsViewController: UIViewController {
 //            print("App launched first time")
 //        }
 //    }
-    
-    private func setButtonShadow() {
-        
-        selectMaleButton.layer.shadowColor = UIColor.black.cgColor
-        selectMaleButton.layer.shadowOpacity = 0.6
-        selectMaleButton.layer.shadowRadius = 10
-        selectMaleButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        
-        selectFemaleButton.layer.shadowColor = UIColor.black.cgColor
-        selectFemaleButton.layer.shadowOpacity = 0.6
-        selectFemaleButton.layer.shadowRadius = 10
-        selectFemaleButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        
-    }
     
     // MARK: - IBActions
     

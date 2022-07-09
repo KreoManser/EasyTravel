@@ -6,10 +6,14 @@
 //
 
 import UIKit
-
+// MARK: - RemainedCollectionViewCell
 class RemainedCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var remainedMoneyLabel: UILabel!
+    
+    // MARK: - Private Properties
     
     private var remainedMoney = 0
 }

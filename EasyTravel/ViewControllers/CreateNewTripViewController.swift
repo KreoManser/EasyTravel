@@ -10,6 +10,7 @@ import UIKit
 // MARK: - CreateNewTripViewController
 
 class CreateNewTripViewController: UIViewController {
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var currentDatePicker: UIDatePicker!

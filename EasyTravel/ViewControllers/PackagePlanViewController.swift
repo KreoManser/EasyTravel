@@ -52,7 +52,7 @@ class PackagePlanViewController: UIPageViewController {
     }
 }
 
-// MARK: -UIPageViewControllerDataSource
+// MARK: - UIPageViewControllerDataSource
 
 extension PackagePlanViewController: UIPageViewControllerDataSource {
     // Before pageViewController
@@ -89,6 +89,7 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
 }
 
 // MARK: - PackagePlanNavigationContoller - empty class for storyboard
+
 class PackagePlanNavigationContoller: UINavigationController {
 
 }

@@ -7,8 +7,11 @@
 
 import UIKit
 
+// MARK: - RubleIconCollectionViewCell
+
 class RubleIconCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var rubleIconImage: UIImageView!
+    // MARK: - IBOutlets
     
+    @IBOutlet weak var rubleIconImage: UIImageView!
 }
