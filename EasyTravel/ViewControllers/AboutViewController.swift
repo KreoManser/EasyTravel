@@ -7,27 +7,49 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+struct Developer {
+    var name: String
+    var discription: String
+    var link: String
+}
 
-    @IBOutlet weak var simpleView: UIView!
+class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    
+    var developers: [Developer] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
+        cell.textLabel?.text = developers[indexPath.row].name
+        cell.detailTextLabel?.text = developers[indexPath.row].discription
+        
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        simpleView.layer.cornerRadius = 25
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        appendTable()
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = URL(string: developers[indexPath.row].link) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
     }
-    */
-
+    
+    func appendTable() {
+        developers.append(Developer(name: "Илья Гребеньков", discription: "Просмотр пакетов", link: "https://github.com/Felinooper"))
+        developers.append(Developer(name: "Вадим Валеев", discription: "Настройки", link: "https://github.com/tuiiiiii"))
+        developers.append(Developer(name: "Рустам Шайхинуров", discription: "Главный экран", link: "https://github.com/ShaykhinurovRustam"))
+        developers.append(Developer(name: "Сергей Бабич", discription: "Экран приветствия и экраны планов", link: "https://github.com/KreoManser"))
+        developers.append(Developer(name: "Роман Емильянов", discription: "План поездки", link: "https://github.com/gentylovePY"))
+    }
 }
