@@ -10,5 +10,4 @@ import UIKit
 
 struct ProductModel {
     var label: String
-    var discription: String
 }

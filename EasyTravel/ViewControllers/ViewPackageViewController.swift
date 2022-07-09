@@ -48,9 +48,9 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
     }
                         
     private func appendProducts() {
-        products.append(ProductModel(label: "Бургер", discription: "Пиздатый бургер"))
-        products.append(ProductModel(label: "Хлеб", discription: "Пиздатый хлеб"))
-        products.append(ProductModel(label: "Жопа", discription: "Пиздатый жопа"))
+        products.append(ProductModel(label: "Бургер"))
+        products.append(ProductModel(label: "Хлеб"))
+        products.append(ProductModel(label: "Жопа"))
     }
     
     // MARK: - Table View
@@ -63,7 +63,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath)
         
         cell.textLabel?.text = products[indexPath.row].label
-        cell.detailTextLabel?.text = products[indexPath.row].discription
         
         return cell
     }
