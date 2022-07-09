@@ -20,7 +20,6 @@ class GreetingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         establishUserDefaultsHaveBeenVerifed()
-//        isAppAlreadyLaunchedOnce()
     }
     
     override func viewDidLoad() {
@@ -44,21 +43,6 @@ class GreetingsViewController: UIViewController {
             print("verified user defaults for first time since app was installed")
         }
     }
-    
-    // Check app launch
-//    private func isAppAlreadyLaunchedOnce() {
-//        let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
-//
-//        guard let mainVC = storyboardMain.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
-//
-//        let defaults = UserDefaults.standard
-//        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-//            navigationController?.pushViewController(mainVC, animated: true)
-//        } else {
-//            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-//            print("App launched first time")
-//        }
-//    }
     
     // MARK: - IBActions
     

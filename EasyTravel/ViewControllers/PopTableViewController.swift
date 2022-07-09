@@ -7,7 +7,11 @@
 
 import UIKit
 
+// MARK: -PopTableViewController
+
 class PopTableViewController: UITableViewController {
+    
+    // MARK: - Properties
     
     let tripsArray = [
                 "Test 1",
@@ -15,11 +19,12 @@ class PopTableViewController: UITableViewController {
                 "Test 3"
     ]
 
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.isScrollEnabled = false
-//        tableView.register(PopTableViewCell.self, forCellReuseIdentifier: "PopTableViewCell")
     }
     
     override func viewWillLayoutSubviews() {
@@ -29,12 +34,10 @@ class PopTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tripsArray.count
     }
     

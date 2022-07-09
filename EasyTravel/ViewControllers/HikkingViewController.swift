@@ -7,14 +7,18 @@
 
 import UIKit
 
+// MARK: - HikkingViewController
+
 class HikkingViewController: UIViewController {
 
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
+    // MARK: - IBActions
 
     @IBAction func goToPlan(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)

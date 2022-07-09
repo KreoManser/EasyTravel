@@ -25,10 +25,10 @@ class ChangeBudgetViewController: UIViewController {
     
     @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var budgetTextField: UITextField!
+
+    // MARK: - Properties
     
     var change: String! = "0"
-    
-    // MARK: - Properties
     
     weak var delegate: changeBudgetDelegate?
     
