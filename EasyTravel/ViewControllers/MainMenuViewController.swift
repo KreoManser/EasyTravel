@@ -25,11 +25,11 @@ class MainMenuViewController: UIViewController {
 
     
     var totalBudgetText = "0"
-    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
-    
+    var storiesItems = ["storiesImage", "storiesImage",
+                        "storiesImage", "storiesImage", "storiesImage"]
     var totalBudgetMoney: Double = 0
     
-    private let packageItems: [Plan] = Plan.getPlan()
+    private var packageItems: [Plan] = Plan.getPlan()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +120,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case tripCollectionView:
             guard let cell = tripCollectionView.dequeueReusableCell(withReuseIdentifier: "tripCell", for: indexPath) as? TripCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.tripImageView.image = UIImage(named: storiesItems[indexPath.row])
+            cell.tripImageView.image = packageItems[indexPath.row].image
             cell.typeOfTripLabel.text = packageItems[indexPath.row].title
             cell.layer.cornerRadius = 20
             
@@ -187,6 +187,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
             navigationController?.pushViewController(storiesVC, animated: true)
+        //case tripCollectionView: нажатие на активную поездку
         default:
             break
         }

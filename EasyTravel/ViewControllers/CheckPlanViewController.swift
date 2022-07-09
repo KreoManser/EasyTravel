@@ -30,7 +30,7 @@ class CheckPlanViewController: UIViewController {
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-    var MainMoney: Double = TotalMoneyCollectionViewCell().totalBudgetMoney
+    var MainMoney: Double = 0
     var flag = true
  
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class CheckPlanViewController: UIViewController {
     func totalScore() -> (Void){
         if flag == true {
             createAlert(
-                title: "Ошибка",description: "Не удалось добавить товар! Проверте баланс"
+                title: "Ошибка", description: "Не удалось добавить товар! Проверте баланс"
             )
             var sum:Double = 0
             if sumArray.count == 0 {
@@ -87,7 +87,7 @@ class CheckPlanViewController: UIViewController {
     }
     
     func settingsView(){
-        score.text = String(MainMoney)
+        
         tableView.dataSource = self
         tableView.delegate = self
         viewScore.layer.cornerRadius = 20
