@@ -63,13 +63,6 @@ class MainMenuViewController: UIViewController {
         self.present(popVC, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }
-    
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        <#code#>
-    }
     // MARK: - IBActions
     
     @IBAction func packageButtonDidTap(_ sender: Any) {
@@ -92,14 +85,14 @@ class MainMenuViewController: UIViewController {
         changeBudgetVC.delegate = self
         
         present(changeBudgetVC, animated: true)
-//        
-//        TotalMoneyCollectionViewCell().totalBudgetLabel.text = String(TotalMoneyCollectionViewCell().totalBudgetMoney)
-
-        
     }
     
     @IBAction func settingsButtonDIdTap(_ sender: Any) {
-        // реализовать при нажатии на шестеренку
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        guard let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsNavigationController") as? SettingsNavigationController else { return }
+        
+        settingsVC.modalPresentationStyle = .fullScreen
+        present(settingsVC, animated: true)
     }
 }
 
