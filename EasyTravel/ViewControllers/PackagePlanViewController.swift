@@ -13,19 +13,23 @@ class PackagePlanViewController: UIPageViewController {
     
     // Initialize the list of storyboards
     var viewControllersList: [UIViewController] = {
+        var views: [UIViewController] = []
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         
-        let TripVC = storyboard.instantiateViewController(
+        guard let TripVC = storyboard.instantiateViewController(
             withIdentifier: "TripVC"
-        )
-        let VisitVC = storyboard.instantiateViewController(
+        ) as? TripViewController else { return [] }
+        views.append(TripVC)
+        guard let VisitVC = storyboard.instantiateViewController(
             withIdentifier: "VisitVC"
-        )
-        let HikkingVC = storyboard.instantiateViewController(
+        ) as? VisitViewController else { return [TripVC] }
+        views.append(VisitVC)
+        guard let HikkingVC = storyboard.instantiateViewController(
             withIdentifier: "HikkingVC"
-        )
+        ) as? HikkingViewController else { return [TripVC, VisitVC] }
+        views.append(HikkingVC)
         
-        return [TripVC, VisitVC, HikkingVC]
+        return views
     }()
 
     // MARK: - Life cycle

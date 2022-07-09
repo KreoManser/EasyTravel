@@ -165,8 +165,9 @@ extension CheckPlanViewController: CreateStudentDelegate {
     }
 }
 
-class CheckPlanNavigationController: UINavigationController {
+class PlanNavigationController: UINavigationController {
     
 }
+
 
 

@@ -162,3 +162,7 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
         return .none
     }
 }
+
+class CheckPlanNavigationController: UINavigationController {
+    
+}

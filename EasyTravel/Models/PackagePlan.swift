@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 enum Package {
-    case hiking
     case trip
     case visit
+    case hiking
 }
 
 struct Plan {
