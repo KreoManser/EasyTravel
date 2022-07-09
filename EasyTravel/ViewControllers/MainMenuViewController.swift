@@ -46,11 +46,6 @@ class MainMenuViewController: UIViewController {
         packageButton.addGestureRecognizer(tapGesture)
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func packageButtonDidTap(_ sender: Any) {
-        // реализовать при нажатии на коробку
-    }
     
     // MARK: - Methods
     
@@ -66,6 +61,12 @@ class MainMenuViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
 
         self.present(popVC, animated: true)
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func packageButtonDidTap(_ sender: Any) {
+        // реализовать при нажатии на коробку
     }
     
     @IBAction func addNewPackageButtonDidTap(_ sender: Any) {
@@ -185,14 +186,14 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
-            
             navigationController?.pushViewController(storiesVC, animated: true)
-
         default:
             break
         }
     }
 }
+
+// MARK: - MainMenuViewController extension popover
 
 extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -200,9 +201,13 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
     }
 }
 
+// MARK: - CheckPlanNavigationController empty class
+
 class CheckPlanNavigationController: UINavigationController {
     
 }
+
+// MARK: - MainMenuViewController extension delegate
 
 extension MainMenuViewController: changeBudgetDelegate {
     func saveBudget(budget: Double) {

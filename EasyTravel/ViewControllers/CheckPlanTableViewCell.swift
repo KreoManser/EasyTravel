@@ -7,7 +7,12 @@
 
 import UIKit
 
+// MARK: - CheckPlanTableViewCell
+
 class CheckPlanTableViewCell: UITableViewCell {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet var labels: UILabel!
     @IBOutlet var lastname: UILabel!
     @IBOutlet var kolve: UILabel!

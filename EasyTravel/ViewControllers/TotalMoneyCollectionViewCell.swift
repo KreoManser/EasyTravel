@@ -15,30 +15,6 @@ class TotalMoneyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var totalBudgetLabel: UILabel!
     
-    // MARK: - Private Properties
-    
     var totalBudgetMoney: Double = 0
-    
-    // MARK: - IBActions
-    
-    // MARK: - Methods
-    
-    
-    func configure(totalBudgetMoney: Double, totalBudgetLabelText: String) {        
-        self.totalBudgetMoney = totalBudgetMoney
-        totalBudgetLabel.text = totalBudgetLabelText
-        
-    }
-    
-//
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print("hello")
-//        guard let changeBudgetVC = segue.destination as? ChangeBudgetViewController else { return }
-//        changeBudgetVC.change = totalBudgetLabel.text
-//        changeBudgetVC.delegate = self
-//
-//    }
-
-    
 }
 

@@ -7,19 +7,29 @@
 
 import UIKit
 
+// MARK: - Protocols
+
 protocol CreateStudentDelegate:AnyObject{
     func saveStudent(student:Ter)
 }
 
+// MARK: - CreateTripViewController
 
 class CreateTripViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var name:UITextField!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var valuee: UITextField!
     @IBOutlet var kolvo: UITextField!
     @IBOutlet var buttonClick: UIButton!
     
+    // MARK: - Properties
+    
     weak var delegate:CreateStudentDelegate?
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +42,18 @@ class CreateTripViewController: UIViewController {
             alpha: 1.0)
     }
     
+    // MARK: - IBActions
+    
     @IBAction func clickButton(_ sender: Any) {
-        guard let name = name.text else {
-            return
-            
-        }
-        guard   let lastname =  lastname.text else {
-            return
-            
-        }
-        guard let kolvo = kolvo.text else {
-            return
-            
-        }
+        guard let name = name.text else { return }
+        guard let lastname =  lastname.text else { return }
+        guard let kolvo = kolvo.text else { return }
         
         let score = Double(lastname)
         let kolvoo = Int(kolvo)
       
         if name != "" && lastname != "" && kolvo != "" {
-            if score != nil && kolvoo != nil{
+            if score != nil && kolvoo != nil {
             let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
                 
             delegate?.saveStudent(student: terr)
@@ -65,6 +68,7 @@ class CreateTripViewController: UIViewController {
     }
 }
 
+// MARK: - UIViewController extension
 
 extension UIViewController {
     func createAlert(title: String?, description: String?) {

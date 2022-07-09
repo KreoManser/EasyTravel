@@ -7,8 +7,12 @@
 
 import UIKit
 
+// MARK: - VisitViewController
+
 class VisitViewController: UIViewController {
 
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +20,8 @@ class VisitViewController: UIViewController {
     }
     
 
+    // MARK: - IBActions
+    
     @IBAction func goToPlan(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)
         guard let planVC = storyboard.instantiateViewController(withIdentifier: "PlanNavigationController") as? PlanNavigationController else { return }
