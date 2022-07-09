@@ -109,7 +109,6 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="packageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Mf-f6-yHg"/>
                                             <segue destination="h5h-QO-tem" kind="popoverPresentation" popoverAnchorView="JhZ-ma-0sk" id="DQl-ON-N2l">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>

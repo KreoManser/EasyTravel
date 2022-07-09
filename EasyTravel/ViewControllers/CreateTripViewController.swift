@@ -9,8 +9,8 @@ import UIKit
 
 // MARK: - Protocols
 
-protocol CreateStudentDelegate:AnyObject{
-    func saveStudent(student:Ter)
+protocol CreatePlanDelegate: AnyObject{
+    func savePlan(for plan: Ter)
 }
 
 // MARK: - CreateTripViewController
@@ -27,7 +27,7 @@ class CreateTripViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var delegate:CreateStudentDelegate?
+    weak var delegate:CreatePlanDelegate?
     
     // MARK: - Life cycle
     
@@ -56,7 +56,7 @@ class CreateTripViewController: UIViewController {
             if score != nil && kolvoo != nil {
             let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
                 
-            delegate?.saveStudent(student: terr)
+            delegate?.savePlan(for: terr)
                 
              dismiss(animated: true)
             } else {
