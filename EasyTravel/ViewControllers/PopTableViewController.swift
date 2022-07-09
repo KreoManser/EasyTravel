@@ -45,4 +45,18 @@ class PopTableViewController: UITableViewController {
         cell.nameLabelPop.text = textData
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+        case 1:
+            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+        case 2:
+            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+        default
+        }
+    }
 }
