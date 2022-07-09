@@ -24,6 +24,12 @@ class TotalMoneyCollectionViewCell: UICollectionViewCell {
     // MARK: - Methods
     
     
+    func configure(totalBudgetMoney: Double, totalBudgetLabelText: String) {        
+        self.totalBudgetMoney = totalBudgetMoney
+        totalBudgetLabel.text = totalBudgetLabelText
+        
+    }
+    
 //
 //    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        print("hello")

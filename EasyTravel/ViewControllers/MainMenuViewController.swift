@@ -22,8 +22,12 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var addNewPackageButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var packageButton: UIButton!
+
     
-    let storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
+    var totalBudgetText = "0"
+    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
+    
+    var totalBudgetMoney: Double = 0
     
     private let packageItems: [Plan] = Plan.getPlan()
     
@@ -134,12 +138,15 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             case 0:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "rubleIconCell", for: indexPath) as? RubleIconCollectionViewCell else { return UICollectionViewCell() }
                 
+                
                 cell.layer.cornerRadius = 20
                 
                 return cell
             case 1:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "totalBudgetCell", for: indexPath) as? TotalMoneyCollectionViewCell else { return UICollectionViewCell() }
                 
+                cell.totalBudgetLabel.text = totalBudgetText
+                cell.totalBudgetMoney = totalBudgetMoney
                 cell.layer.cornerRadius = 20
                 
                 return cell
@@ -177,7 +184,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
             
             navigationController?.pushViewController(storiesVC, animated: true)
-            
+
         default:
             break
         }
@@ -198,12 +205,10 @@ extension MainMenuViewController: changeBudgetDelegate {
     func saveBudget(budget: Double) {
 
         let indexPath = IndexPath(item: 1, section: 0)
-
-        guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "totalBudgetCell", for: indexPath) as? TotalMoneyCollectionViewCell else { return }
-
-        cell.totalBudgetMoney = budget
-        cell.totalBudgetLabel.text = String(budget)
-
+        
+        totalBudgetMoney = budget
+        totalBudgetText = String(budget)
+        
         financeCollectionView.reloadItems(at: [indexPath])
 
     }
