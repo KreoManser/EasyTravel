@@ -47,7 +47,6 @@ class CreateNewTripViewController: UIViewController {
     
     
     @IBAction func dismissCreateNewTrip(_ sender: Any) {
-        
         dismiss(animated: true)
     }
     
@@ -57,14 +56,8 @@ class CreateNewTripViewController: UIViewController {
         
         plansVC.modalPresentationStyle = .fullScreen
         present(plansVC, animated: true)
-//        navigationController?.pushViewController(plansVC, animated: true)
         
     }
-    
-//    @IBAction func unwind(for segue: UIStoryboardSegue) {
-//        guard ((segue.source as? MainMenuViewController) != nil) else { return }
-//    }
-    
 }
 
 // MARK: - CreateNewTripNavigationController - empty class for storyboard

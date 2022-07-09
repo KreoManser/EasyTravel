@@ -104,6 +104,10 @@ class CheckPlanViewController: UIViewController {
             blue: 224.0 / 255,
             alpha: 1.0)
     }
+    
+    @IBAction func dismissCheckPlan(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 // MARK: - CheckPlanViewController extension TableView
@@ -161,7 +165,8 @@ extension CheckPlanViewController: CreateStudentDelegate {
     }
 }
 
-
+class CheckPlanNavigationController: UINavigationController {
     
+}
 
 

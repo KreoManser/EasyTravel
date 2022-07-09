@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Check Plan Navigation Controller-->
         <scene sceneID="Lae-Se-RM5">
             <objects>
-                <navigationController id="IiK-bl-GDr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CheckPlanNavigationController" id="IiK-bl-GDr" customClass="CheckPlanNavigationController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SLu-ar-7YT">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -171,6 +171,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="STudent" id="pr1-F5-XNR">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="oXy-mb-69j">
+                            <connections>
+                                <action selector="dismissCheckPlan:" destination="d9c-Z3-i4O" id="xnG-ZM-hTU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXx-Mc-tlO">
                             <connections>
                                 <action selector="ClickAddButton:" destination="d9c-Z3-i4O" id="7qt-hs-rDF"/>
@@ -289,6 +294,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="121"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

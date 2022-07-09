@@ -547,6 +547,22 @@
             </objects>
             <point key="canvasLocation" x="674" y="116"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sk0-Tj-aUb">
+            <objects>
+                <navigationController id="8D9-wr-qck" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PlW-R3-TXf">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h5h-QO-tem" kind="relationship" relationship="rootViewController" id="ha7-wz-irc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cf-8c-JUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949" y="838"/>
+        </scene>
         <!--Pop Table View Controller-->
         <scene sceneID="E7G-I9-Knj">
             <objects>
@@ -582,6 +598,7 @@
                             <outlet property="delegate" destination="h5h-QO-tem" id="iCg-GL-25t"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="YZi-ld-vFQ"/>
                     <size key="freeformSize" width="250" height="250"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb1-ea-OKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -589,6 +606,9 @@
             <point key="canvasLocation" x="-102" y="803"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DQl-ON-N2l"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Hikking" width="600" height="600"/>
         <image name="Logo" width="429" height="228"/>

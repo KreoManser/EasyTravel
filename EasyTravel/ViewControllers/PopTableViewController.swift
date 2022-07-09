@@ -48,14 +48,19 @@ class PopTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)
+        guard let checkPlanVC = storyboard.instantiateViewController(withIdentifier: "CheckPlanNavigationController") as? CheckPlanNavigationController else { return }
         
         switch indexPath.row {
         case 0:
-            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+            checkPlanVC.modalPresentationStyle = .fullScreen
+            present(checkPlanVC, animated: true)
         case 1:
-            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+            checkPlanVC.modalPresentationStyle = .fullScreen
+            present(checkPlanVC, animated: true)
         case 2:
-            guard let detailUserVC = storyboard?.instantiateViewController(withIdentifier: "CheckPlanViewController") as? CheckPlanViewController else { return }
+            checkPlanVC.modalPresentationStyle = .fullScreen
+            present(checkPlanVC, animated: true)
         default:
             break
         }
