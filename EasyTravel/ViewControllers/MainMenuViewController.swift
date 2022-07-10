@@ -22,12 +22,16 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var addNewPackageButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var packageButton: UIButton!
+    @IBOutlet weak var buttonTapBar: UIButton!
+    @IBOutlet weak var buttonFinance: UIButton!
+    @IBOutlet weak var buttonStories: UIButton!
+    @IBOutlet weak var buttonRecomendation: UIButton!
 
     
     var totalBudgetText = "0"
     var totalBudgetText2 = "0"
     var totalBudgetText3 = "0"
-    var storiesItems: [Stories] = Stories.getStories()
+    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
     
     var totalBudgetMoney: Double = 0
     var totalBudgetMoney2: Double = 0
@@ -37,7 +41,9 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUI()
+        
         navigationItem.hidesBackButton = true
         setupGesture()
         
@@ -55,6 +61,13 @@ class MainMenuViewController: UIViewController {
         packageButton.addGestureRecognizer(tapGesture)
     }
     
+    private func setUpUI(Button button: UIButton) {
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.6
+        button.layer.shadowRadius = 10
+        button.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
     
     // MARK: - Methods
     
@@ -70,6 +83,13 @@ class MainMenuViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
 
         self.present(popVC, animated: true)
+    }
+    
+    func setupUI() {
+        buttonTapBar.showShadow()
+        buttonFinance.showShadow()
+        buttonStories.showShadow()
+        buttonRecomendation.showShadow()
     }
     
     // MARK: - IBActions
@@ -127,15 +147,15 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             
             cell.tripImageView.image = packageItems[indexPath.row].image
             cell.typeOfTripLabel.text = packageItems[indexPath.row].title
-            cell.layer.cornerRadius = 20
+            cell.layer.cornerRadius = 25
             
             return cell
             
         case storiesCollectionView:
             guard let cell = storiesCollectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as? StoriesCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.storiesImage.image = storiesItems[indexPath.row].image
-            cell.layer.cornerRadius = 20
+            cell.storiesImage.image = UIImage(named: storiesItems[indexPath.row])
+            cell.layer.cornerRadius = 25
         
             return cell
             
@@ -145,7 +165,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "rubleIconCell", for: indexPath) as? RubleIconCollectionViewCell else { return UICollectionViewCell() }
                 
                 
-                cell.layer.cornerRadius = 20
+                cell.layer.cornerRadius = 25
                 
                 return cell
             case 1:
@@ -153,13 +173,13 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 
                 cell.totalBudgetLabel.text = totalBudgetText
                 cell.totalBudgetMoney = totalBudgetMoney
-                cell.layer.cornerRadius = 20
+                cell.layer.cornerRadius = 25
                 
                 return cell
             case 2:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "spentMoneyCell", for: indexPath) as? SpentCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.layer.cornerRadius = 20
+                cell.layer.cornerRadius = 25
                 cell.spentMoneyLabel.text = totalBudgetText2
                 cell.spentMoney = totalBudgetMoney2
                 
@@ -169,7 +189,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 
                 cell.remainedMoneyLabel.text = totalBudgetText3
                 cell.remainedMoney = totalBudgetMoney3
-                cell.layer.cornerRadius = 20
+                cell.layer.cornerRadius = 25
                 
                 return cell
             default:
@@ -183,9 +203,9 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 && collectionView == financeCollectionView {
-            return CGSize(width: self.financeCollectionView.frame.height / 6 * 2.5, height: self.financeCollectionView.frame.height / 6 * 2.5)
+            return CGSize(width: self.financeCollectionView.frame.height / 7 * 2.5, height: self.financeCollectionView.frame.height / 7 * 5.2)
         }
-        return CGSize(width: self.storiesCollectionView.frame.height / 6 * 5.2, height: self.storiesCollectionView.frame.height / 6 * 5.2)
+        return CGSize(width: self.storiesCollectionView.frame.height / 7 * 5.2, height: self.storiesCollectionView.frame.height / 6.5 * 5.2)
     }
     
     // обработка нажатий на ячейки в "каруселях"
@@ -226,10 +246,9 @@ extension MainMenuViewController: changeBudgetDelegate {
         
         totalBudgetMoney = budget
         totalBudgetText = String(budget)
-       
-        totalBudgetText2 = String(budget)
+        totalBudgetText2 = "0"
+        totalBudgetText3 = "0"
         totalBudgetMoney2 = 0.0
-        totalBudgetMoney3 = totalBudgetMoney
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
