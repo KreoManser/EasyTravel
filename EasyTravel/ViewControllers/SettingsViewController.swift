@@ -24,6 +24,13 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         saveData()
+        
+        switch traitCollection.userInterfaceStyle {
+        case .dark: break
+        case .light, .unspecified: break
+        @unknown default:
+            fatalError()
+        }
     }
 
     
