@@ -7,14 +7,6 @@
 
 import UIKit
 
-//protocol TypeOfTripDelegate: AnyObject {
-//    func changeType(by trip: Package)
-//}
-
-//struct TypeOfTripDelegate {
-//    var type: Package
-//}
-
 // MARK: -PopTableViewController
 
 class PopTableViewController: UITableViewController, UINavigationControllerDelegate {

@@ -24,8 +24,8 @@ class CheckPlanViewController: UIViewController {
     
     var arrayCheckPlan:[CheckPlan] = []
     let idCell = "mainCell"
-    var sumArray:[Double] = []
-    var sumKolArray:[Int] = []
+    var sumArray: [Double] = []
+    var sumKolArray: [Int] = []
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
