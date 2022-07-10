@@ -49,7 +49,7 @@
                                         <rect key="frame" x="103" y="477" width="82" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Выбрать">
-                                            <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" name="accentColor-1"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="goToPlan:" destination="tGz-qd-uXf" eventType="touchUpInside" id="fsk-NZ-BCt"/>
@@ -98,7 +98,7 @@
                                         <rect key="frame" x="103" y="477" width="82" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Выбрать">
-                                            <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" name="accentColor-1"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="goToPlan:" destination="oQr-xM-bB2" eventType="touchUpInside" id="m8q-Y1-uAe"/>
@@ -199,6 +199,9 @@
         <image name="Trip" width="1181" height="1181"/>
         <image name="Visit" width="1181" height="1181"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="accentColor-1">
+            <color red="0.37599998712539673" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

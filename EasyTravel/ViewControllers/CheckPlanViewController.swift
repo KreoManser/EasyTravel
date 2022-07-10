@@ -23,6 +23,7 @@ class CheckPlanViewController: UIViewController {
     @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var score: UILabel!
+    @IBOutlet weak var scoreButton: UIButton!
     
     // MARK: - Properties
     
@@ -97,7 +98,7 @@ class CheckPlanViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         viewScore.layer.cornerRadius = 20
-        saveButtton.layer.cornerRadius = 10
+        saveButtton.layer.cornerRadius = 20
         viewScore.layer.masksToBounds = true;
         viewScore.backgroundColor = UIColor(
             red: 104.0 / 255,
