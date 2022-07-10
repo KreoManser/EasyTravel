@@ -30,7 +30,7 @@ class ChangeSettingsViewController: UIViewController {
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
         if nameTextField.text == "" {
-            checker()
+            checker(message: "Вы не ввели имя!")
         } else {
             switch segmentedControl.selectedSegmentIndex {
             case 0:
@@ -43,6 +43,7 @@ class ChangeSettingsViewController: UIViewController {
             
             guard let pickedGender = pickedGender else { return }
             
+            guard nameTextField.text?.count ?? 0 <= 12 else { return checker(message: "Слишком длинное имя") }
             UserSettings.userName = nameTextField.text
             UserSettings.userGender = pickedGender.rawValue
             
@@ -52,8 +53,8 @@ class ChangeSettingsViewController: UIViewController {
         }
     }
 
-    func checker() {
-        let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели имя!", preferredStyle: .alert)
+    func checker(message: String) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
