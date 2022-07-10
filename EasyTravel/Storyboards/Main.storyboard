@@ -332,7 +332,7 @@
                                                                 <attributedString key="attributedTitle">
                                                                     <fragment content="Добавить">
                                                                         <attributes>
-                                                                            <font key="NSFont" size="10" name=".SFNS-Regular"/>
+                                                                            <font key="NSFont" metaFont="system" size="10"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>

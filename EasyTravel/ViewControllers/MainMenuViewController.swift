@@ -27,9 +27,7 @@ class MainMenuViewController: UIViewController {
     var totalBudgetText = "0"
     var totalBudgetText2 = "0"
     var totalBudgetText3 = "0"
-    var storiesItems = ["storiesImage", "storiesImage",
-                        "storiesImage", "storiesImage",
-                        ]
+    var storiesItems: [Stories] = Stories.getStories()
     
     var totalBudgetMoney: Double = 0
     var totalBudgetMoney2: Double = 0
@@ -136,7 +134,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             guard let cell = storiesCollectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as? StoriesCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.storiesImage.image = UIImage(named: storiesItems[indexPath.row])
+            cell.storiesImage.image = storiesItems[indexPath.row].image
             cell.layer.cornerRadius = 20
         
             return cell
