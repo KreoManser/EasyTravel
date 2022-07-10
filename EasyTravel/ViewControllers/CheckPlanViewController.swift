@@ -38,11 +38,8 @@ class CheckPlanViewController: UIViewController {
     
     @IBAction func clickSaveButton(_ sender: Any) {
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
-                
-        let storyboardStories = UIStoryboard(name: "Main", bundle: nil)
-        guard let backMainMenuVC = storyboardStories.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
-        navigationController?.pushViewController(backMainMenuVC, animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {
