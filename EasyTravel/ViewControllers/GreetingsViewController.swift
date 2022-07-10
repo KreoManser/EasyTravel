@@ -36,11 +36,11 @@ class GreetingsViewController: UIViewController {
         guard let mainVC = storyboardMain.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
         if let _ = defaults.string(forKey: "userDefaultsHaveBeenVerified"){
-            print("user defaults were already verified")
-            navigationController?.pushViewController(mainVC, animated: true)
-        }else{
+            if UserSettings.userGender != nil {
+                navigationController?.pushViewController(mainVC, animated: true)
+            }
+        } else {
             defaults.set(true, forKey: "userDefaultsHaveBeenVerified")
-            print("verified user defaults for first time since app was installed")
         }
     }
     
