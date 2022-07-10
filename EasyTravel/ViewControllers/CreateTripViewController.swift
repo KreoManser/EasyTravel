@@ -19,7 +19,7 @@ class CreateTripViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var name:UITextField!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var valuee: UITextField!
     @IBOutlet var kolvo: UITextField!
@@ -27,7 +27,7 @@ class CreateTripViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var delegate:CreatePlanDelegate?
+    weak var delegate: CreatePlanDelegate?
     
     // MARK: - Life cycle
     
@@ -42,29 +42,25 @@ class CreateTripViewController: UIViewController {
             alpha: 1.0)
     }
     
+    func checker(message: String) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - IBActions
     
     @IBAction func clickButton(_ sender: Any) {
-        guard let name = name.text else { return }
-        guard let lastname =  lastname.text else { return }
-        guard let kolvo = kolvo.text else { return }
+        guard let name = name.text, !name.isEmpty else { return checker(message: "Введите наименование") }
+        guard let lastname = lastname.text, !lastname.isEmpty else { return checker(message: "Введите цену") }
+        guard let kolvo = kolvo.text, !kolvo.isEmpty else { return checker(message: "Введите количество") }
         
-        let score = Double(lastname)
-        let kolvoo = Int(kolvo)
-      
-        if name != "" && lastname != "" && kolvo != "" {
-            if score != nil && kolvoo != nil {
-            let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
-                
-            delegate?.savePlan(for: terr)
-                
-             dismiss(animated: true)
-            } else {
-                createAlert(title: "Ошибка!", description: "Заполните корректно поле для цены")
-            }
-        } else {
-            createAlert(title: "Ошибка!", description: "Заполните все поля")
-        }
+        let terr = Ter(name: name, lastname: Double(lastname)!, kolve: Int(kolvo)!)
+            
+        delegate?.savePlan(for: terr)
+            
+        dismiss(animated: true)
     }
 }
 
