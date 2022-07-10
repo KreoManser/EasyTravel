@@ -42,6 +42,8 @@ class CreateTripViewController: UIViewController {
             alpha: 1.0)
     }
     
+    // MARK: - Methods
+    
     func checker(message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)

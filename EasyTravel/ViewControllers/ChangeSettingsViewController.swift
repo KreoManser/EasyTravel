@@ -12,21 +12,28 @@ protocol ChangeUserInfo: AnyObject {
     func changeData(user: User)
 }
 
+// MARK: - ChangeSettingsViewController
+
 class ChangeSettingsViewController: UIViewController {
+    
+    // MARK: -IBOutlets
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    // MARK: - Properties
+    
     var pickedGender: GenderType?
     weak var delegate: ChangeUserInfo?
-        
+    
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
+    // MARK: - IBActions
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
         if nameTextField.text == "" {
@@ -52,6 +59,8 @@ class ChangeSettingsViewController: UIViewController {
             dismiss(animated: true)
         }
     }
+    
+    // MARK: - Methods
 
     func checker(message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)

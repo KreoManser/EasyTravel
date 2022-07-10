@@ -40,6 +40,8 @@ class CreateNewTripViewController: UIViewController {
         lastDateDatePicker.date = currentDate
     }
     
+    // MARK: - Methods
+    
     func checker() {
         let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели название поездки!", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)

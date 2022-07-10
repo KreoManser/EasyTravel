@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 // MARK: - CheckPlanViewController
 class CheckPlanViewController: UIViewController {
     
@@ -29,6 +27,8 @@ class CheckPlanViewController: UIViewController {
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsView()

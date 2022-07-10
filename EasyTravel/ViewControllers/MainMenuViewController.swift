@@ -27,6 +27,8 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var buttonStories: UIButton!
     @IBOutlet weak var buttonRecomendation: UIButton!
     
+    // MARK: - Properties
+    
     var totalBudgetText = "0"
     var totalBudgetText2 = "0"
     var totalBudgetText3 = "0"
@@ -36,7 +38,11 @@ class MainMenuViewController: UIViewController {
     var totalBudgetMoney2: Double = 0
     var totalBudgetMoney3: Double = 0
     
+    // MARK: - Private Properties
+    
     private var packageItems: [Plan] = Plan.getPlan()
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

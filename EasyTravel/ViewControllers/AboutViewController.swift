@@ -13,10 +13,28 @@ struct Developer {
     var link: String
 }
 
+// MARK: - AboutViewController
+
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
+    
     var developers: [Developer] = []
+    
+    
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        appendTable()
+    }
+    
+    // MARK: - Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -28,13 +46,6 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.detailTextLabel?.text = developers[indexPath.row].discription
         
         return cell
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        appendTable()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

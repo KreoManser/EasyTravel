@@ -10,6 +10,25 @@ import UIKit
 // MARK: - UIPageViewController
 
 class PackagePlanViewController: UIPageViewController {
+
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.dataSource = self
+        
+        if let firstVC = viewControllersList.first {
+            self.setViewControllers(
+                [firstVC],
+                direction: .forward,
+                animated: true,
+                completion: nil
+            )
+        }
+    }
+    
+    // MARK: - Properties
     
     // Initialize the list of storyboards
     var viewControllersList: [UIViewController] = {
@@ -31,23 +50,6 @@ class PackagePlanViewController: UIPageViewController {
         
         return views
     }()
-
-    // MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.dataSource = self
-        
-        if let firstVC = viewControllersList.first {
-            self.setViewControllers(
-                [firstVC],
-                direction: .forward,
-                animated: true,
-                completion: nil
-            )
-        }
-    }
     
     // MARK: - IBActions
     

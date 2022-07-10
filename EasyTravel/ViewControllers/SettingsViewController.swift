@@ -7,8 +7,11 @@
 
 import UIKit
 
+// MARK: - SettingsViewController
+
 class SettingsViewController: UIViewController {
     
+    // MARK: - IBOutlets
     
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -18,7 +21,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var themeSwitch: UISwitch!
     @IBOutlet weak var themeLabel: UILabel!
     
-    // MARK: - View life cyrcle
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class SettingsViewController: UIViewController {
         saveData()
     }
 
+    // MARK: - Private Methods
     
     private func setUpUI() {
         changeSettingsButton.layer.shadowColor = UIColor.black.cgColor
@@ -40,6 +44,8 @@ class SettingsViewController: UIViewController {
         themeSwitch.onTintColor = UIColor(named: "accentColor-1")
     }
     
+    // MARK: - Methods
+    
     func saveData() {
         if UserSettings.userName == nil {
             UserSettings.userName = "Username"
@@ -48,7 +54,7 @@ class SettingsViewController: UIViewController {
         usernameLabel.text = UserSettings.userName
     }
     
-    // MARK: - Actions
+    // MARK: - IBActions
     
     @IBAction func dismiss() {
         dismiss(animated: true)
@@ -79,13 +85,15 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK: - ChangeUserInfo
+// MARK: - SettingsViewController extension by ChangeUserInfo
 extension SettingsViewController: ChangeUserInfo {
     func changeData(user: User) {
         usernameLabel.text = user.name
         genderLabel.text = "Пол: \(user.gender)"
     }
 }
+
+// MARK: - SettingsNavigationController empty class
 
 class SettingsNavigationController: UINavigationController {
     

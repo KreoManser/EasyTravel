@@ -20,6 +20,17 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tripImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configueMainView()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     // MARK: - Properties
     
     var tripProducts: [ProductModel] = [
@@ -79,22 +90,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         ProductModel(label: "Вода")
     ]
 
-    
-    // MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configueMainView()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    
-    @IBAction func dismissCheckPlan(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
     // MARK: - Private Methods
     
     private func configueMainView() {
@@ -103,10 +98,17 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         mainView?.layer.shadowRadius = 10
         mainView?.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
-                        
+    
     private func appendProducts() {
         // APPEND
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func dismissCheckPlan(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     
     // MARK: - Table View
     

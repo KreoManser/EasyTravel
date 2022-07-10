@@ -19,8 +19,6 @@ class PopTableViewController: UITableViewController, UINavigationControllerDeleg
                 "Поездка",
                 "Поход"
     ]
-    
-//    weak var delegateTrip: TypeOfTripDelegate?
 
     // MARK: - Life cycle
     
