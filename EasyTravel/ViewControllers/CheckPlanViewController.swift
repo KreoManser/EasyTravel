@@ -45,6 +45,10 @@ class CheckPlanViewController: UIViewController {
         navigationController?.pushViewController(backMainMenuVC, animated: true)
     }
     
+    @IBAction func dismissCheckPlan(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func ClickAddButton(_ sender: Any) {
         guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController
         else { return }
@@ -101,9 +105,6 @@ class CheckPlanViewController: UIViewController {
             alpha: 1.0)
     }
     
-    @IBAction func dismissCheckPlan(_ sender: Any) {
-        dismiss(animated: true)
-    }
 }
 
 // MARK: - CheckPlanViewController extension TableView
