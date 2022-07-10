@@ -50,6 +50,6 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         developers.append(Developer(name: "Вадим Валеев", discription: "Настройки", link: "https://github.com/tuiiiiii"))
         developers.append(Developer(name: "Рустам Шайхинуров", discription: "Главный экран", link: "https://github.com/ShaykhinurovRustam"))
         developers.append(Developer(name: "Сергей Бабич", discription: "Экран приветствия и экраны планов", link: "https://github.com/KreoManser"))
-        developers.append(Developer(name: "Роман Емильянов", discription: "План поездки", link: "https://github.com/gentylovePY"))
+        developers.append(Developer(name: "Роман Гиниятов", discription: "План поездки", link: "https://github.com/gentylovePY"))
     }
 }

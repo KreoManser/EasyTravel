@@ -24,8 +24,6 @@ class GreetingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
     }
     
     // MARK: - Private methods
@@ -44,11 +42,6 @@ class GreetingsViewController: UIViewController {
             defaults.set(true, forKey: "userDefaultsHaveBeenVerified")
             print("verified user defaults for first time since app was installed")
         }
-    }
-    
-    private func setupUI() {
-        selectMaleButton.showShadow()
-        selectFemaleButton.showShadow()
     }
     
     // MARK: - IBActions

@@ -245,14 +245,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rpl-PhotoRoom (1)" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-7n-Qqe">
-                                <rect key="frame" x="330" y="149" width="36" height="23"/>
+                                <rect key="frame" x="330" y="148.5" width="36" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="ExK-c1-U9d"/>
                                     <constraint firstAttribute="height" constant="23" id="JdL-TI-dxB"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-travel-11" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-ez-pyd">
-                                <rect key="frame" x="42" y="117" width="100" height="87"/>
+                                <rect key="frame" x="42" y="116.5" width="100" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MiJ-GK-xLc"/>
                                     <constraint firstAttribute="height" constant="87" id="qpt-St-c22"/>
