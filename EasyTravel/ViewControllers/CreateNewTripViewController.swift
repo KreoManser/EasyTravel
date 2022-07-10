@@ -13,6 +13,7 @@ class CreateNewTripViewController: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var nameTripTF: UITextField!
     @IBOutlet weak var currentDatePicker: UIDatePicker!
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
     @IBOutlet weak var goToPlans: UIButton!
@@ -38,6 +39,13 @@ class CreateNewTripViewController: UIViewController {
         lastDateDatePicker.minimumDate = currentDate
         lastDateDatePicker.date = currentDate
     }
+    
+    func checker() {
+        let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели название поездки!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 
     // MARK: - IBActions
     
@@ -53,10 +61,10 @@ class CreateNewTripViewController: UIViewController {
     @IBAction func goToPlansButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanNavigationContoller") as? PackagePlanNavigationContoller else { return }
-        
         plansVC.modalPresentationStyle = .fullScreen
-        present(plansVC, animated: true)
         
+        guard let text = nameTripTF.text, !text.isEmpty else { return checker() }
+        present(plansVC, animated: true)
     }
 }
 

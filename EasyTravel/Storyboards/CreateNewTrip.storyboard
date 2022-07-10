@@ -3,7 +3,6 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -115,6 +114,7 @@
                         <outlet property="currentDatePicker" destination="BSc-CC-TIn" id="LEI-hT-0XO"/>
                         <outlet property="goToPlans" destination="Re7-7h-hXs" id="4xc-kW-zuC"/>
                         <outlet property="lastDateDatePicker" destination="Y22-rb-tlH" id="s7U-Za-aOR"/>
+                        <outlet property="nameTripTF" destination="I6h-NA-fIh" id="zMD-ZZ-Hnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMQ-ha-e2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
