@@ -56,9 +56,9 @@ class CreateTripViewController: UIViewController {
         guard let lastname = lastname.text, !lastname.isEmpty else { return checker(message: "Введите цену") }
         guard let kolvo = kolvo.text, !kolvo.isEmpty else { return checker(message: "Введите количество") }
         
-        let terr = Ter(name: name, lastname: Double(lastname)!, kolve: Int(kolvo)!)
+        let check = CheckPlan(object: name, cost: Double(lastname)!, quantity: Int(kolvo)!)
             
-        delegate?.savePlan(for: terr)
+        delegate?.savePlan(for: check)
             
         dismiss(animated: true)
     }
