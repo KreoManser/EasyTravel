@@ -73,8 +73,8 @@ class CheckPlanViewController: UIViewController {
             if sumArray.count == 0 {
                 score.text = String( 0)
             } else {
-                for index in sumArray.count-1...sumArray.count-1{ //0,1
-                sum = (Double ( sumArray[index]) * Double (sumKolArray[index]))
+                for index in sumArray.count-1...sumArray.count-1 { //0,1
+                sum = (Double(sumArray[index]) * Double (sumKolArray[index]))
                 if sum > mainMoney {
                     sumArray.removeLast()
                     ters.removeLast()
