@@ -54,41 +54,31 @@ class CheckPlanViewController: UIViewController {
 
     // MARK: - Methods
     
-    func checker(message: String) {
-        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     func totalScore() -> (Void){
         if flag == true {
-            checker(message: "Не удалось добавить товар! Проверте баланс")
-            var sum:Double = 0
+            var sum = 0.0
             if sumArray.count == 0 {
-                score.text = String( 0)
+                score.text = "0.0"
             } else {
                 for index in sumArray.count-1...sumArray.count-1 { //0,1
-                sum = (Double(sumArray[index]) * Double (sumKolArray[index]))
+                sum = (Double(sumArray[index]) * Double(sumKolArray[index]))
                 if sum > mainMoney {
                     sumArray.removeLast()
                     arrayCheckPlan.removeLast()
                     sumKolArray.removeLast()
                     sum = 0
-                    checker(message: "Не удалось добавить товар! Проверте баланс")
                 }
             }
                 mainMoney = mainMoney - sum
-                if  mainMoney == 0 {
+                if mainMoney == 0 {
                     flag = false
-                    checker(message: "Не удалось добавить товар! Проверте баланс")
                 }
-                score.text = String( mainMoney)}
+                score.text = String( mainMoney)
+            }
         } else {
             sumArray.removeLast()
             arrayCheckPlan.removeLast()
             sumKolArray.removeLast()
-            checker(message: "Не удалось добавить товар! Проверте баланс")
         }
     }
     
