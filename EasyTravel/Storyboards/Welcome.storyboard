@@ -34,19 +34,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="lXa-Tc-6no">
-                                <rect key="frame" x="22.5" y="395" width="369.5" height="106.5"/>
+                                <rect key="frame" x="20" y="395" width="374" height="106.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awd-tS-G9E">
-                                        <rect key="frame" x="0.0" y="0.0" width="369.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в EasyTravel!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r81-ty-YsW">
-                                                <rect key="frame" x="32" y="0.0" width="305.5" height="24"/>
+                                                <rect key="frame" x="34.5" y="0.0" width="305.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приложение поможет спланировать Ваши поездки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Tf-h3-EUR">
-                                                <rect key="frame" x="0.0" y="32" width="369.5" height="18"/>
+                                                <rect key="frame" x="2.5" y="32" width="369.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для начала выберите Ваш пол:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-Nz-ltF">
-                                        <rect key="frame" x="0.0" y="86" width="369.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="86" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -131,6 +131,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lXa-Tc-6no" secondAttribute="trailing" constant="20" id="4U8-sR-DoE"/>
                             <constraint firstItem="2Ov-Kh-Ti3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="F9k-6V-XRy"/>
                             <constraint firstItem="lXa-Tc-6no" firstAttribute="top" secondItem="HaC-E4-xHb" secondAttribute="bottom" id="MEq-dy-Wkc"/>
                             <constraint firstItem="HaC-E4-xHb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="V1m-26-Bd1"/>
@@ -138,6 +139,7 @@
                             <constraint firstItem="2Ov-Kh-Ti3" firstAttribute="top" secondItem="lXa-Tc-6no" secondAttribute="bottom" constant="50" id="lw2-py-sXW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Ov-Kh-Ti3" secondAttribute="trailing" constant="40" id="peK-dW-TaW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HaC-E4-xHb" secondAttribute="trailing" constant="20" id="qdU-OQ-AxW"/>
+                            <constraint firstItem="lXa-Tc-6no" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uah-8I-CTd"/>
                             <constraint firstItem="lXa-Tc-6no" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="wWS-eu-tOp"/>
                         </constraints>
                     </view>

@@ -22,7 +22,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="d3P-eF-5GJ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="228"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Помощник вашим поездкам" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-pw-Mis">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Помощник вашим поездкам" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-pw-Mis">
                                         <rect key="frame" x="0.0" y="236" width="374" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,10 +34,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="accentColor-1"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="l3h-bc-3Tc" secondAttribute="trailing" constant="20" id="IFK-Op-DwK"/>
                             <constraint firstItem="l3h-bc-3Tc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lMu-AC-4fi"/>
+                            <constraint firstAttribute="trailing" secondItem="l3h-bc-3Tc" secondAttribute="trailing" constant="20" id="oYs-Nj-VPR"/>
                             <constraint firstItem="l3h-bc-3Tc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ovX-8o-fW6"/>
-                            <constraint firstItem="l3h-bc-3Tc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="slC-jj-QwL"/>
+                            <constraint firstItem="l3h-bc-3Tc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="zVT-MH-VGj"/>
                         </constraints>
                     </view>
                 </viewController>
