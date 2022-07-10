@@ -37,7 +37,7 @@ class ChangeBudgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        budgetTextField.text = String(change)
+        budgetTextField.text = UserDefaults.standard.string(forKey: "budgetForCreateTrip")
     }
     
     // MARK: - Private Properties

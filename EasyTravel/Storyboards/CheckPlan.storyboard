@@ -113,7 +113,7 @@
                                     <constraint firstItem="mVs-d3-bvQ" firstAttribute="top" secondItem="x8z-pQ-D53" secondAttribute="top" id="qfQ-XJ-PBj"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-Ay-JdR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-Ay-JdR">
                                 <rect key="frame" x="129.33333333333334" y="794.66666666666663" width="278.66666666666663" height="77.333333333333371"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>

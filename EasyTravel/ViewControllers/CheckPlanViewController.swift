@@ -23,7 +23,6 @@ class CheckPlanViewController: UIViewController {
     @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var score: UILabel!
-    @IBOutlet weak var scoreButton: UIButton!
     
     // MARK: - Properties
     

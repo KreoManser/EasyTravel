@@ -109,6 +109,8 @@ class MainMenuViewController: UIViewController {
         
         changeBudgetVC.delegate = self
         
+        
+        
         present(changeBudgetVC, animated: true)
     }
     
