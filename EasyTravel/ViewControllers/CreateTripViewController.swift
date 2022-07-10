@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Protocols
 
 protocol CreatePlanDelegate: AnyObject{
-    func savePlan(for plan: Ter)
+    func savePlan(for plan: CheckPlan)
 }
 
 // MARK: - CreateTripViewController
@@ -54,7 +54,7 @@ class CreateTripViewController: UIViewController {
       
         if name != "" && lastname != "" && kolvo != "" {
             if score != nil && kolvoo != nil {
-            let terr = Ter(name: name, lastname: score!, kolve: kolvoo!)
+            let terr = CheckPlan(object: name, cost: score!, quantity: kolvoo!)
                 
             delegate?.savePlan(for: terr)
                 

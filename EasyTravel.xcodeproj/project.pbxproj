@@ -47,6 +47,7 @@
 		0ACAAC112879744400E05B92 /* ShowStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */; };
 		0ACAAC122879744400E05B92 /* ViewPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */; };
 		0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0F2879744400E05B92 /* ProductModel.swift */; };
+		449DF3AE287B096000867EAF /* CheckPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449DF3AD287B096000867EAF /* CheckPlan.swift */; };
 		DDB057AC287A6AB700753AA5 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB057AB287A6AB700753AA5 /* StoriesModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStoryViewController.swift; sourceTree = "<group>"; };
 		0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPackageViewController.swift; sourceTree = "<group>"; };
 		0ACAAC0F2879744400E05B92 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		449DF3AD287B096000867EAF /* CheckPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPlan.swift; sourceTree = "<group>"; };
 		DDB057AB287A6AB700753AA5 /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				0AC7EE1A287399CA00433E88 /* PackagePlan.swift */,
 				0A4FEB14287A189600DC8A11 /* Username.swift */,
 				DDB057AB287A6AB700753AA5 /* StoriesModel.swift */,
+				449DF3AD287B096000867EAF /* CheckPlan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				0A4EF3992879C1480079CB54 /* TripViewController.swift in Sources */,
 				0A4EF3972879A7AA0079CB54 /* CheckPlanTableViewCell.swift in Sources */,
 				0A4FEB0F287A16E800DC8A11 /* ChangeSettingsViewController.swift in Sources */,
+				449DF3AE287B096000867EAF /* CheckPlan.swift in Sources */,
 				0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */,
 				0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
