@@ -9,12 +9,16 @@ import UIKit
 
 // MARK: - ViewPackageViewController
 
+var typeOfTrip: Package = .trip
+
 class ViewPackageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var mainView: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tripImage: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: - Properties
     
@@ -74,8 +78,7 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         ProductModel(label: "Powerbank"),
         ProductModel(label: "Вода")
     ]
-    
-    var typeOfTrip: Package = .trip
+
     
     // MARK: - Life cycle
     
@@ -86,8 +89,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-//        print(typeOfTrip)
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {
@@ -110,12 +111,32 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: - Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tripProducts.count
+        switch typeOfTrip {
+        case .trip:
+            return tripProducts.count
+        case .visit:
+            return visitProducts.count
+        case .hikking:
+            return hikkingProducts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath)
-        cell.textLabel?.text = tripProducts[indexPath.row].label
+        switch typeOfTrip {
+        case .trip:
+            tripImage.image = UIImage(named: "Trip")
+            cell.textLabel?.text = tripProducts[indexPath.row].label
+            descriptionLabel.text = "Путешествие – это нечто большее. Это постоянное движение вперед."
+        case .visit:
+            tripImage.image = UIImage(named: "Visit")
+            cell.textLabel?.text = visitProducts[indexPath.row].label
+            descriptionLabel.text = "Поездка – это сравнительно короткое путешествие, с целью посещения кого-либо или чего-либо."
+        case .hikking:
+            tripImage.image = UIImage(named: "Hikking")
+            cell.textLabel?.text = hikkingProducts[indexPath.row].label
+            descriptionLabel.text = "Поход – это совместное путешествие группы людей по определенному маршруту и верный путь к обретению здоровья."
+        }
         
         return cell
     }

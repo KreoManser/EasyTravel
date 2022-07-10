@@ -110,8 +110,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLabel" destination="ySq-aP-aMq" id="Mvf-xa-r1Z"/>
                         <outlet property="mainView" destination="Zqs-Jl-61j" id="8ST-8Z-lzF"/>
                         <outlet property="tableView" destination="EpL-q0-ip1" id="kK9-1y-kSU"/>
+                        <outlet property="tripImage" destination="xpf-JD-VLG" id="1P3-OD-DuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -627,20 +627,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopTableViewCell" id="S6L-eo-nmL" customClass="PopTableViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="250" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="250" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6L-eo-nmL" id="fuL-n5-OTv">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-FO-2Z3">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-FO-2Z3">
+                                            <rect key="frame" x="36" y="11" width="178" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Vle-FO-2Z3" secondAttribute="trailing" constant="20" id="4DZ-CL-Pgs"/>
+                                        <constraint firstItem="Vle-FO-2Z3" firstAttribute="leading" secondItem="fuL-n5-OTv" secondAttribute="leadingMargin" constant="20" id="6c9-CK-qgU"/>
+                                        <constraint firstItem="Vle-FO-2Z3" firstAttribute="top" secondItem="fuL-n5-OTv" secondAttribute="topMargin" id="LuK-IC-k68"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Vle-FO-2Z3" secondAttribute="bottom" id="m1F-kR-ooJ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabelPop" destination="Vle-FO-2Z3" id="Ft9-ib-apa"/>
