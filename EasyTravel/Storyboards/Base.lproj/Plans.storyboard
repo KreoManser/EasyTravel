@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="742-Ac-LDt">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Package Plan Navigation Contoller-->
+        <scene sceneID="IZF-18-Fjj">
+            <objects>
+                <navigationController storyboardIdentifier="PackagePlanNavigationContoller" id="742-Ac-LDt" customClass="PackagePlanNavigationContoller" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXW-1r-gQB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NZt-OF-1O0" kind="relationship" relationship="rootViewController" id="qu8-KU-QQd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKH-Ma-fwo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1286" y="-111"/>
+        </scene>
+        <!--Путешествие-->
+        <scene sceneID="oKW-kh-5Hy">
+            <objects>
+                <viewController storyboardIdentifier="TripVC" id="tGz-qd-uXf" customClass="TripViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sfL-vK-gtz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="vB9-Vh-nCy">
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trip" translatesAutoresizingMaskIntoConstraints="NO" id="EQt-fi-I66">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-ha-Qp9">
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-CQ-mvy">
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Выбрать">
+                                            <color key="baseBackgroundColor" name="accentColor-1"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToPlan:" destination="tGz-qd-uXf" eventType="touchUpInside" id="fsk-NZ-BCt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fqa-tk-vFf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vB9-Vh-nCy" secondAttribute="trailing" constant="16" id="015-Df-h0b"/>
+                            <constraint firstItem="vB9-Vh-nCy" firstAttribute="leading" secondItem="Fqa-tk-vFf" secondAttribute="leading" constant="16" id="aBQ-7D-3HW"/>
+                            <constraint firstItem="vB9-Vh-nCy" firstAttribute="top" secondItem="sfL-vK-gtz" secondAttribute="top" constant="44" id="ceK-Rg-vzM"/>
+                            <constraint firstItem="Fqa-tk-vFf" firstAttribute="bottom" secondItem="vB9-Vh-nCy" secondAttribute="bottom" constant="16" id="rwk-Zb-NpC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Путешествие" largeTitleDisplayMode="never" id="bUn-UY-PQP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYe-sk-bET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219.375" y="641.19718309859161"/>
+        </scene>
+        <!--Поездка-->
+        <scene sceneID="4Gb-mv-BO5">
+            <objects>
+                <viewController storyboardIdentifier="VisitVC" id="oQr-xM-bB2" customClass="VisitViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YwF-ZB-PGv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="jw3-Uc-2qG">
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Visit" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-LX-lJC">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H7g-BR-GOl">
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nu-6h-VDC">
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Выбрать">
+                                            <color key="baseBackgroundColor" name="accentColor-1"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToPlan:" destination="oQr-xM-bB2" eventType="touchUpInside" id="m8q-Y1-uAe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZXa-K7-ckX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZXa-K7-ckX" firstAttribute="bottom" secondItem="jw3-Uc-2qG" secondAttribute="bottom" constant="16" id="1Et-zb-wbN"/>
+                            <constraint firstAttribute="trailing" secondItem="jw3-Uc-2qG" secondAttribute="trailing" constant="16" id="P1m-uj-1ZT"/>
+                            <constraint firstItem="jw3-Uc-2qG" firstAttribute="leading" secondItem="YwF-ZB-PGv" secondAttribute="leading" constant="16" id="RBe-VR-0bv"/>
+                            <constraint firstItem="jw3-Uc-2qG" firstAttribute="top" secondItem="YwF-ZB-PGv" secondAttribute="top" constant="44" id="ggA-ce-faI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Поездка" largeTitleDisplayMode="never" id="Ktc-6B-KU1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cR-0s-iJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609.375" y="640.14084507042253"/>
+        </scene>
+        <!--Поход-->
+        <scene sceneID="uKh-5t-QDJ">
+            <objects>
+                <viewController storyboardIdentifier="HikkingVC" id="jY6-l7-fi3" customClass="HikkingViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TcP-bs-D3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="q5U-W6-G3H">
+                                <rect key="frame" x="16" y="44" width="288" height="508"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hikking" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-KL-Xt9">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="307"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Nk-D3-r7E">
+                                        <rect key="frame" x="0.0" y="340" width="288" height="104"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi lectus, accumsan in mi a, luctus hendrerit sem. Cras in quam auctor, pharetra diam quis, mattis dui. In risus ligula, interdum ac commodo nec, fermentum eu eros. </string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-BD-rWr">
+                                        <rect key="frame" x="103" y="477" width="82" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Выбрать">
+                                            <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToPlan:" destination="jY6-l7-fi3" eventType="touchUpInside" id="ZsU-t6-gWR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kq6-ia-iCn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q5U-W6-G3H" secondAttribute="trailing" constant="16" id="434-yF-wZl"/>
+                            <constraint firstItem="q5U-W6-G3H" firstAttribute="top" secondItem="TcP-bs-D3Y" secondAttribute="top" constant="44" id="aBX-JS-6cb"/>
+                            <constraint firstItem="Kq6-ia-iCn" firstAttribute="bottom" secondItem="q5U-W6-G3H" secondAttribute="bottom" constant="16" id="dzS-ic-yGe"/>
+                            <constraint firstItem="q5U-W6-G3H" firstAttribute="leading" secondItem="TcP-bs-D3Y" secondAttribute="leading" constant="16" id="xAr-dq-eOr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Поход" largeTitleDisplayMode="never" id="Xnj-aQ-xNS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snv-9V-lYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="641"/>
+        </scene>
+        <!--Выбрать план-->
+        <scene sceneID="fcI-b2-z9p">
+            <objects>
+                <pageViewController storyboardIdentifier="PackagePlanViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NZt-OF-1O0" customClass="PackagePlanViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Выбрать план" largeTitleDisplayMode="never" id="67k-it-l2v">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="czs-8i-sVh">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backToMainPressed" destination="NZt-OF-1O0" id="bgl-iY-3mx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="tGz-qd-uXf" kind="show" identifier="TripSegue" id="Fx6-AQ-jcr"/>
+                        <segue destination="oQr-xM-bB2" kind="show" identifier="VisitSegue" id="Olw-Ld-d5R"/>
+                        <segue destination="jY6-l7-fi3" kind="show" identifier="HikkingSegue" id="tcY-z6-mMM"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bb-YP-Kq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-216" y="-110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Hikking" width="600" height="600"/>
+        <image name="Trip" width="1181" height="1181"/>
+        <image name="Visit" width="1181" height="1181"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="accentColor-1">
+            <color red="0.37599998712539673" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

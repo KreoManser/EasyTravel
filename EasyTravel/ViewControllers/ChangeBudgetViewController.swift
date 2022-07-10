@@ -7,38 +7,40 @@
 
 import UIKit
 
+// MARK: - Protocols
+
 protocol changeBudget: AnyObject {
     func change(budget: BudgetStruct)
 }
 
 protocol changeBudgetDelegate: AnyObject {
-    func saveBudget(budget: Int)
+    func saveBudget(budget: Double)
 }
 
+// MARK: - ChangeBudgetViewController
+
 class ChangeBudgetViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var budgetTextField: UITextField!
+
+    // MARK: - Properties
+    
+    var change: String! = "0"
     
     weak var delegate: changeBudgetDelegate?
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        budgetTextField.text = String(change)
     }
     
-
-    @IBAction func buttonDidTap(_ sender: Any) {
-        saveInUserDefaults()
-        let stringBudget = budgetTextField.text!
-        if let age = Int(stringBudget) {
-            delegate?.saveBudget(budget: Int(age))
-            dismiss(animated: true)
-        } else {
-            showAlert()
-        }
-        
-    }
+    // MARK: - Private Properties
     
     private func showAlert() {
         let alert = UIAlertController(title: "Ошибка", message: "Введите верное значение бюджета", preferredStyle: .alert)
@@ -50,14 +52,18 @@ class ChangeBudgetViewController: UIViewController {
     private func saveInUserDefaults() {
         Budget.budgetValue = budgetTextField.text
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBActions
+    
+    @IBAction func buttonDidTap(_ sender: Any) {
+        saveInUserDefaults()
+        // ИСПРАВИТЬ
+        let stringBudget = budgetTextField.text!
+        if let age = Int(stringBudget) {
+            delegate?.saveBudget(budget: Double(age))
+            dismiss(animated: true)
+        } else {
+            showAlert()
+        }
     }
-    */
-
 }
