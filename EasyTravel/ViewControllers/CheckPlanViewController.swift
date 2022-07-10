@@ -59,7 +59,7 @@ class CheckPlanViewController: UIViewController {
         if flag == true {
             var sum = 0.0
             if sumArray.count == 0 {
-                score.text = "0.0"
+                score.text = "0"
             } else {
                 for index in sumArray.count-1...sumArray.count-1 { //0,1
                 sum = (Double(sumArray[index]) * Double(sumKolArray[index]))

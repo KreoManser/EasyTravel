@@ -113,6 +113,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="LrP-Mz-svS" firstAttribute="top" secondItem="BYv-jw-bqh" secondAttribute="top" id="9fC-C8-ze0"/>
+                                                        <constraint firstAttribute="width" secondItem="LrP-Mz-svS" secondAttribute="height" multiplier="160:127" id="B2d-KM-H1v"/>
                                                         <constraint firstItem="Qjr-AI-ZsT" firstAttribute="leading" secondItem="BYv-jw-bqh" secondAttribute="leading" id="E2p-0n-SNo"/>
                                                         <constraint firstAttribute="bottom" secondItem="Qjr-AI-ZsT" secondAttribute="bottom" constant="10" id="Esh-7N-Fm2"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qjr-AI-ZsT" secondAttribute="trailing" id="FDC-fl-P9J"/>
@@ -524,10 +525,10 @@
                     <navigationItem key="navigationItem" title="EasyTravel" id="Jzq-wq-xkD"/>
                     <connections>
                         <outlet property="addNewPackageButton" destination="19c-TJ-EfN" id="z6d-Gj-NgB"/>
-                        <outlet property="buttonFinance" destination="ykc-iY-grg" id="qSi-yT-9Ul"/>
-                        <outlet property="buttonRecomendation" destination="2ay-uS-Yt3" id="hfy-7S-8M5"/>
-                        <outlet property="buttonStories" destination="VVi-ZJ-ylW" id="csE-lK-Uzf"/>
-                        <outlet property="buttonTapBar" destination="npI-8q-HPc" id="qW9-0w-Cey"/>
+                        <outlet property="buttonFinance" destination="ykc-iY-grg" id="YG7-tV-aHK"/>
+                        <outlet property="buttonRecomendation" destination="2ay-uS-Yt3" id="Yhb-oS-D3h"/>
+                        <outlet property="buttonStories" destination="VVi-ZJ-ylW" id="op0-yo-m79"/>
+                        <outlet property="buttonTapBar" destination="npI-8q-HPc" id="NRw-yl-p8k"/>
                         <outlet property="financeCollectionView" destination="1CF-Vg-o0G" id="5nD-o5-r27"/>
                         <outlet property="packageButton" destination="JhZ-ma-0sk" id="fFa-fz-Cgz"/>
                         <outlet property="recommendationsBackground" destination="CU5-xo-uJe" id="8en-PK-LPA"/>

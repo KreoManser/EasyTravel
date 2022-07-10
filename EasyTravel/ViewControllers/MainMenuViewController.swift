@@ -26,12 +26,11 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var buttonFinance: UIButton!
     @IBOutlet weak var buttonStories: UIButton!
     @IBOutlet weak var buttonRecomendation: UIButton!
-
     
     var totalBudgetText = "0"
     var totalBudgetText2 = "0"
     var totalBudgetText3 = "0"
-    var storiesItems = ["Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip", "Trip"]
+    var storiesItems = Stories.getStories()
     
     var totalBudgetMoney: Double = 0
     var totalBudgetMoney2: Double = 0
@@ -47,10 +46,9 @@ class MainMenuViewController: UIViewController {
         navigationItem.hidesBackButton = true
         setupGesture()
         
-        // let indexPathRemained = IndexPath(item: 3, section: 0)
-               totalBudgetText3 = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
-               totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
-               totalBudgetText2 = String(  (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        totalBudgetText3 = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+        totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
+        totalBudgetText2 = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
     }
     
     // MARK: - Private Methods
@@ -68,28 +66,33 @@ class MainMenuViewController: UIViewController {
         button.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
-    
     // MARK: - Methods
     
     @objc
     func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "popVC") else { return }
+        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "popVC")
+        else { return }
 
         popVC.modalPresentationStyle = .popover
         let popOverVC = popVC.popoverPresentationController
         popOverVC?.delegate = self
         popOverVC?.sourceView = self.packageButton
-        popOverVC?.sourceRect = CGRect(x: self.packageButton.bounds.midX, y: self.packageButton.bounds.minY, width: 0, height: 0)
+        popOverVC?.sourceRect = CGRect(
+            x: self.packageButton.bounds.midX,
+            y: self.packageButton.bounds.minY,
+            width: 0,
+            height: 0
+        )
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
 
         self.present(popVC, animated: true)
     }
     
     func setupUI() {
-        buttonTapBar.showShadow()
-        buttonFinance.showShadow()
-        buttonStories.showShadow()
-        buttonRecomendation.showShadow()
+//        buttonTapBar.showShadow()
+//        buttonFinance.showShadow()
+//        buttonStories.showShadow()
+//        buttonRecomendation.showShadow()
     }
     
     // MARK: - IBActions
@@ -100,9 +103,7 @@ class MainMenuViewController: UIViewController {
         
         createPlanVC.modalPresentationStyle = .fullScreen
         present(createPlanVC, animated: true)
-    
     }
-    
     
     @IBAction func addButtonDidTap(_ sender: Any) {
         guard let changeBudgetVC = storyboard?.instantiateViewController(withIdentifier: "ChangeBudgetViewController") as? ChangeBudgetViewController else { return }
@@ -154,7 +155,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             guard let cell = storiesCollectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as? StoriesCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.storiesImage.image = UIImage(named: storiesItems[indexPath.row])
+            cell.storiesImage.image = storiesItems[indexPath.row].image
             cell.layer.cornerRadius = 25
         
             return cell
@@ -163,7 +164,6 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             switch indexPath.row {
             case 0:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "rubleIconCell", for: indexPath) as? RubleIconCollectionViewCell else { return UICollectionViewCell() }
-                
                 
                 cell.layer.cornerRadius = 25
                 
@@ -230,12 +230,6 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
     }
 }
 
-// MARK: - CheckPlanNavigationController empty class
-
-class CheckPlanNavigationController: UINavigationController {
-    
-}
-
 // MARK: - MainMenuViewController extension delegate
 
 extension MainMenuViewController: changeBudgetDelegate {
@@ -244,17 +238,17 @@ extension MainMenuViewController: changeBudgetDelegate {
         let indexPathTotal = IndexPath(item: 1, section: 0)
         let indexPathRemained = IndexPath(item: 3, section: 0)
         
-        totalBudgetMoney = budget
         totalBudgetText = String(budget)
-        totalBudgetText2 = "0"
-        totalBudgetText3 = "0"
+        totalBudgetText3 = String(budget)
+        
+        totalBudgetMoney = budget
         totalBudgetMoney2 = 0.0
+        totalBudgetMoney3 = totalBudgetMoney
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
         UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
         UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
-        
     }
 }
 

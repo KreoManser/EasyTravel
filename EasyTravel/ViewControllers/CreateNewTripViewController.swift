@@ -16,7 +16,7 @@ class CreateNewTripViewController: UIViewController {
     @IBOutlet weak var nameTripTF: UITextField!
     @IBOutlet weak var currentDatePicker: UIDatePicker!
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
-    @IBOutlet weak var goToPlans: UIButton!
+    @IBOutlet weak var goToPlansButton: UIButton!
     
     // MARK: - Life cycle
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SH5-va-cBa">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,22 +29,22 @@
             <objects>
                 <viewController storyboardIdentifier="CreateNewTripViewController" id="CTu-2V-w6s" customClass="CreateNewTripViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VRo-Tk-Wr4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="955-rZ-MUc">
-                                <rect key="frame" x="16" y="44" width="288" height="484"/>
+                                <rect key="frame" x="16" y="44" width="568" height="516"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewTripImage" translatesAutoresizingMaskIntoConstraints="NO" id="D0N-jm-pW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="254.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="286.5"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите название поездки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I6h-NA-fIh">
-                                        <rect key="frame" x="27.5" y="284.5" width="233" height="34"/>
+                                        <rect key="frame" x="167.5" y="316.5" width="233" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-w3-pY0">
-                                        <rect key="frame" x="0.0" y="348.5" width="288" height="70"/>
+                                        <rect key="frame" x="140" y="380.5" width="288" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-Yy-hsp">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
@@ -80,7 +80,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-7h-hXs">
-                                        <rect key="frame" x="60.5" y="448.5" width="167" height="35.5"/>
+                                        <rect key="frame" x="200.5" y="480.5" width="167" height="35.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="К выбору планов">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
@@ -112,7 +112,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentDatePicker" destination="BSc-CC-TIn" id="LEI-hT-0XO"/>
-                        <outlet property="goToPlans" destination="Re7-7h-hXs" id="4xc-kW-zuC"/>
+                        <outlet property="goToPlansButton" destination="Re7-7h-hXs" id="4xc-kW-zuC"/>
                         <outlet property="lastDateDatePicker" destination="Y22-rb-tlH" id="s7U-Za-aOR"/>
                         <outlet property="nameTripTF" destination="I6h-NA-fIh" id="zMD-ZZ-Hnl"/>
                     </connections>

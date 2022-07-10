@@ -7,17 +7,28 @@
 
 import UIKit
 
+//protocol TypeOfTripDelegate: AnyObject {
+//    func changeType(by trip: Package)
+//}
+
+//struct TypeOfTripDelegate {
+//    var type: Package
+//}
+
 // MARK: -PopTableViewController
 
-class PopTableViewController: UITableViewController {
+class PopTableViewController: UITableViewController, UINavigationControllerDelegate {
+    
     
     // MARK: - Properties
     
     let tripsArray = [
-                "Test 1",
-                "Test 1",
-                "Test 3"
+                "Trip",
+                "Visit",
+                "Hikking"
     ]
+    
+//    weak var delegateTrip: TypeOfTripDelegate?
 
     // MARK: - Life cycle
     
@@ -53,15 +64,19 @@ class PopTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "ViewPackage", bundle: nil)
         guard let checkPlanVC = storyboard.instantiateViewController(withIdentifier: "CheckPlanNavigationController") as? CheckPlanNavigationController else { return }
+        guard let viewVC = storyboard.instantiateViewController(withIdentifier: "ViewPackageViewController") as? ViewPackageViewController else { return }
         
         switch indexPath.row {
         case 0:
+//            viewVC.typeOfTrip = .trip
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 1:
+//            viewVC.typeOfTrip = .visit
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 2:
+//            viewVC.typeOfTrip = .hikking
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         default:

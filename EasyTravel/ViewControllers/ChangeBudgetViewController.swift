@@ -57,10 +57,9 @@ class ChangeBudgetViewController: UIViewController {
     
     @IBAction func buttonDidTap(_ sender: Any) {
         saveInUserDefaults()
-        // ИСПРАВИТЬ
-        let stringBudget = budgetTextField.text!
-        if let age = Int(stringBudget) {
-            delegate?.saveBudget(budget: Double(age))
+        guard let stringBudget = budgetTextField.text, !stringBudget.isEmpty else { return }
+        if let currentBudget = Int(stringBudget) {
+            delegate?.saveBudget(budget: Double(currentBudget))
             dismiss(animated: true)
         } else {
             showAlert()

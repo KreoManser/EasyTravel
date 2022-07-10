@@ -75,8 +75,7 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         ProductModel(label: "Вода")
     ]
     
-    var products: [ProductModel] = []
-    
+    var typeOfTrip: Package = .trip
     
     // MARK: - Life cycle
     
@@ -88,7 +87,7 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         
-        appendProducts()
+//        print(typeOfTrip)
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {
@@ -105,23 +104,25 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
     }
                         
     private func appendProducts() {
-        products.append(ProductModel(label: "Бургер"))
-        products.append(ProductModel(label: "Хлеб"))
-        products.append(ProductModel(label: "Жопа"))
+        // APPEND
     }
     
     // MARK: - Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return tripProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath)
-        
-        cell.textLabel?.text = products[indexPath.row].label
+        cell.textLabel?.text = tripProducts[indexPath.row].label
         
         return cell
     }
 }
 
+// MARK: - CheckPlanNavigationController empty class
+
+class CheckPlanNavigationController: UINavigationController {
+    
+}

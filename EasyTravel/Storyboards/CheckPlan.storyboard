@@ -261,8 +261,8 @@
                     </view>
                     <connections>
                         <outlet property="buttonClick" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
+                        <outlet property="cost" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
                         <outlet property="kolvo" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
-                        <outlet property="lastname" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
                         <outlet property="name" destination="ICh-ap-st7" id="vX2-EJ-Vmt"/>
                         <outlet property="valuee" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
                     </connections>

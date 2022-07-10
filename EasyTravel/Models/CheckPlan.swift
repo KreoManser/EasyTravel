@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct CheckPlan {
-    var object:String
-    let cost:Double
-    let quantity:Int
+    var object: String
+    let cost: Double
+    let quantity: Int
 }
