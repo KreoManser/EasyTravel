@@ -16,7 +16,7 @@ class CreateNewTripViewController: UIViewController {
     @IBOutlet weak var nameTripTF: UITextField!
     @IBOutlet weak var currentDatePicker: UIDatePicker!
     @IBOutlet weak var lastDateDatePicker: UIDatePicker!
-    @IBOutlet weak var goToPlans: UIButton!
+    @IBOutlet weak var goToPlansButton: UIButton!
     
     // MARK: - Life cycle
     
@@ -39,6 +39,8 @@ class CreateNewTripViewController: UIViewController {
         lastDateDatePicker.minimumDate = currentDate
         lastDateDatePicker.date = currentDate
     }
+    
+    // MARK: - Methods
     
     func checker() {
         let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели название поездки!", preferredStyle: .alert)

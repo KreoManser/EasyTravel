@@ -173,13 +173,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Просмотр плана" id="pr1-F5-XNR">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="oXy-mb-69j">
-                            <color key="tintColor" name="accentColor-1"/>
+                            <color key="tintColor" name="accentColor-2"/>
                             <connections>
                                 <action selector="dismissCheckPlan:" destination="d9c-Z3-i4O" id="xnG-ZM-hTU"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXx-Mc-tlO">
-                            <color key="tintColor" name="accentColor-1"/>
+                            <color key="tintColor" name="accentColor-2"/>
                             <connections>
                                 <action selector="ClickAddButton:" destination="d9c-Z3-i4O" id="7qt-hs-rDF"/>
                             </connections>
@@ -261,8 +261,8 @@
                     </view>
                     <connections>
                         <outlet property="buttonClick" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
+                        <outlet property="cost" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
                         <outlet property="kolvo" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
-                        <outlet property="lastname" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
                         <outlet property="name" destination="ICh-ap-st7" id="vX2-EJ-Vmt"/>
                         <outlet property="valuee" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
                     </connections>
@@ -275,8 +275,8 @@
     <resources>
         <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="121"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
-        <namedColor name="accentColor-1">
-            <color red="0.37599998712539673" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="accentColor-2">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

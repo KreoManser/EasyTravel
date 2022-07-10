@@ -229,13 +229,13 @@
                                     <action selector="changeSettingsButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c36-DU-bU4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-7u-MEh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-7u-MEh">
                                 <rect key="frame" x="156" y="126" width="166" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ut-sE-Teq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пол: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Ut-sE-Teq">
                                 <rect key="frame" x="156" y="171" width="166" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CmV-58-qU8"/>
@@ -293,7 +293,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" id="0DW-Gm-6KA">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="BNE-vU-TTA">
-                            <color key="tintColor" name="accentColor-1"/>
+                            <color key="tintColor" name="accentColor-2"/>
                             <connections>
                                 <action selector="dismiss" destination="BYZ-38-t0r" id="LM5-WR-Vbb"/>
                             </connections>
@@ -502,6 +502,9 @@
         <image name="Без названия (2)" width="429" height="228"/>
         <namedColor name="accentColor-1">
             <color red="0.37599998712539673" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="accentColor-2">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

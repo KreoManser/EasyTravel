@@ -20,7 +20,7 @@ class CreateTripViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var lastname: UITextField!
+    @IBOutlet weak var cost: UITextField!
     @IBOutlet weak var valuee: UITextField!
     @IBOutlet var kolvo: UITextField!
     @IBOutlet var buttonClick: UIButton!
@@ -42,6 +42,8 @@ class CreateTripViewController: UIViewController {
             alpha: 1.0)
     }
     
+    // MARK: - Methods
+    
     func checker(message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -53,10 +55,10 @@ class CreateTripViewController: UIViewController {
     
     @IBAction func clickButton(_ sender: Any) {
         guard let name = name.text, !name.isEmpty else { return checker(message: "Введите наименование") }
-        guard let lastname = lastname.text, !lastname.isEmpty else { return checker(message: "Введите цену") }
+        guard let cost = cost.text, !cost.isEmpty else { return checker(message: "Введите цену") }
         guard let kolvo = kolvo.text, !kolvo.isEmpty else { return checker(message: "Введите количество") }
         
-        let check = CheckPlan(object: name, cost: Double(lastname)!, quantity: Int(kolvo)!)
+        let check = CheckPlan(object: name, cost: Double(cost)!, quantity: Int(kolvo)!)
             
         delegate?.savePlan(for: check)
             
@@ -69,11 +71,11 @@ class CreateTripViewController: UIViewController {
 extension UIViewController {
     func createAlert(title: String?, description: String?) {
         let alertController = UIAlertController(
-            title: title, message: description, preferredStyle: .alert
+            title: title,
+            message: description,
+            preferredStyle: .alert
         )
-        alertController.addAction(
-            UIAlertAction(title: "OK", style: .default, handler: nil)
-        )
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 }

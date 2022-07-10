@@ -9,14 +9,15 @@ import UIKit
 
 // MARK: -PopTableViewController
 
-class PopTableViewController: UITableViewController {
+class PopTableViewController: UITableViewController, UINavigationControllerDelegate {
+    
     
     // MARK: - Properties
     
     let tripsArray = [
-                "Test 1",
-                "Test 1",
-                "Test 3"
+                "Путешествие",
+                "Поездка",
+                "Поход"
     ]
 
     // MARK: - Life cycle
@@ -56,12 +57,15 @@ class PopTableViewController: UITableViewController {
         
         switch indexPath.row {
         case 0:
+            typeOfTrip = .trip
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 1:
+            typeOfTrip = .visit
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 2:
+            typeOfTrip = .hikking
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         default:
