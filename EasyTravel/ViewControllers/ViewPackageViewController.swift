@@ -18,6 +18,63 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: - Properties
     
+    var tripProducts: [ProductModel] = [
+        ProductModel(label: "Документы"),
+        ProductModel(label: "Летняя одежда"),
+        ProductModel(label: "Обувь"),
+        ProductModel(label: "Зонт"),
+        ProductModel(label: "Деньги"),
+        ProductModel(label: "Билеты"),
+        ProductModel(label: "Очки"),
+        ProductModel(label: "Беруши"),
+        ProductModel(label: "Маска для сна"),
+        ProductModel(label: "Средства личной гигиены"),
+        ProductModel(label: "Косметичка"),
+        ProductModel(label: "Аптечка"),
+        ProductModel(label: "Средство для загара"),
+        ProductModel(label: "Полотенца"),
+        ProductModel(label: "Средство от ожогов"),
+        ProductModel(label: "Зарядное устройство"),
+        ProductModel(label: "Powerbank")
+    ]
+    
+    
+    var visitProducts: [ProductModel] = [
+        ProductModel(label: "Документы"),
+        ProductModel(label: "Одежда"),
+        ProductModel(label: "Обувь"),
+        ProductModel(label: "Зонт"),
+        ProductModel(label: "Деньги"),
+        ProductModel(label: "Билеты"),
+        ProductModel(label: "Очки"),
+        ProductModel(label: "Беруши"),
+        ProductModel(label: "Маска для сна"),
+        ProductModel(label: "Средства личной гигиены"),
+        ProductModel(label: "Косметичка"),
+        ProductModel(label: "Зарядное устройство"),
+        ProductModel(label: "Powerbank")
+    ]
+    
+    var hikkingProducts: [ProductModel] = [
+        ProductModel(label: "Одежда"),
+        ProductModel(label: "Документы"),
+        ProductModel(label: "Спортивное снаряжение"),
+        ProductModel(label: "Палатка"),
+        ProductModel(label: "Перчатки"),
+        ProductModel(label: "Продуктовый набор"),
+        ProductModel(label: "Деньги"),
+        ProductModel(label: "Лейкопластырь"),
+        ProductModel(label: "Спальный мешок"),
+        ProductModel(label: "Очки"),
+        ProductModel(label: "Походный нож"),
+        ProductModel(label: "Косметичка"),
+        ProductModel(label: "Аптечка"),
+        ProductModel(label: "Телефон"),
+        ProductModel(label: "Зарядное устройство"),
+        ProductModel(label: "Powerbank"),
+        ProductModel(label: "Вода")
+    ]
+    
     var products: [ProductModel] = []
     
     
