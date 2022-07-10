@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         saveData()
+        setupTheme()
     }
 
     // MARK: - Private Methods
@@ -42,6 +43,15 @@ class SettingsViewController: UIViewController {
         rateButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         themeSwitch.isOn = false
         themeSwitch.onTintColor = UIColor(named: "accentColor-1")
+    }
+    
+    private func setupTheme() {
+        switch traitCollection.userInterfaceStyle {
+               case .dark: break
+               case .light, .unspecified: break
+               @unknown default:
+                   fatalError()
+        }
     }
     
     // MARK: - Methods

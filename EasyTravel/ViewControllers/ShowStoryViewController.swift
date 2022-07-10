@@ -14,11 +14,4 @@ class ShowStoryViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var imageBackgroundView: UIImageView!
-    
-    // MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 }
