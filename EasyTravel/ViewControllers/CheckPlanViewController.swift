@@ -41,7 +41,6 @@ class CheckPlanViewController: UIViewController {
                 
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         
-       // navigationController?.pushViewController(backMainMenuVC, animated: true)
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {
