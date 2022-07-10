@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zpB-kn-hH8">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="zpB-kn-hH8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jxX-gG-xnY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -31,20 +31,20 @@
             <objects>
                 <viewController storyboardIdentifier="MainMenuViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I60-z0-1uf">
-                                <rect key="frame" x="20" y="321" width="280" height="163.5"/>
+                                <rect key="frame" x="20" y="466.00000000000006" width="388" height="163.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Активные поездки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QgL-Qu-p0q">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="21.666666666666668"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9iv-0g-N4U">
-                                        <rect key="frame" x="0.0" y="21.5" width="280" height="142"/>
+                                        <rect key="frame" x="0.0" y="21.666666666666686" width="388" height="142"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="142" id="N4c-sK-9LX"/>
@@ -67,7 +67,7 @@
                                                             <rect key="frame" x="15" y="8" width="100" height="100"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лес" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qjr-AI-ZsT">
-                                                            <rect key="frame" x="53.5" y="100.5" width="23.5" height="14.5"/>
+                                                            <rect key="frame" x="53.333333333333336" y="100.66666666666667" width="23.333333333333336" height="14.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -99,24 +99,23 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itc-FR-zQ9">
-                                <rect key="frame" x="20" y="512" width="280" height="36"/>
+                                <rect key="frame" x="20" y="822" width="388" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-ma-0sk">
-                                        <rect key="frame" x="30" y="2.5" width="47" height="31"/>
+                                        <rect key="frame" x="29.999999999999996" y="2.6666666666666288" width="46.666666666666657" height="45"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="shippingbox" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="packageButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Mf-f6-yHg"/>
                                             <segue destination="h5h-QO-tem" kind="popoverPresentation" popoverAnchorView="JhZ-ma-0sk" id="DQl-ON-N2l">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62z-fo-1xI">
-                                        <rect key="frame" x="204" y="6" width="46" height="24"/>
+                                        <rect key="frame" x="311.66666666666669" y="6" width="46.333333333333314" height="38"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system" title="">
@@ -127,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19c-TJ-EfN">
-                                        <rect key="frame" x="106" y="0.0" width="68" height="36"/>
+                                        <rect key="frame" x="160.33333333333334" y="0.0" width="67.666666666666657" height="50"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="">
@@ -172,13 +171,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CU5-xo-uJe">
-                                <rect key="frame" x="20" y="44" width="280" height="89"/>
+                                <rect key="frame" x="20" y="88" width="388" height="123"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-ve-M9I">
-                                        <rect key="frame" x="0.0" y="9.5" width="280.5" height="70"/>
+                                        <rect key="frame" x="53.666666666666657" y="26.666666666666671" width="280.66666666666674" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rye-A9-vv6">
-                                                <rect key="frame" x="0.0" y="-1" width="70" height="71"/>
+                                                <rect key="frame" x="0.0" y="-1" width="70" height="70.666666666666671"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="sjt-Mi-nTQ"/>
@@ -186,16 +185,16 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpg-cj-eKZ">
-                                                <rect key="frame" x="70" y="0.0" width="210.5" height="34.5"/>
+                                                <rect key="frame" x="69.999999999999986" y="0.0" width="210.66666666666663" height="34.666666666666664"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рекомендуем посетить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jzl-mg-1LH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="210.66666666666666" height="21.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Советский ИТИСовский лагерь — iOSик" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VP4-qB-3wA">
-                                                        <rect key="frame" x="0.0" y="23.5" width="183" height="11"/>
+                                                        <rect key="frame" x="0.0" y="23.666666666666671" width="183" height="11"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -219,7 +218,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7V3-KN-mxc">
-                                <rect key="frame" x="20" y="138" width="280" height="86.5"/>
+                                <rect key="frame" x="20" y="216" width="388" height="120"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7V3-KN-mxc" secondAttribute="height" multiplier="97:30" id="vTX-8Z-N0l"/>
@@ -232,7 +231,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storiesCell" id="2jv-m5-7hh" customClass="StoriesCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="3.5" width="80" height="80"/>
+                                        <rect key="frame" x="10" y="20" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ywu-nv-vPU">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -269,7 +268,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1CF-Vg-o0G">
-                                <rect key="frame" x="20" y="229.5" width="280" height="86.5"/>
+                                <rect key="frame" x="20" y="341" width="388" height="120"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.42745098040000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1CF-Vg-o0G" secondAttribute="height" multiplier="97:30" id="UU2-dV-Upm"/>
@@ -282,14 +281,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rubleIconCell" id="Tqh-sM-lE6" customClass="RubleIconCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="3.5" width="72" height="80"/>
+                                        <rect key="frame" x="0.0" y="20" width="72" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JQR-sT-dub">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rublesign.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-aV-LIy">
-                                                    <rect key="frame" x="0.0" y="1" width="72" height="77.5"/>
+                                                    <rect key="frame" x="0.0" y="1.6666666666666643" width="72" height="77"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
@@ -305,7 +304,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="totalBudgetCell" id="H7C-Fk-Xz0" customClass="TotalMoneyCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                        <rect key="frame" x="77" y="0.0" width="72" height="100"/>
+                                        <rect key="frame" x="77" y="10" width="72" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RNL-B8-Vdg">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
@@ -315,25 +314,25 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0BF-cf-GL6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="33.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="33.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemGreenColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общий бюджет" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-1h-a0d">
-                                                            <rect key="frame" x="0.0" y="33.5" width="72" height="33"/>
+                                                            <rect key="frame" x="0.0" y="33.333333333333329" width="72" height="33.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHe-NN-fdf">
-                                                            <rect key="frame" x="0.0" y="66.5" width="72" height="33.5"/>
+                                                            <rect key="frame" x="0.0" y="66.666666666666671" width="72" height="33.333333333333329"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="tinted">
                                                                 <attributedString key="attributedTitle">
                                                                     <fragment content="Добавить">
                                                                         <attributes>
-                                                                            <font key="NSFont" metaFont="cellTitle"/>
+                                                                            <font key="NSFont" metaFont="system" size="10"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -359,7 +358,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="spentMoneyCell" id="sA8-ob-LG7" customClass="SpentCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                        <rect key="frame" x="154" y="3.5" width="72" height="80"/>
+                                        <rect key="frame" x="154" y="20" width="72" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RzJ-ch-V2r">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="80"/>
@@ -369,7 +368,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="72" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cNi-sG-skq">
-                                                            <rect key="frame" x="25" y="0.0" width="22.5" height="30"/>
+                                                            <rect key="frame" x="25" y="0.0" width="22.333333333333329" height="30"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                             <nil key="highlightedColor"/>
@@ -400,7 +399,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remainedMoneyCell" id="BNt-wM-itk" customClass="RemainedCollectionViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                        <rect key="frame" x="231" y="3.5" width="72" height="80"/>
+                                        <rect key="frame" x="231" y="20" width="72" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hNl-VP-dhH">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="80"/>
@@ -410,13 +409,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="72" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DT2-vJ-vm8">
-                                                            <rect key="frame" x="25" y="0.0" width="22.5" height="30"/>
+                                                            <rect key="frame" x="25" y="0.0" width="22.333333333333329" height="30"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemOrangeColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось в бюджете" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="52Q-Ra-2xp">
-                                                            <rect key="frame" x="8" y="30" width="56" height="50"/>
+                                                            <rect key="frame" x="8.3333333333333321" y="30" width="55.666666666666671" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="9L2-VY-o82"/>
                                                                 <constraint firstAttribute="width" constant="55.666666666666671" id="e0l-P9-8dL"/>
@@ -495,22 +494,22 @@
             <objects>
                 <viewController storyboardIdentifier="ChangeBudgetViewController" id="YOt-te-tVy" customClass="ChangeBudgetViewController" customModule="EasyTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpZ-eN-8F8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите ваш бюджет" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyj-nz-xqe">
-                                <rect key="frame" x="20" y="30" width="280" height="33"/>
+                                <rect key="frame" x="20" y="74" width="388" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-7d-rLw">
-                                <rect key="frame" x="30" y="93" width="260" height="34"/>
+                                <rect key="frame" x="30" y="137" width="368" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-If-HX0">
-                                <rect key="frame" x="20" y="466" width="280" height="52"/>
+                                <rect key="frame" x="20" y="790" width="388" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Yrk-OC-1dg"/>
                                 </constraints>
@@ -553,7 +552,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CellsNB" id="8D9-wr-qck" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PlW-R3-TXf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -574,10 +573,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopTableViewCell" id="S6L-eo-nmL" customClass="PopTableViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="250" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="250" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6L-eo-nmL" id="fuL-n5-OTv">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-FO-2Z3">

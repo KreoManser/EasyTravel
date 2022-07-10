@@ -24,7 +24,7 @@ struct Plan {
     static func getPlan() -> [Plan] {
         [
             Plan(
-                image: UIImage(named: "Hikking"),
+                image: UIImage(named: "storiesImage"),
                 title: "Поход",
                 package: .hikking,
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."

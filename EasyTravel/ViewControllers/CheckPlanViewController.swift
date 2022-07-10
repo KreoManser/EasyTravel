@@ -30,7 +30,8 @@ class CheckPlanViewController: UIViewController {
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-    var MainMoney: Double = 0
+    
+    var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
     override func viewDidLoad() {
@@ -41,7 +42,12 @@ class CheckPlanViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func clickSaveButton(_ sender: Any) {
-        //кнопка сохранить
+        UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
+                
+        let storyboardStories = UIStoryboard(name: "Main", bundle: nil)
+        guard let backMainMenuVC = storyboardStories.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        
+        navigationController?.pushViewController(backMainMenuVC, animated: true)
     }
     
     @IBAction func ClickAddButton(_ sender: Any) {
@@ -64,7 +70,7 @@ class CheckPlanViewController: UIViewController {
             } else {
                 for index in sumArray.count-1...sumArray.count-1{ //0,1
                 sum = (Double ( sumArray[index]) * Double (sumKolArray[index]))
-                if sum > MainMoney {
+                if sum > mainMoney {
                     sumArray.removeLast()
                     ters.removeLast()
                     sumKolArray.removeLast()
@@ -72,12 +78,12 @@ class CheckPlanViewController: UIViewController {
                     createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверьте баланс")
                 }
             }
-                MainMoney = MainMoney - sum
-                if  MainMoney == 0{
+                mainMoney = mainMoney - sum
+                if  mainMoney == 0 {
                     flag = false
                     createAlert(title: "Ошибка!", description: "Не удалось добавить товар! Проверьте баланс")
                 }
-                score.text = String( MainMoney)}
+                score.text = String( mainMoney)}
         } else {
             sumArray.removeLast()
             ters.removeLast()
@@ -87,11 +93,11 @@ class CheckPlanViewController: UIViewController {
     }
     
     func settingsView(){
-        
+        score.text = String(mainMoney)
         tableView.dataSource = self
         tableView.delegate = self
         viewScore.layer.cornerRadius = 20
-        saveButtton.layer.cornerRadius = 10
+        saveButtton.layer.cornerRadius = 20
         viewScore.layer.masksToBounds = true;
         viewScore.backgroundColor = UIColor(
             red: 104.0 / 255,
@@ -135,14 +141,14 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle : UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            MainMoney += ((sumArray[indexPath.row]) * Double(sumKolArray[indexPath.row]))
-            if MainMoney >= 0 {
+            mainMoney += ((sumArray[indexPath.row]) * Double(sumKolArray[indexPath.row]))
+            if mainMoney >= 0 {
                 flag = true
             }
             ters.remove(at: indexPath.row)
             sumArray.remove(at: indexPath.row)
             sumKolArray.remove(at: indexPath.row)
-            score.text = String( MainMoney)
+            score.text = String( mainMoney)
             tableView.deleteRows(at: [indexPath] , with: .fade)
             tableView.endUpdates()
         }
@@ -155,11 +161,11 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
 
 // MARK: - CheckPlanViewController extension Delegate
 
-extension CheckPlanViewController: CreateStudentDelegate {
-    func saveStudent(student: Ter) {
-        ters.append(student)
-        sumArray.append(student.lastname)
-        sumKolArray.append(student.kolve)
+extension CheckPlanViewController: CreatePlanDelegate {
+    func savePlan(for plan: Ter) {
+        ters.append(plan)
+        sumArray.append(plan.lastname)
+        sumKolArray.append(plan.kolve)
         totalScore()
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }

@@ -84,7 +84,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="К выбору планов">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                            <color key="baseBackgroundColor" red="0.37647058823529411" green="0.41568627450980389" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" name="accentColor-1"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="goToPlansButtonPressed:" destination="CTu-2V-w6s" eventType="touchUpInside" id="kEd-Di-Taa"/>
@@ -114,6 +114,7 @@
                         <outlet property="currentDatePicker" destination="BSc-CC-TIn" id="LEI-hT-0XO"/>
                         <outlet property="goToPlans" destination="Re7-7h-hXs" id="4xc-kW-zuC"/>
                         <outlet property="lastDateDatePicker" destination="Y22-rb-tlH" id="s7U-Za-aOR"/>
+                        <outlet property="nameTripTF" destination="I6h-NA-fIh" id="zMD-ZZ-Hnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMQ-ha-e2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,6 +125,9 @@
     <resources>
         <image name="NewTripImage" width="900" height="900"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <namedColor name="accentColor-1">
+            <color red="0.37599998712539673" green="0.41600000858306885" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

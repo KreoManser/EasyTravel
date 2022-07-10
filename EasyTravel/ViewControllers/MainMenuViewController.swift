@@ -25,9 +25,13 @@ class MainMenuViewController: UIViewController {
 
     
     var totalBudgetText = "0"
-    var storiesItems = ["storiesImage", "storiesImage",
-                        "storiesImage", "storiesImage", "storiesImage"]
+    var totalBudgetText2 = "0"
+    var totalBudgetText3 = "0"
+    var storiesItems: [Stories] = Stories.getStories()
+    
     var totalBudgetMoney: Double = 0
+    var totalBudgetMoney2: Double = 0
+    var totalBudgetMoney3: Double = 0
     
     private var packageItems: [Plan] = Plan.getPlan()
     
@@ -36,6 +40,11 @@ class MainMenuViewController: UIViewController {
 
         navigationItem.hidesBackButton = true
         setupGesture()
+        
+        // let indexPathRemained = IndexPath(item: 3, section: 0)
+               totalBudgetText3 = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+               totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
+               totalBudgetText2 = String(  (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
     }
     
     // MARK: - Private Methods
@@ -64,10 +73,6 @@ class MainMenuViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    
-    @IBAction func packageButtonDidTap(_ sender: Any) {
-        // реализовать при нажатии на коробку
-    }
     
     @IBAction func addNewPackageButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CreateNewTrip", bundle: nil)
@@ -129,7 +134,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             guard let cell = storiesCollectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as? StoriesCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.storiesImage.image = UIImage(named: storiesItems[indexPath.row])
+            cell.storiesImage.image = storiesItems[indexPath.row].image
             cell.layer.cornerRadius = 20
         
             return cell
@@ -153,14 +158,17 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 return cell
             case 2:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "spentMoneyCell", for: indexPath) as? SpentCollectionViewCell else { return UICollectionViewCell() }
+                
                 cell.layer.cornerRadius = 20
+                cell.spentMoneyLabel.text = totalBudgetText2
+                cell.spentMoney = totalBudgetMoney2
                 
                 return cell
             case 3:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "remainedMoneyCell", for: indexPath) as? RemainedCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.remainedMoneyLabel.text = totalBudgetText
-                cell.remainedMoney = totalBudgetMoney
+                cell.remainedMoneyLabel.text = totalBudgetText3
+                cell.remainedMoney = totalBudgetMoney3
                 cell.layer.cornerRadius = 20
                 
                 return cell
@@ -220,9 +228,14 @@ extension MainMenuViewController: changeBudgetDelegate {
         totalBudgetText = String(budget)
        
         
+        totalBudgetMoney2 = 0.0
+        totalBudgetMoney3 = totalBudgetMoney
         
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
 
+        UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
+        UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
+        
     }
 }
 

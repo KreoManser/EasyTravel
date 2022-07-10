@@ -47,6 +47,7 @@
 		0ACAAC112879744400E05B92 /* ShowStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */; };
 		0ACAAC122879744400E05B92 /* ViewPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */; };
 		0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAAC0F2879744400E05B92 /* ProductModel.swift */; };
+		DDB057AC287A6AB700753AA5 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB057AB287A6AB700753AA5 /* StoriesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		0ACAAC0D2879744400E05B92 /* ShowStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStoryViewController.swift; sourceTree = "<group>"; };
 		0ACAAC0E2879744400E05B92 /* ViewPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPackageViewController.swift; sourceTree = "<group>"; };
 		0ACAAC0F2879744400E05B92 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		DDB057AB287A6AB700753AA5 /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				0ACAAC0F2879744400E05B92 /* ProductModel.swift */,
 				0AC7EE1A287399CA00433E88 /* PackagePlan.swift */,
 				0A4FEB14287A189600DC8A11 /* Username.swift */,
+				DDB057AB287A6AB700753AA5 /* StoriesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				0ACAAC102879744400E05B92 /* ChangeBudgetViewController.swift in Sources */,
 				0A4FEB15287A189600DC8A11 /* Username.swift in Sources */,
 				0A4FEB0D287A168A00DC8A11 /* AboutViewController.swift in Sources */,
+				DDB057AC287A6AB700753AA5 /* StoriesModel.swift in Sources */,
 				0A4EF3952879A7AA0079CB54 /* CheckPlanViewController.swift in Sources */,
 				0A8BD1802878955000562636 /* RubleIconCollectionViewCell.swift in Sources */,
 				0A4EF39B2879C33A0079CB54 /* VisitViewController.swift in Sources */,
