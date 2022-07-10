@@ -22,10 +22,10 @@ class CheckPlanViewController: UIViewController {
     
     // MARK: - Properties
     
-    var arrayCheckPlan:[CheckPlan] = []
+    var arrayCheckPlan: [CheckPlan] = []
     let idCell = "mainCell"
-    var sumArray:[Double] = []
-    var sumKolArray:[Int] = []
+    var sumArray: [Double] = []
+    var sumKolArray: [Int] = []
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
@@ -39,10 +39,9 @@ class CheckPlanViewController: UIViewController {
     @IBAction func clickSaveButton(_ sender: Any) {
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
                 
-        let storyboardStories = UIStoryboard(name: "Main", bundle: nil)
-        guard let backMainMenuVC = storyboardStories.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         
-        navigationController?.pushViewController(backMainMenuVC, animated: true)
+       // navigationController?.pushViewController(backMainMenuVC, animated: true)
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {

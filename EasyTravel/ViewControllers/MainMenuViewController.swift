@@ -226,6 +226,8 @@ extension MainMenuViewController: changeBudgetDelegate {
         
         totalBudgetMoney = budget
         totalBudgetText = String(budget)
+        
+        totalBudgetText3 = String(budget)
        
         
         totalBudgetMoney2 = 0.0
