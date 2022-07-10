@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Protocols
 
 protocol CreatePlanDelegate: AnyObject{
-    func savePlan(for plan: Ter)
+    func savePlan(for plan: CheckPlan)
 }
 
 // MARK: - CreateTripViewController

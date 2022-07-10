@@ -7,11 +7,7 @@
 
 import UIKit
 
-struct Ter {
-    var name:String
-    let lastname:Double
-    let kolve:Int
-}
+
 
 // MARK: - CheckPlanViewController
 class CheckPlanViewController: UIViewController {
@@ -26,11 +22,10 @@ class CheckPlanViewController: UIViewController {
     
     // MARK: - Properties
     
-    var ters:[Ter] = []
+    var arrayCheckPlan:[CheckPlan] = []
     let idCell = "mainCell"
     var sumArray:[Double] = []
     var sumKolArray:[Int] = []
-    
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
@@ -77,7 +72,7 @@ class CheckPlanViewController: UIViewController {
                 sum = (Double(sumArray[index]) * Double (sumKolArray[index]))
                 if sum > mainMoney {
                     sumArray.removeLast()
-                    ters.removeLast()
+                    arrayCheckPlan.removeLast()
                     sumKolArray.removeLast()
                     sum = 0
                     checker(message: "Не удалось добавить товар! Проверте баланс")
@@ -91,7 +86,7 @@ class CheckPlanViewController: UIViewController {
                 score.text = String( mainMoney)}
         } else {
             sumArray.removeLast()
-            ters.removeLast()
+            arrayCheckPlan.removeLast()
             sumKolArray.removeLast()
             checker(message: "Не удалось добавить товар! Проверте баланс")
         }
@@ -125,7 +120,7 @@ class CheckPlanViewController: UIViewController {
     
 extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ters.count
+        return arrayCheckPlan.count
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,10 +131,10 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? CheckPlanTableViewCell
         else { return UITableViewCell() }
         
-        cell.labels.text = ters[indexPath.row].name
-        let ff = (ters[indexPath.row].lastname) * Double(ters[indexPath.row].kolve)
+        cell.labels.text = arrayCheckPlan[indexPath.row].object
+        let ff = (arrayCheckPlan[indexPath.row].cost) * Double(arrayCheckPlan[indexPath.row].quantity)
         cell.lastname.text =  "\(ff) руб"
-        cell.kolve.text = "x\(ters[indexPath.row].kolve)"
+        cell.kolve.text = "x\(arrayCheckPlan[indexPath.row].quantity)"
         return cell
     }
     
@@ -150,7 +145,7 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
             if mainMoney >= 0 {
                 flag = true
             }
-            ters.remove(at: indexPath.row)
+            arrayCheckPlan.remove(at: indexPath.row)
             sumArray.remove(at: indexPath.row)
             sumKolArray.remove(at: indexPath.row)
             score.text = String( mainMoney)
@@ -167,10 +162,10 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
 // MARK: - CheckPlanViewController extension Delegate
 
 extension CheckPlanViewController: CreatePlanDelegate {
-    func savePlan(for plan: Ter) {
-        ters.append(plan)
-        sumArray.append(plan.lastname)
-        sumKolArray.append(plan.kolve)
+    func savePlan(for plan: CheckPlan) {
+        arrayCheckPlan.append(plan)
+        sumArray.append(plan.cost)
+        sumKolArray.append(plan.quantity)
         totalScore()
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }
