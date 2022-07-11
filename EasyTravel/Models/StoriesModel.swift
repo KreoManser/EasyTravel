@@ -9,38 +9,40 @@ import Foundation
 import UIKit
 
 struct Stories {
-    let image: UIImage?
-    let storiesScreen: UIViewController?
-    
+    let icon: UIImage?
+    let backgroundImage: UIImage?
+    let titleText: String?
+    let descriptionText: String?
+        
     static func getStories() -> [Stories] {
         [
             Stories(
-                image: UIImage(named: "storiesImage"),
-                storiesScreen: UIStoryboard(
-                    name: "ShowStory",
-                    bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                icon: UIImage(named: "storiesImage"),
+                backgroundImage: UIImage(named: "storyOne")!,
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
+            ),
+            
+            
+            
+            
+            Stories(
+                icon: UIImage(named: "storiesImage"),
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             Stories(
-                image: UIImage(named: "storiesImage"),
-                storiesScreen: UIStoryboard(
-                    name: "ShowStory",
-                    bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                icon: UIImage(named: "storiesImage"),
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             Stories(
-                image: UIImage(named: "storiesImage"),
-                storiesScreen: UIStoryboard(
-                    name: "ShowStory",
-                    bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
-            ),
-            Stories(
-                image: UIImage(named: "storiesImage"),
-                storiesScreen: UIStoryboard(
-                    name: "ShowStory",
-                    bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                icon: UIImage(named: "storiesImage"),
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
         ]
     }

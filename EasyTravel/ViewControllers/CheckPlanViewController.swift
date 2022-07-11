@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+protocol reloadBudgetDelegate: AnyObject {
+    func reloadBudget(for mainMoney: Double)
+}
+
 // MARK: - CheckPlanViewController
 class CheckPlanViewController: UIViewController {
     
@@ -17,6 +22,9 @@ class CheckPlanViewController: UIViewController {
     @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var score: UILabel!
+    
+    static var delegate: reloadBudgetDelegate?
+    
     
     // MARK: - Properties
     
@@ -37,8 +45,9 @@ class CheckPlanViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func clickSaveButton(_ sender: Any) {
-        UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
-        
+        if let delegate = CheckPlanViewController.delegate {
+            delegate.reloadBudget(for: mainMoney)
+        }
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -106,7 +115,7 @@ class CheckPlanViewController: UIViewController {
 
 // MARK: - CheckPlanViewController extension TableView
     
-extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
+extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCheckPlan.count
     }
@@ -150,6 +159,7 @@ extension CheckPlanViewController: UITableViewDataSource,UITableViewDelegate {
 // MARK: - CheckPlanViewController extension Delegate
 
 extension CheckPlanViewController: CreatePlanDelegate {
+    
     func savePlan(for plan: CheckPlan) {
         arrayCheckPlan.append(plan)
         sumArray.append(plan.cost)
@@ -157,7 +167,10 @@ extension CheckPlanViewController: CreatePlanDelegate {
         totalScore()
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }
+    
+    
 }
+
 
 // MARK: - PlanNavigationController
 

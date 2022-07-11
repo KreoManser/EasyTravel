@@ -29,15 +29,17 @@ class PackagePlanViewController: UIPageViewController {
     }
     
     // MARK: - Properties
-    
+        
     // Initialize the list of storyboards
     var viewControllersList: [UIViewController] = {
+        
         var views: [UIViewController] = []
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         
         guard let TripVC = storyboard.instantiateViewController(
             withIdentifier: "TripVC"
         ) as? TripViewController else { return [] }
+        
         views.append(TripVC)
         guard let VisitVC = storyboard.instantiateViewController(
             withIdentifier: "VisitVC"
@@ -48,8 +50,11 @@ class PackagePlanViewController: UIPageViewController {
         ) as? HikkingViewController else { return [TripVC, VisitVC] }
         views.append(HikkingVC)
         
+    
         return views
     }()
+
+    
     
     // MARK: - IBActions
     
@@ -97,5 +102,4 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
 // MARK: - PackagePlanNavigationContoller - empty class for storyboard
 
 class PackagePlanNavigationContoller: UINavigationController {
-
 }

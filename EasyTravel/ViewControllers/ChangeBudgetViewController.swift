@@ -17,6 +17,8 @@ protocol changeBudgetDelegate: AnyObject {
     func saveBudget(budget: Double)
 }
 
+
+
 // MARK: - ChangeBudgetViewController
 
 class ChangeBudgetViewController: UIViewController {
@@ -37,7 +39,7 @@ class ChangeBudgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        budgetTextField.text = UserDefaults.standard.string(forKey: "budgetForCreateTrip")
+        budgetTextField.text = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl")
     }
     
     // MARK: - Private Properties
