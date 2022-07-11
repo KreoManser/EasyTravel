@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct CheckPlan {
     var object: String

@@ -7,16 +7,8 @@
 
 import UIKit
 
-struct Developer {
-    var name: String
-    var discription: String
-    var link: String
-}
-
-// MARK: - AboutViewController
-
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
     

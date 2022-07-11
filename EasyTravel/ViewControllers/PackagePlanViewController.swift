@@ -7,17 +7,19 @@
 
 import UIKit
 
-// MARK: - UIPageViewController
-
 class PackagePlanViewController: UIPageViewController {
-
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.dataSource = self
         
+        setupFirstPage()
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupFirstPage() {
         if let firstVC = viewControllersList.first {
             self.setViewControllers(
                 [firstVC],
@@ -29,17 +31,14 @@ class PackagePlanViewController: UIPageViewController {
     }
     
     // MARK: - Properties
-        
-    // Initialize the list of storyboards
+
     var viewControllersList: [UIViewController] = {
-        
         var views: [UIViewController] = []
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         
         guard let TripVC = storyboard.instantiateViewController(
             withIdentifier: "TripVC"
         ) as? TripViewController else { return [] }
-        
         views.append(TripVC)
         guard let VisitVC = storyboard.instantiateViewController(
             withIdentifier: "VisitVC"
@@ -49,21 +48,16 @@ class PackagePlanViewController: UIPageViewController {
             withIdentifier: "HikkingVC"
         ) as? HikkingViewController else { return [TripVC, VisitVC] }
         views.append(HikkingVC)
-        
     
         return views
     }()
-
     
-    
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func backToMainPressed() {
         dismiss(animated: true)
     }
 }
-
-// MARK: - UIPageViewControllerDataSource
 
 extension PackagePlanViewController: UIPageViewControllerDataSource {
     // Before pageViewController
@@ -73,7 +67,7 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
     ) -> UIViewController? {
         guard let vcIndex = viewControllersList.firstIndex(of: viewController)
         else { return nil }
-
+        
         let previousIndex = vcIndex - 1
 
         guard previousIndex >= 0 else { return nil }
@@ -98,8 +92,6 @@ extension PackagePlanViewController: UIPageViewControllerDataSource {
         return viewControllersList[nextIndex]
     }
 }
-
-// MARK: - PackagePlanNavigationContoller - empty class for storyboard
 
 class PackagePlanNavigationContoller: UINavigationController {
 }

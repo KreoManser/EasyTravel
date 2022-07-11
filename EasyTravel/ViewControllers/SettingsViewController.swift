@@ -7,11 +7,8 @@
 
 import UIKit
 
-// MARK: - SettingsViewController
-
 class SettingsViewController: UIViewController {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet var image1: UIImageView!
     @IBOutlet var image2: UIImageView!
@@ -26,10 +23,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var themeSwitch: UISwitch!
     @IBOutlet weak var themeLabel: UILabel!
     
+    // MARK: - Properties
+    
     let starIsNotHidden = "iconfinder_checked_favorite_star_favourite_rating_1564507 (1)"
     let starIsHidden = "iconfinder_checked_favorite_star_favourite_rating_1564507-1"
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,15 +57,15 @@ class SettingsViewController: UIViewController {
     private func reloudStar(){
             switch UserDefaults.standard.integer(forKey: "star"){
             case 1:
-                fillingInTheFirstStar()
+                fillingStars(by: 1)
             case 2:
-                fillingInTheSecondStar()
+                fillingStars(by: 2)
             case 3:
-                fillingInTheThirdStar()
+                fillingStars(by: 3)
             case 4:
-                fillingInTheFourStar()
+                fillingStars(by: 4)
             case 5:
-                fillingInTheFiveStar()
+                fillingStars(by: 5)
             default:
                 break
             }
@@ -94,63 +93,64 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    // MARK: - Methods
-    
     @objc private func imageTapped1(_ recognizer: UITapGestureRecognizer) {
-        fillingInTheFirstStar()
+        fillingStars(by: 1)
         UserDefaults.standard.set(1, forKey: "star")
     }
     @objc private func imageTapped2(_ recognizer: UITapGestureRecognizer) {
-        fillingInTheSecondStar()
+        fillingStars(by: 2)
         UserDefaults.standard.set(2, forKey: "star")
     }
     @objc private func imageTapped3(_ recognizer: UITapGestureRecognizer) {
-        fillingInTheThirdStar()
+        fillingStars(by: 3)
         UserDefaults.standard.set(3, forKey: "star")
     }
     @objc private func imageTapped4(_ recognizer: UITapGestureRecognizer) {
-        fillingInTheFourStar()
+        fillingStars(by: 4)
         UserDefaults.standard.set(4, forKey: "star")
     }
     @objc private func imageTapped5(_ recognizer: UITapGestureRecognizer) {
-       fillingInTheFiveStar()
+        fillingStars(by: 5)
         UserDefaults.standard.set(5, forKey: "star")
     }
     
-    func fillingInTheFirstStar(){
-        image5.image = UIImage(named: starIsNotHidden)
-        image2.image = UIImage(named: starIsNotHidden)
-        image3.image = UIImage(named: starIsNotHidden)
-        image4.image = UIImage(named: starIsNotHidden)
-        image1.image = UIImage(named: starIsHidden)
-    }
-    func fillingInTheSecondStar(){
-        image5.image = UIImage(named: starIsNotHidden)
-        image2.image = UIImage(named: starIsHidden)
-        image3.image = UIImage(named: starIsNotHidden)
-        image4.image = UIImage(named: starIsNotHidden)
-        image1.image = UIImage(named: starIsHidden)
-    }
-    func fillingInTheThirdStar(){
-        image5.image = UIImage(named: starIsNotHidden)
-        image2.image = UIImage(named: starIsHidden)
-        image3.image = UIImage(named: starIsHidden)
-        image4.image = UIImage(named: starIsNotHidden)
-        image1.image = UIImage(named: starIsHidden)
-    }
-    func fillingInTheFourStar(){
-        image5.image = UIImage(named: starIsNotHidden)
-        image2.image = UIImage(named: starIsHidden)
-        image3.image = UIImage(named: starIsHidden)
-        image4.image = UIImage(named: starIsHidden)
-        image1.image = UIImage(named: starIsHidden)
-    }
-    func fillingInTheFiveStar(){
-        image5.image = UIImage(named: starIsHidden)
-        image2.image = UIImage(named: starIsHidden)
-        image3.image = UIImage(named: starIsHidden)
-        image4.image = UIImage(named: starIsHidden)
-        image1.image = UIImage(named: starIsHidden)
+    // MARK: - Methods
+    
+    func fillingStars(by count: Int) {
+        switch count {
+        case 1:
+            image1.image = UIImage(named: starIsHidden)
+            image2.image = UIImage(named: starIsNotHidden)
+            image3.image = UIImage(named: starIsNotHidden)
+            image4.image = UIImage(named: starIsNotHidden)
+            image5.image = UIImage(named: starIsNotHidden)
+        case 2:
+            image1.image = UIImage(named: starIsHidden)
+            image2.image = UIImage(named: starIsHidden)
+            image3.image = UIImage(named: starIsNotHidden)
+            image4.image = UIImage(named: starIsNotHidden)
+            image5.image = UIImage(named: starIsNotHidden)
+        case 3:
+            image1.image = UIImage(named: starIsHidden)
+            image2.image = UIImage(named: starIsHidden)
+            image3.image = UIImage(named: starIsHidden)
+            image4.image = UIImage(named: starIsNotHidden)
+            image5.image = UIImage(named: starIsNotHidden)
+        case 4:
+            image1.image = UIImage(named: starIsHidden)
+            image2.image = UIImage(named: starIsHidden)
+            image3.image = UIImage(named: starIsHidden)
+            image4.image = UIImage(named: starIsHidden)
+            image5.image = UIImage(named: starIsNotHidden)
+        case 5:
+            image1.image = UIImage(named: starIsHidden)
+            image2.image = UIImage(named: starIsHidden)
+            image3.image = UIImage(named: starIsHidden)
+            image4.image = UIImage(named: starIsHidden)
+            image5.image = UIImage(named: starIsHidden)
+        default:
+            break
+        }
     }
     
     func saveData() {
@@ -161,7 +161,7 @@ class SettingsViewController: UIViewController {
         usernameLabel.text = UserSettings.userName
     }
     
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func dismiss() {
         dismiss(animated: true)
@@ -192,7 +192,6 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK: - SettingsViewController extension by ChangeUserInfo
 extension SettingsViewController: ChangeUserInfo {
     func changeData(user: User) {
         usernameLabel.text = user.name
@@ -200,8 +199,5 @@ extension SettingsViewController: ChangeUserInfo {
     }
 }
 
-// MARK: - SettingsNavigationController empty class
-
 class SettingsNavigationController: UINavigationController {
-    
 }

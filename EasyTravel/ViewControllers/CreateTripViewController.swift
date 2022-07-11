@@ -7,58 +7,60 @@
 
 import UIKit
 
-// MARK: - Protocols
-
 protocol CreatePlanDelegate: AnyObject{
     func savePlan(for plan: CheckPlan)
 }
 
-// MARK: - CreateTripViewController
-
 class CreateTripViewController: UIViewController {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var cost: UITextField!
-    @IBOutlet weak var valuee: UITextField!
-    @IBOutlet var kolvo: UITextField!
-    @IBOutlet var buttonClick: UIButton!
+    @IBOutlet weak var value: UITextField!
+    @IBOutlet var countOfItem: UITextField!
+    @IBOutlet var addItemButton: UIButton!
     
     // MARK: - Properties
     
     weak var delegate: CreatePlanDelegate?
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonClick.layer.cornerRadius = 10
-        buttonClick.clipsToBounds = true
-        buttonClick.backgroundColor = UIColor(
+        setupAddItemButton()
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupAddItemButton() {
+        addItemButton.layer.cornerRadius = 10
+        addItemButton.clipsToBounds = true
+        addItemButton.backgroundColor = UIColor(
             red: 104.0 / 255,
             green: 109.0 / 255,
             blue: 224.0 / 255,
-            alpha: 1.0)
+            alpha: 1.0
+        )
     }
     
     // MARK: - Methods
     
-    func checker(message: String) {
+    func createAlert(message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
     
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func clickButton(_ sender: Any) {
-        guard let name = name.text, !name.isEmpty else { return checker(message: "Введите наименование") }
-        guard let cost = cost.text, !cost.isEmpty else { return checker(message: "Введите цену") }
-        guard Double(cost) != nil, Double(cost)! >= 0 else { return checker(message: "Введите корректную цену") }
-        guard let kolvo = kolvo.text, !kolvo.isEmpty else { return checker(message: "Введите количество") }
-        guard Double(kolvo) != nil, Double(kolvo)! >= 0 else { return checker(message: "Введите корректное количество") }
+        guard let name = name.text, !name.isEmpty else { return createAlert(message: "Введите наименование") }
+        guard let cost = cost.text, !cost.isEmpty else { return createAlert(message: "Введите цену") }
+        guard Double(cost) != nil, Double(cost)! >= 0 else { return createAlert(message: "Введите корректную цену") }
+        guard let kolvo = countOfItem.text, !kolvo.isEmpty else { return createAlert(message: "Введите количество") }
+        guard Double(kolvo) != nil, Double(kolvo)! >= 0 else { return createAlert(message: "Введите корректное количество") }
     
         let check = CheckPlan(object: name, cost: Double(cost)!, quantity: Int(kolvo)!)
         delegate?.savePlan(for: check)
@@ -66,8 +68,6 @@ class CreateTripViewController: UIViewController {
         dismiss(animated: true)
     }
 }
-
-// MARK: - UIViewController extension
 
 extension UIViewController {
     func createAlert(title: String?, description: String?) {

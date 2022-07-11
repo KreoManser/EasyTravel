@@ -38,6 +38,10 @@
 		0A8BD1842878955000562636 /* RemainedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */; };
 		0A8BD1862878957B00562636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8BD1852878957B00562636 /* Main.storyboard */; };
 		0A91E8D12879FDD000B33F7C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A91E8D02879FDD000B33F7C /* Settings.storyboard */; };
+		0ABE9BB5287C6640003EBFE2 /* TripInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE9BB4287C6640003EBFE2 /* TripInfo.swift */; };
+		0ABE9BB7287C6653003EBFE2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE9BB6287C6653003EBFE2 /* Item.swift */; };
+		0ABE9BB9287C6668003EBFE2 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE9BB8287C6668003EBFE2 /* DataStoreManager.swift */; };
+		0ABE9BBB287C72FD003EBFE2 /* Developer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE9BBA287C72FD003EBFE2 /* Developer.swift */; };
 		0AC7EE1B287399CA00433E88 /* PackagePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7EE1A287399CA00433E88 /* PackagePlan.swift */; };
 		0ACAAC012878B36F00E05B92 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAAC002878B36F00E05B92 /* Welcome.storyboard */; };
 		0ACAAC07287973E900E05B92 /* ShowStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAAC05287973E900E05B92 /* ShowStory.storyboard */; };
@@ -85,6 +89,10 @@
 		0A8BD17C2878955000562636 /* RemainedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainedCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A8BD1852878957B00562636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A91E8D02879FDD000B33F7C /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		0ABE9BB4287C6640003EBFE2 /* TripInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfo.swift; sourceTree = "<group>"; };
+		0ABE9BB6287C6653003EBFE2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0ABE9BB8287C6668003EBFE2 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
+		0ABE9BBA287C72FD003EBFE2 /* Developer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developer.swift; sourceTree = "<group>"; };
 		0AC7EE1A287399CA00433E88 /* PackagePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePlan.swift; sourceTree = "<group>"; };
 		0ACAAC002878B36F00E05B92 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		0ACAAC05287973E900E05B92 /* ShowStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowStory.storyboard; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 		0A38EEB828739351003F397A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0ABE9BB1287C5F98003EBFE2 /* Check Plan */,
 				0A4EF3942879A7AA0079CB54 /* CheckPlanTableViewCell.swift */,
 				0A4EF3922879A7A90079CB54 /* CheckPlanViewController.swift */,
 				0A4EF3932879A7AA0079CB54 /* CreateTripViewController.swift */,
@@ -211,8 +220,19 @@
 				0A4FEB14287A189600DC8A11 /* Username.swift */,
 				DDB057AB287A6AB700753AA5 /* StoriesModel.swift */,
 				449DF3AD287B096000867EAF /* CheckPlan.swift */,
+				0ABE9BB4287C6640003EBFE2 /* TripInfo.swift */,
+				0ABE9BB6287C6653003EBFE2 /* Item.swift */,
+				0ABE9BB8287C6668003EBFE2 /* DataStoreManager.swift */,
+				0ABE9BBA287C72FD003EBFE2 /* Developer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0ABE9BB1287C5F98003EBFE2 /* Check Plan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Check Plan";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ABE9BBB287C72FD003EBFE2 /* Developer.swift in Sources */,
 				0A4EF39D2879C34B0079CB54 /* HikkingViewController.swift in Sources */,
 				0A4EF38D2879A2890079CB54 /* PopTableViewCell.swift in Sources */,
+				0ABE9BB7287C6653003EBFE2 /* Item.swift in Sources */,
 				0A35BE312875E8F500855E02 /* CreateNewTripViewController.swift in Sources */,
 				0A8BD1742878953F00562636 /* GreetingsViewController.swift in Sources */,
 				0ACAAC0B2879740A00E05B92 /* Budget.swift in Sources */,
@@ -317,9 +339,11 @@
 				0ACAAC132879744400E05B92 /* ProductModel.swift in Sources */,
 				0A38EE8328732EBB003F397A /* AppDelegate.swift in Sources */,
 				0A4EF3962879A7AA0079CB54 /* CreateTripViewController.swift in Sources */,
+				0ABE9BB9287C6668003EBFE2 /* DataStoreManager.swift in Sources */,
 				0A8BD1832878955000562636 /* MainMenuViewController.swift in Sources */,
 				0A4FEB11287A171500DC8A11 /* SettingsViewController.swift in Sources */,
 				0ACAAC122879744400E05B92 /* ViewPackageViewController.swift in Sources */,
+				0ABE9BB5287C6640003EBFE2 /* TripInfo.swift in Sources */,
 				0A8BD17E2878955000562636 /* TripCollectionViewCell.swift in Sources */,
 				0A38EE8528732EBB003F397A /* SceneDelegate.swift in Sources */,
 				0A4EF38B287994960079CB54 /* PopTableViewController.swift in Sources */,

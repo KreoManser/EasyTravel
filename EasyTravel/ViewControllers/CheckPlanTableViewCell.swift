@@ -7,27 +7,11 @@
 
 import UIKit
 
-// MARK: - CheckPlanTableViewCell
-
 class CheckPlanTableViewCell: UITableViewCell {
+    // MARK: - Outlets
     
-    // MARK: - IBOutlets
-    
-    @IBOutlet var labels: UILabel!
-    @IBOutlet var lastname: UILabel!
-    @IBOutlet var kolve: UILabel!
-    @IBOutlet var imageF : UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    // MARK: - Methods
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
+    @IBOutlet var nameOfItem: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var countOfItemLabel: UILabel!
+    @IBOutlet var okImage : UIImageView!
 }

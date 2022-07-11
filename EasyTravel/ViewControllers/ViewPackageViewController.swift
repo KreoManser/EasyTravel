@@ -7,20 +7,17 @@
 
 import UIKit
 
-// MARK: - ViewPackageViewController
-
-var typeOfTrip: Package = .trip
+var typeOfTrip: String = packageList[0]
 
 class ViewPackageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var mainView: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tripImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +49,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         ProductModel(label: "Зарядное устройство"),
         ProductModel(label: "Powerbank")
     ]
-    
     
     var visitProducts: [ProductModel] = [
         ProductModel(label: "Документы"),
@@ -109,43 +105,42 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         dismiss(animated: true)
     }
     
-    
     // MARK: - Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch typeOfTrip {
-        case .trip:
+        case packageList[0]:
             return tripProducts.count
-        case .visit:
+        case packageList[1]:
             return visitProducts.count
-        case .hikking:
+        case packageList[2]:
             return hikkingProducts.count
+        default:
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath)
         switch typeOfTrip {
-        case .trip:
+        case packageList[0]:
             tripImage.image = UIImage(named: "Trip")
             cell.textLabel?.text = tripProducts[indexPath.row].label
             descriptionLabel.text = "Путешествие – это нечто большее. Это постоянное движение вперед."
-        case .visit:
+        case packageList[1]:
             tripImage.image = UIImage(named: "Visit")
             cell.textLabel?.text = visitProducts[indexPath.row].label
             descriptionLabel.text = "Поездка – это сравнительно короткое путешествие, с целью посещения кого-либо или чего-либо."
-        case .hikking:
+        case packageList[2]:
             tripImage.image = UIImage(named: "Hikking")
             cell.textLabel?.text = hikkingProducts[indexPath.row].label
             descriptionLabel.text = "Поход – это совместное путешествие группы людей по определенному маршруту и верный путь к обретению здоровья."
+        default:
+            return UITableViewCell()
         }
-        
         return cell
     }
 }
 
-// MARK: - CheckPlanNavigationController empty class
-
 class CheckPlanNavigationController: UINavigationController {
-    
 }

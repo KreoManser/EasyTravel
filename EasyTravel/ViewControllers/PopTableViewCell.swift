@@ -11,21 +11,18 @@ struct Page {
     let name: String
 }
 
-// MARK: - PopTableViewCell
-
 class PopTableViewCell: UITableViewCell {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet var nameLabelPop: UILabel!
     
+    // MARK: - View life cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 }

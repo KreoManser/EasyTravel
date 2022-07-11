@@ -6,40 +6,34 @@
 //
 
 import Foundation
-import UIKit
 
-enum Package {
-    case trip
-    case visit
-    case hikking
-}
+let packageList = ["trip", "visit", "hikking"]
 
-struct Plan {
-    let image: UIImage?
+struct Plan: Codable {
+    let image: String?
     let title: String
-    let package: Package
-    let description: String
-
+    let package: String
+    let descriptionPlan: String
     
     static func getPlan() -> [Plan] {
         [
             Plan(
-                image: UIImage(named: "Hikking"),
+                image: "storiesImage",
                 title: "Поход",
-                package: .hikking,
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                package: packageList[2],
+                descriptionPlan: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ),
             Plan(
-                image: UIImage(named: "Trip"),
+                image: "Trip",
                 title: "Путешествие",
-                package: .trip,
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                package: packageList[0],
+                descriptionPlan: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ),
             Plan(
-                image: UIImage(named: "Visit"),
+                image: "Visit",
                 title: "Визит",
-                package: .visit,
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                package: packageList[1],
+                descriptionPlan: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             ),
         ]
     }

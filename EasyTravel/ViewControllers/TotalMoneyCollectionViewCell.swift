@@ -7,13 +7,12 @@
 
 import UIKit
 
-// MARK: - TotalMoneyCollectionViewCell
-
 class TotalMoneyCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var totalBudgetLabel: UILabel!
+    
+    // MARK: - Properties
     
     var totalBudgetMoney: Double = 0
 }

@@ -41,7 +41,7 @@
                                 </buttonConfiguration>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-Cr-W5s">
-                                <rect key="frame" x="20" y="88" width="330" height="107"/>
+                                <rect key="frame" x="20" y="88" width="374" height="107"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trip" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-JD-VLG">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="107"/>
@@ -50,11 +50,8 @@
                                             <constraint firstAttribute="height" constant="107" id="MjV-Cs-Ihg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путешествие – это нечто большее. Это постоянное движение вперед" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySq-aP-aMq">
-                                        <rect key="frame" x="128" y="26.5" width="202" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="202" id="wEj-vr-Mm8"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путешествие – это нечто большее. Это постоянное движение вперед" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ySq-aP-aMq">
+                                        <rect key="frame" x="128" y="26.5" width="246" height="54"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -93,9 +90,10 @@
                             <constraint firstItem="Zqs-Jl-61j" firstAttribute="trailing" secondItem="EpL-q0-ip1" secondAttribute="trailing" id="DhY-Q0-MWX"/>
                             <constraint firstItem="EpL-q0-ip1" firstAttribute="top" secondItem="Zqs-Jl-61j" secondAttribute="bottom" constant="27" id="Uuc-mz-idN"/>
                             <constraint firstItem="Zqs-Jl-61j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="Vbc-WY-YDw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zqs-Jl-61j" secondAttribute="trailing" constant="20" id="Y13-mj-qux"/>
                             <constraint firstItem="E3c-Cr-W5s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e9j-mm-8mU"/>
+                            <constraint firstItem="E3c-Cr-W5s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="frb-EY-Vrk"/>
                             <constraint firstItem="EpL-q0-ip1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h2j-0B-fyE"/>
+                            <constraint firstItem="Zqs-Jl-61j" firstAttribute="trailing" secondItem="E3c-Cr-W5s" secondAttribute="trailing" id="oet-qz-CPg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EpL-q0-ip1" secondAttribute="trailing" constant="20" id="rzj-FK-abM"/>
                             <constraint firstItem="Zqs-Jl-61j" firstAttribute="leading" secondItem="EpL-q0-ip1" secondAttribute="leading" id="s3z-8h-Kdi"/>
                             <constraint firstItem="EpL-q0-ip1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="skR-6J-Hsk"/>

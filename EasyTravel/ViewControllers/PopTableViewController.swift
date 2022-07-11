@@ -7,11 +7,7 @@
 
 import UIKit
 
-// MARK: -PopTableViewController
-
 class PopTableViewController: UITableViewController, UINavigationControllerDelegate {
-    
-    
     // MARK: - Properties
     
     let tripsArray = [
@@ -20,11 +16,10 @@ class PopTableViewController: UITableViewController, UINavigationControllerDeleg
                 "Поход"
     ]
 
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.isScrollEnabled = false
     }
     
@@ -38,8 +33,11 @@ class PopTableViewController: UITableViewController, UINavigationControllerDeleg
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tripsArray.count
+    override func tableView(
+                            _ tableView: UITableView,
+                            numberOfRowsInSection section: Int
+    ) -> Int {
+        tripsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,15 +55,15 @@ class PopTableViewController: UITableViewController, UINavigationControllerDeleg
         
         switch indexPath.row {
         case 0:
-            typeOfTrip = .trip
+            typeOfTrip = packageList[0]
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 1:
-            typeOfTrip = .visit
+            typeOfTrip = packageList[1]
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         case 2:
-            typeOfTrip = .hikking
+            typeOfTrip = packageList[2]
             checkPlanVC.modalPresentationStyle = .fullScreen
             present(checkPlanVC, animated: true)
         default:

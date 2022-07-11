@@ -93,10 +93,10 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="imageF" destination="L9q-G0-vKo" id="65t-93-eK1"/>
-                                                            <outlet property="kolve" destination="fPY-C4-gSK" id="kYY-06-Laf"/>
-                                                            <outlet property="labels" destination="pWe-hG-w1C" id="Arn-zo-wmN"/>
-                                                            <outlet property="lastname" destination="xxc-EM-BZW" id="bcW-wW-tKw"/>
+                                                            <outlet property="countOfItemLabel" destination="fPY-C4-gSK" id="kYY-06-Laf"/>
+                                                            <outlet property="nameOfItem" destination="pWe-hG-w1C" id="Arn-zo-wmN"/>
+                                                            <outlet property="okImage" destination="L9q-G0-vKo" id="65t-93-eK1"/>
+                                                            <outlet property="priceLabel" destination="xxc-EM-BZW" id="bcW-wW-tKw"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -128,7 +128,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickSaveButton:" destination="d9c-Z3-i4O" eventType="touchUpInside" id="CNP-5y-YQn"/>
+                                    <action selector="saveButtonDidTap:" destination="d9c-Z3-i4O" eventType="touchUpInside" id="hkk-hw-u48"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAq-Lt-PQR">
@@ -178,22 +178,22 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="oXy-mb-69j">
                             <color key="tintColor" name="accentColor-2"/>
                             <connections>
-                                <action selector="dismissCheckPlan:" destination="d9c-Z3-i4O" id="xnG-ZM-hTU"/>
+                                <action selector="itemBarButtonDidTap:" destination="d9c-Z3-i4O" id="noE-0O-vNJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXx-Mc-tlO">
                             <color key="tintColor" name="accentColor-2"/>
                             <connections>
-                                <action selector="ClickAddButton:" destination="d9c-Z3-i4O" id="7qt-hs-rDF"/>
+                                <action selector="addButtonDidTap:" destination="d9c-Z3-i4O" id="LRr-Fd-koA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="AXx-Mc-tlO" id="bGd-iX-zO2"/>
+                        <outlet property="addButton" destination="AXx-Mc-tlO" id="cF8-bv-hwk"/>
+                        <outlet property="backgroundView" destination="zAq-Lt-PQR" id="1oP-Bj-2xM"/>
+                        <outlet property="listOfProductsTV" destination="Ygj-k1-xHs" id="3lc-Uj-izi"/>
                         <outlet property="saveButtton" destination="MHX-Ay-JdR" id="y3w-vO-Uwe"/>
-                        <outlet property="score" destination="8EW-F7-nPW" id="VL7-xg-zzz"/>
-                        <outlet property="tableView" destination="Ygj-k1-xHs" id="3lc-Uj-izi"/>
-                        <outlet property="viewScore" destination="zAq-Lt-PQR" id="1oP-Bj-2xM"/>
+                        <outlet property="totalBudgetInBottomLabel" destination="8EW-F7-nPW" id="VL7-xg-zzz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiH-dz-cYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -263,11 +263,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonClick" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
+                        <outlet property="addItemButton" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
                         <outlet property="cost" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
-                        <outlet property="kolvo" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
+                        <outlet property="countOfItem" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
                         <outlet property="name" destination="ICh-ap-st7" id="vX2-EJ-Vmt"/>
-                        <outlet property="valuee" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
+                        <outlet property="value" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INJ-xE-e7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

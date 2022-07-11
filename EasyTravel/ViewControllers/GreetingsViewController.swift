@@ -7,29 +7,21 @@
 
 import UIKit
 
-// MARK: - GreetingsViewController
-
 class GreetingsViewController: UIViewController {
-
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var selectMaleButton: UIButton!
     @IBOutlet weak var selectFemaleButton: UIButton!
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewWillAppear(_ animated: Bool) {
-        establishUserDefaultsHaveBeenVerifed()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        checkFirstLaunchApp()
     }
     
     // MARK: - Private methods
     
-    // Check user defaults verified
-    private func establishUserDefaultsHaveBeenVerifed() {
+    private func checkFirstLaunchApp() {
         let defaults = UserDefaults.standard
         let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
         
@@ -44,22 +36,22 @@ class GreetingsViewController: UIViewController {
         }
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func selectMaleButtonDidTap(_ sender: Any) {
+    private func sendToNextView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
         
-        UserSettings.userGender = "Мужской"
         navigationController?.pushViewController(mainVC, animated: true)
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func selectMaleButtonDidTap(_ sender: Any) {
+        UserSettings.userGender = "Мужской"
+        sendToNextView()
     }
     
     @IBAction func selectFemaleButtonDidTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
-        
         UserSettings.userGender = "Женский"
-        navigationController?.pushViewController(mainVC, animated: true)
+        sendToNextView()
     }
-
 }

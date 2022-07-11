@@ -7,11 +7,8 @@
 
 import UIKit
 
-// MARK: - CreateNewTripViewController
-
 class CreateNewTripViewController: UIViewController {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var nameTripTF: UITextField!
     @IBOutlet weak var currentDatePicker: UIDatePicker!
@@ -19,7 +16,7 @@ class CreateNewTripViewController: UIViewController {
     @IBOutlet weak var goToPlansButton: UIButton!
     
 
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +40,7 @@ class CreateNewTripViewController: UIViewController {
     
     // MARK: - Methods
     
-    func checker() {
+    func createAlert() {
         let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели название поездки!", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
@@ -65,13 +62,13 @@ class CreateNewTripViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanNavigationContoller") as? PackagePlanNavigationContoller else { return }
         plansVC.modalPresentationStyle = .fullScreen
+        guard let text = nameTripTF.text, !text.isEmpty else { return createAlert() }
         
-        guard let text = nameTripTF.text, !text.isEmpty else { return checker() }
+        nameTrip = text
+
         present(plansVC, animated: true)
     }
 }
-
-// MARK: - CreateNewTripNavigationController - empty class for storyboard
 
 class CreateNewTripNavigationController: UINavigationController {
 }
