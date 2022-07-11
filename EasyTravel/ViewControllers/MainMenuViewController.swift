@@ -31,9 +31,9 @@ class MainMenuViewController: UIViewController {
     var remainedMoneyText = "0"
     var storiesItems = Stories.getStories()
     
-    var totalBudgetMoney: Double = 0
-    var spentMoney: Double = 0
-    var remainedMoney: Double = 0
+    var totalBudgetMoney = 0.0
+    var spentMoney = 0.0
+    var remainedMoney = 0.0
     
     static var controller = MainMenuViewController().self
     
@@ -73,18 +73,11 @@ class MainMenuViewController: UIViewController {
         packageButton.addGestureRecognizer(tapGesture)
     }
     
-    private func setUpUI(Button button: UIButton) {
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.6
-        button.layer.shadowRadius = 10
-        button.layer.shadowOffset = CGSize(width: 0, height: 0)
-    }
-    
     private func setupBudget() {
         MainMenuViewController.controller = MainMenuViewController().self
-        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+        spentMoneyText = UserDefaults.standard.string(forKey: "spentMoneyKey") ?? "0"
         totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
-        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
     }
     
     // MARK: - Methods
@@ -245,9 +238,18 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
 
 extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
     func reloadBudget(for mainMoney: Double) {
+//        spentMoney = UserDefaults.standard.string(forKey: "spentMoneyKey")
+//        totalBudgetMoney = mainMoney
+//        remainedMoney = totalBudgetMoney - spentMoney
+//
+//        totalBudgetText = String(totalBudgetMoney)
+//        remainedMoneyText = String(remainedMoney)
+//        spentMoneyText = String(spentMoney)
+        
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
         remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
         spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+//        spentMoneyText = UserDefaults.standard.string(forKey: "spentMoneyKey") ?? "0"
         
         let indexPathTotal = IndexPath(item: 1, section: 0)
         let indexPathSpent = IndexPath(item: 2, section: 0)
@@ -257,7 +259,7 @@ extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
     }
     
     func saveBudget(budget: Double) {
-        spentMoney = (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip"))
+        spentMoney = UserDefaults.standard.double(forKey: "spentMoneyKey")
         totalBudgetMoney = budget
         remainedMoney = totalBudgetMoney - spentMoney
         
@@ -272,7 +274,8 @@ extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
        
         UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
-        UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
+        UserDefaults.standard.set(remainedMoney, forKey: "budgetForCreateTrip")
+        UserDefaults.standard.set(spentMoney, forKey: "spentMoneyKey")
     }
 }
 

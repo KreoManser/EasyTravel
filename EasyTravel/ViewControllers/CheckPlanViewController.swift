@@ -47,6 +47,11 @@ class CheckPlanViewController: UIViewController {
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
         dataStoreManager.saveTrip(TripInfo(name: nameTrip ?? "", plan: planTrip!, items: itemsTrip))
+        
+        if let delegate = CheckPlanViewController.delegate {
+            delegate.reloadBudget(for: remainedMoney)
+        }
+
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
