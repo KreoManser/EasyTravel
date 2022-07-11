@@ -61,8 +61,12 @@ class ChangeBudgetViewController: UIViewController {
         saveInUserDefaults()
         guard let stringBudget = budgetTextField.text, !stringBudget.isEmpty else { return }
         if let currentBudget = Int(stringBudget) {
+            if currentBudget > 0 {
             delegate?.saveBudget(budget: Double(currentBudget))
             dismiss(animated: true)
+            } else {
+                showAlert()
+            }
         } else {
             showAlert()
         }

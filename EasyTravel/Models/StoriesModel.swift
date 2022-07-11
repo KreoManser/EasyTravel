@@ -23,9 +23,6 @@ struct Stories {
                 descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             
-            
-            
-            
             Stories(
                 icon: UIImage(named: "storiesImage"),
                 backgroundImage: UIImage(named: "storyOne"),
