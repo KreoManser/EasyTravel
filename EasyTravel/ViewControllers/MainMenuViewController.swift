@@ -37,13 +37,10 @@ class MainMenuViewController: UIViewController {
     
     static var controller = MainMenuViewController().self
     
-    
     // MARK: - Private Properties
     
     private var packageItems: [Plan] = Plan.getPlan()
     private let dataStoreManager = DataStoreManager()
-    
-    // MARK: - Delegate
     
     // MARK: - View life cycle
     
@@ -55,14 +52,9 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataStoreManager.prepareForWork()
-        
         navigationItem.hidesBackButton = true
         setupGesture()
-        
-        MainMenuViewController.controller = MainMenuViewController().self
-        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
-        totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
-        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        setupBudget()
     }
     
     func configureActiveTrips() {
@@ -86,6 +78,13 @@ class MainMenuViewController: UIViewController {
         button.layer.shadowOpacity = 0.6
         button.layer.shadowRadius = 10
         button.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    private func setupBudget() {
+        MainMenuViewController.controller = MainMenuViewController().self
+        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+        totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
+        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
     }
     
     // MARK: - Methods
@@ -136,11 +135,9 @@ class MainMenuViewController: UIViewController {
         settingsVC.modalPresentationStyle = .fullScreen
         present(settingsVC, animated: true)
     }
-
 }
 
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case storiesCollectionView:
@@ -211,8 +208,6 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             default:
                 break
             }
-            
-            
         default:
             break
         }
@@ -225,13 +220,9 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         }
         return CGSize(width: self.storiesCollectionView.frame.height / 7 * 5.2, height: self.storiesCollectionView.frame.height / 6.5 * 5.2)
     }
-    
     // обработка нажатий на ячейки в "каруселях"
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
-            
         case storiesCollectionView:
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
@@ -239,25 +230,18 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             storiesVC.titleText = storiesItems[indexPath.row].titleText
             storiesVC.descriptionText = storiesItems[indexPath.row].descriptionText
             navigationController?.pushViewController(storiesVC, animated: true)
-            
-            
         //case tripCollectionView: нажатие на активную поездку
         default:
             break
         }
     }
-    
 }
-
-// MARK: - MainMenuViewController extension popover
 
 extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
+        .none
     }
 }
-
-// MARK: - MainMenuViewController extension delegate
 
 extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
     func reloadBudget(for mainMoney: Double) {
@@ -269,16 +253,13 @@ extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
         let indexPathSpent = IndexPath(item: 2, section: 0)
         let indexPathRemained = IndexPath(item: 3, section: 0)
         
-        
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
-        
     }
     
     func saveBudget(budget: Double) {
         spentMoney = (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip"))
         totalBudgetMoney = budget
         remainedMoney = totalBudgetMoney - spentMoney
-        
         
         totalBudgetText = String(totalBudgetMoney)
         remainedMoneyText = String(remainedMoney)
@@ -288,13 +269,10 @@ extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
         let indexPathSpent = IndexPath(item: 2, section: 0)
         let indexPathRemained = IndexPath(item: 3, section: 0)
         
-        
         financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
-        
        
         UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
         UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
     }
-        
 }
 
