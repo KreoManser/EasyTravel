@@ -46,6 +46,11 @@ class CheckPlanViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
+        
+        if let delegate = CheckPlanViewController.delegate {
+             delegate.reloadBudget(for: remainedMoney)
+         }
+        
         dataStoreManager.saveTrip(TripInfo(name: nameTrip ?? "", plan: planTrip!, items: itemsTrip))
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
@@ -158,9 +163,7 @@ extension CheckPlanViewController: CreatePlanDelegate {
         arrayCheckPlan.append(plan)
         sumArray.append(plan.cost)
         sumCountArray.append(plan.quantity)
-        
         checkSum()
-        
         DispatchQueue.main.async { self.listOfProductsTV.reloadData() }
     }
 }
