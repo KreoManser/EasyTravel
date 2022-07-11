@@ -7,16 +7,13 @@
 
 import UIKit
 
-// MARK: - TripViewController
-
 class TripViewController: UIViewController {
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     var controller: UIViewController?
@@ -27,8 +24,10 @@ class TripViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)
         guard let planVC = storyboard.instantiateViewController(withIdentifier: "PlanNavigationController") as? PlanNavigationController else { return }
         
+        planTrip = Plan(image: "Trip", title: "Путешествие", package: packageList[0], descriptionPlan: "Путешествие – это нечто большее. Это постоянное движение вперед.")
         
         planVC.modalPresentationStyle = .fullScreen
+        
         present(planVC, animated: true)
     }
 }

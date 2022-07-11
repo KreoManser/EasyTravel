@@ -7,29 +7,21 @@
 
 import UIKit
 
-// MARK: - GreetingsViewController
-
 class GreetingsViewController: UIViewController {
-
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var selectMaleButton: UIButton!
     @IBOutlet weak var selectFemaleButton: UIButton!
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewWillAppear(_ animated: Bool) {
-        establishUserDefaultsHaveBeenVerifed()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        checkFirstLaunchApp()
     }
     
     // MARK: - Private methods
     
-    // Check user defaults verified
-    private func establishUserDefaultsHaveBeenVerifed() {
+    private func checkFirstLaunchApp() {
         let defaults = UserDefaults.standard
         let storyboardMain = UIStoryboard(name: "Main", bundle: nil)
         
@@ -44,7 +36,7 @@ class GreetingsViewController: UIViewController {
         }
     }
     
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func selectMaleButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

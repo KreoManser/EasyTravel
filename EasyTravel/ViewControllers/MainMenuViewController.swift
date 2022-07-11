@@ -7,12 +7,8 @@
 
 import UIKit
 
-// MARK: - MainMenuViewController
-
-
 class MainMenuViewController: UIViewController {
-
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var recommendationsImage: UIImageView!
     @IBOutlet weak var recommendationsBackground: UIView!
@@ -45,15 +41,20 @@ class MainMenuViewController: UIViewController {
     // MARK: - Private Properties
     
     private var packageItems: [Plan] = Plan.getPlan()
+    private let dataStoreManager = DataStoreManager()
     
     // MARK: - Delegate
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tripCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
+        dataStoreManager.prepareForWork()
         
         navigationItem.hidesBackButton = true
         setupGesture()
@@ -62,6 +63,14 @@ class MainMenuViewController: UIViewController {
         remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
         totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
         spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+    }
+    
+    func configureActiveTrips() {
+        guard let checkData = UserDefaults.standard.object(forKey: "ActiveTrips") as? Data, let _ = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(checkData) as? [TripInfo] else { return }
+        //collectionView(tripCollectionView.self, numberOfItemsInSection: activeTrips.count)
+        DispatchQueue.main.async {
+            self.tripCollectionView.reloadData()
+        }
     }
     
     // MARK: - Private Methods
@@ -100,16 +109,8 @@ class MainMenuViewController: UIViewController {
 
         self.present(popVC, animated: true)
     }
-    
-    func setupUI() {
-//        buttonTapBar.showShadow()
-//        buttonFinance.showShadow()
-//        buttonStories.showShadow()
-//        buttonRecomendation.showShadow()
-    }
-    
 
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func addNewPackageButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CreateNewTrip", bundle: nil)
@@ -138,8 +139,6 @@ class MainMenuViewController: UIViewController {
 
 }
 
-// MARK: - MainMenuViewController extension for UICollection
-
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -149,7 +148,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case financeCollectionView:
             return 4
         case tripCollectionView:
-            return packageItems.count
+            return activeTrips.count
         default:
             break
         }
@@ -162,8 +161,8 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case tripCollectionView:
             guard let cell = tripCollectionView.dequeueReusableCell(withReuseIdentifier: "tripCell", for: indexPath) as? TripCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.tripImageView.image = packageItems[indexPath.row].image
-            cell.typeOfTripLabel.text = packageItems[indexPath.row].title
+            cell.tripImageView.image = UIImage(named: activeTrips[indexPath.row].plan.image ?? "")
+            cell.typeOfTripLabel.text = activeTrips[indexPath.row].name
             cell.layer.cornerRadius = 25
             
             return cell

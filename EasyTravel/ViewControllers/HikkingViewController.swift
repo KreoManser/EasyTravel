@@ -10,6 +10,8 @@ import UIKit
 // MARK: - HikkingViewController
 
 class HikkingViewController: UIViewController {
+    
+    var nameTrip: String?
 
     // MARK: - Life cycle
     
@@ -24,7 +26,10 @@ class HikkingViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)
         guard let planVC = storyboard.instantiateViewController(withIdentifier: "PlanNavigationController") as? PlanNavigationController else { return }
         
+        planTrip = Plan(image: "Hikking", title: "Поход", package: packageList[2], descriptionPlan: "Поход – это совместное путешествие группы людей по определенному маршруту и верный путь к обретению здоровья.")
+        
         planVC.modalPresentationStyle = .fullScreen
+        
         present(planVC, animated: true)
     }
 }

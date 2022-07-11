@@ -7,8 +7,6 @@
 
 import UIKit
 
-// MARK: - Protocols
-
 protocol changeBudget: AnyObject {
     func change(budget: BudgetStruct)
 }
@@ -17,13 +15,8 @@ protocol changeBudgetDelegate: AnyObject {
     func saveBudget(budget: Double)
 }
 
-
-
-// MARK: - ChangeBudgetViewController
-
 class ChangeBudgetViewController: UIViewController {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var budgetTextField: UITextField!
@@ -31,10 +24,9 @@ class ChangeBudgetViewController: UIViewController {
     // MARK: - Properties
     
     var change: String! = "0"
-    
     weak var delegate: changeBudgetDelegate?
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +47,7 @@ class ChangeBudgetViewController: UIViewController {
         Budget.budgetValue = budgetTextField.text
     }
 
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func buttonDidTap(_ sender: Any) {
         saveInUserDefaults()

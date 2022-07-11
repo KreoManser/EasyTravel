@@ -7,19 +7,16 @@
 
 import UIKit
 
-// MARK: - SpentCollectionViewCell
-
 class SpentCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var spentMoneyLabel: UILabel!
     
-    // MARK: - Private Properties
+    // MARK: - Properties
     
     var spentMoney = 0.0
     
-    // MARK: - Life Cycle
+    // MARK: - View life Cycle
     
     override class func awakeFromNib() {
         super.awakeFromNib()

@@ -93,10 +93,10 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="imageF" destination="L9q-G0-vKo" id="65t-93-eK1"/>
-                                                            <outlet property="kolve" destination="fPY-C4-gSK" id="kYY-06-Laf"/>
-                                                            <outlet property="labels" destination="pWe-hG-w1C" id="Arn-zo-wmN"/>
-                                                            <outlet property="lastname" destination="xxc-EM-BZW" id="bcW-wW-tKw"/>
+                                                            <outlet property="countOfItemLabel" destination="fPY-C4-gSK" id="kYY-06-Laf"/>
+                                                            <outlet property="nameOfItem" destination="pWe-hG-w1C" id="Arn-zo-wmN"/>
+                                                            <outlet property="okImage" destination="L9q-G0-vKo" id="65t-93-eK1"/>
+                                                            <outlet property="priceLabel" destination="xxc-EM-BZW" id="bcW-wW-tKw"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -178,7 +178,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.circle" catalog="system" id="oXy-mb-69j">
                             <color key="tintColor" name="accentColor-2"/>
                             <connections>
-                                <action selector="dismissCheckPlan:" destination="d9c-Z3-i4O" id="xnG-ZM-hTU"/>
+                                <action selector="itemBarButtonDidTap:" destination="d9c-Z3-i4O" id="noE-0O-vNJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXx-Mc-tlO">
@@ -263,11 +263,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonClick" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
+                        <outlet property="addItemButton" destination="NDk-Iu-IHu" id="jhV-yR-Frc"/>
                         <outlet property="cost" destination="FdN-Ig-oFe" id="v0X-bH-Fgz"/>
-                        <outlet property="kolvo" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
+                        <outlet property="countOfItem" destination="dem-r0-zg7" id="eZt-xU-ivV"/>
                         <outlet property="name" destination="ICh-ap-st7" id="vX2-EJ-Vmt"/>
-                        <outlet property="valuee" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
+                        <outlet property="value" destination="dem-r0-zg7" id="dLO-xT-ONN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INJ-xE-e7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

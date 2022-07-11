@@ -7,11 +7,9 @@
 
 import UIKit
 
-// MARK: - TripCollectionViewCell
-
 class TripCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var typeOfTripLabel: UILabel!

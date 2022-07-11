@@ -7,11 +7,8 @@
 
 import UIKit
 
-// MARK: - StoriesCollectionViewCell
-
 class StoriesCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var storiesImage: UIImageView!
 }

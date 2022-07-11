@@ -11,11 +11,9 @@ struct Page {
     let name: String
 }
 
-// MARK: - PopTableViewCell
-
 class PopTableViewCell: UITableViewCell {
     
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet var nameLabelPop: UILabel!
     

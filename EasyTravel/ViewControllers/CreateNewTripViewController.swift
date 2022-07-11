@@ -7,11 +7,9 @@
 
 import UIKit
 
-// MARK: - CreateNewTripViewController
-
 class CreateNewTripViewController: UIViewController {
     
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var nameTripTF: UITextField!
     @IBOutlet weak var currentDatePicker: UIDatePicker!
@@ -19,7 +17,7 @@ class CreateNewTripViewController: UIViewController {
     @IBOutlet weak var goToPlansButton: UIButton!
     
 
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +65,13 @@ class CreateNewTripViewController: UIViewController {
         plansVC.modalPresentationStyle = .fullScreen
         
         guard let text = nameTripTF.text, !text.isEmpty else { return checker() }
+        
+        nameTrip = text
+
+//        present(plansVC, animated: true)
         present(plansVC, animated: true)
     }
 }
-
-// MARK: - CreateNewTripNavigationController - empty class for storyboard
 
 class CreateNewTripNavigationController: UINavigationController {
 }

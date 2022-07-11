@@ -7,15 +7,13 @@
 
 import UIKit
 
-
 protocol reloadBudgetDelegate: AnyObject {
     func reloadBudget(for mainMoney: Double)
 }
 
-// MARK: - CheckPlanViewController
 class CheckPlanViewController: UIViewController {
     
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet var saveButtton: UIButton!
     @IBOutlet var viewScore: UIView!
@@ -23,39 +21,41 @@ class CheckPlanViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var score: UILabel!
     
-    static var delegate: reloadBudgetDelegate?
-    
     
     // MARK: - Properties
     
-    var arrayCheckPlan:[CheckPlan] = []
+    static var delegate: reloadBudgetDelegate?
+    
     let idCell = "mainCell"
+    var arrayCheckPlan:[CheckPlan] = []
     var sumArray: [Double] = []
     var sumKolArray: [Int] = []
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
+    
+    private let dataStoreManager = DataStoreManager()
  
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         settingsView()
     }
     
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func clickSaveButton(_ sender: Any) {
-        if let delegate = CheckPlanViewController.delegate {
-            delegate.reloadBudget(for: mainMoney)
-        }
+        dataStoreManager.saveTrip(TripInfo(name: nameTrip ?? "", plan: planTrip!, items: itemsTrip))
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func dismissCheckPlan(_ sender: Any) {
+    @IBAction func itemBarButtonDidTap(_ sender: Any) {
         dismiss(animated: true)
     }
     
-    @IBAction func ClickAddButton(_ sender: Any) {
+    @IBAction func addButtonDidTap(_ sender: Any) {
         guard let createVc = storyboard?.instantiateViewController(withIdentifier: "CreateTripViewController") as? CreateTripViewController
         else { return }
         createVc.delegate = self
@@ -94,8 +94,6 @@ class CheckPlanViewController: UIViewController {
     
     func settingsView(){
         score.text = String(mainMoney)
-        tableView.dataSource = self
-        tableView.delegate = self
         viewScore.layer.cornerRadius = 20
         saveButtton.layer.cornerRadius = 20
         viewScore.layer.masksToBounds = true;
@@ -112,7 +110,6 @@ class CheckPlanViewController: UIViewController {
     }
     
 }
-
 // MARK: - CheckPlanViewController extension TableView
     
 extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
@@ -128,10 +125,10 @@ extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? CheckPlanTableViewCell
         else { return UITableViewCell() }
         
-        cell.labels.text = arrayCheckPlan[indexPath.row].object
+        cell.nameOfItem.text = arrayCheckPlan[indexPath.row].object
         let ff = (arrayCheckPlan[indexPath.row].cost) * Double(arrayCheckPlan[indexPath.row].quantity)
-        cell.lastname.text =  "\(ff) руб"
-        cell.kolve.text = "x\(arrayCheckPlan[indexPath.row].quantity)"
+        cell.priceLabel.text =  "\(ff) руб"
+        cell.countOfItemLabel.text = "x\(arrayCheckPlan[indexPath.row].quantity)"
         return cell
     }
     
@@ -156,23 +153,17 @@ extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-// MARK: - CheckPlanViewController extension Delegate
-
 extension CheckPlanViewController: CreatePlanDelegate {
-    
     func savePlan(for plan: CheckPlan) {
+        itemsTrip.append(Item(itemName: plan.object, price: plan.cost))
+        
         arrayCheckPlan.append(plan)
         sumArray.append(plan.cost)
         sumKolArray.append(plan.quantity)
         totalScore()
         DispatchQueue.main.async{ self.tableView.reloadData() }
     }
-    
-    
 }
-
-
-// MARK: - PlanNavigationController
 
 class PlanNavigationController: UINavigationController {
     
