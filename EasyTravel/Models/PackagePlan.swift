@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 let packageList = ["trip", "visit", "hikking"]
 

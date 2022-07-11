@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct ProductModel {
     var label: String
