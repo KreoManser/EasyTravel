@@ -8,7 +8,7 @@
 import UIKit
 
 protocol reloadBudgetDelegate: AnyObject {
-    func reloadBudget(for mainMoney: Double)
+    func reloadBudget(for mainMoney: Double, value: Double)
 }
 
 class CheckPlanViewController: UIViewController {
@@ -49,7 +49,7 @@ class CheckPlanViewController: UIViewController {
         dataStoreManager.saveTrip(TripInfo(name: nameTrip ?? "", plan: planTrip!, items: itemsTrip))
         
         if let delegate = CheckPlanViewController.delegate {
-            delegate.reloadBudget(for: remainedMoney)
+            delegate.reloadBudget(for: remainedMoney, value: spentMoniesReloader(sumArray: sumArray, countArray: sumCountArray))
         }
 
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -67,6 +67,14 @@ class CheckPlanViewController: UIViewController {
     }
 
     // MARK: - Methods
+    
+    func spentMoniesReloader(sumArray: [Double], countArray: [Int]) -> Double {
+        var sumArr = 0.0
+        for index in 0..<sumArray.count {
+            sumArr += sumArray[index] * Double(countArray[index])
+        }
+        return sumArr
+    }
     
     func checkSum() {
         if checkBudget == true {

@@ -237,10 +237,11 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
 }
 
 extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
-    func reloadBudget(for mainMoney: Double) {
+    func reloadBudget(for mainMoney: Double, value: Double) {
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
+        UserDefaults.standard.set(UserDefaults.standard.double(forKey: "spentMoneyKey") + value, forKey: "spentMoneyKey")
         remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
-        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        spentMoneyText = UserDefaults.standard.string(forKey: "spentMoneyKey") ?? "0"
         
         let indexPathTotal = IndexPath(item: 1, section: 0)
         let indexPathSpent = IndexPath(item: 2, section: 0)
