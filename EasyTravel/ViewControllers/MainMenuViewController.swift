@@ -234,8 +234,11 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     // обработка нажатий на ячейки в "каруселях"
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
+            
         case storiesCollectionView:
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
@@ -243,6 +246,8 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             storiesVC.titleText = storiesItems[indexPath.row].titleText
             storiesVC.descriptionText = storiesItems[indexPath.row].descriptionText
             navigationController?.pushViewController(storiesVC, animated: true)
+            
+            
         //case tripCollectionView: нажатие на активную поездку
         default:
             break
