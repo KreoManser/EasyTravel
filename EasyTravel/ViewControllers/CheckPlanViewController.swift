@@ -45,7 +45,7 @@ class CheckPlanViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func clickSaveButton(_ sender: Any) {
+    @IBAction func saveButtonDidTap(_ sender: Any) {
         dataStoreManager.saveTrip(TripInfo(name: nameTrip ?? "", plan: planTrip!, items: itemsTrip))
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
