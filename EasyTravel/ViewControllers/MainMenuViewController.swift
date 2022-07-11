@@ -213,12 +213,6 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 break
             }
             
-            let indexPathTotal = IndexPath(item: 1, section: 0)
-            let indexPathSpent = IndexPath(item: 2, section: 0)
-            let indexPathRemained = IndexPath(item: 3, section: 0)
-            
-            
-            financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
             
         default:
             break
