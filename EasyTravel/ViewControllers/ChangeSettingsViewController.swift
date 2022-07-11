@@ -7,16 +7,12 @@
 
 import UIKit
 
-
 protocol ChangeUserInfo: AnyObject {
     func changeData(user: User)
 }
 
-// MARK: - ChangeSettingsViewController
-
 class ChangeSettingsViewController: UIViewController {
-    
-    // MARK: -IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
@@ -27,17 +23,11 @@ class ChangeSettingsViewController: UIViewController {
     var pickedGender: GenderType?
     weak var delegate: ChangeUserInfo?
     
-    // MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func saveButtonDidTap(_ sender: Any) {
         if nameTextField.text == "" {
-            checker(message: "Вы не ввели имя!")
+            createAlert(message: "Вы не ввели имя!")
         } else {
             switch segmentedControl.selectedSegmentIndex {
             case 0:
@@ -47,10 +37,8 @@ class ChangeSettingsViewController: UIViewController {
             default:
                 break
             }
-            
             guard let pickedGender = pickedGender else { return }
-            
-            guard nameTextField.text?.count ?? 0 <= 12 else { return checker(message: "Слишком длинное имя") }
+            guard nameTextField.text?.count ?? 0 <= 12 else { return createAlert(message: "Слишком длинное имя") }
             UserSettings.userName = nameTextField.text
             UserSettings.userGender = pickedGender.rawValue
             
@@ -62,7 +50,7 @@ class ChangeSettingsViewController: UIViewController {
     
     // MARK: - Methods
 
-    func checker(message: String) {
+    func createAlert(message: String) {
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)

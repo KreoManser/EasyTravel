@@ -12,26 +12,25 @@ protocol reloadBudgetDelegate: AnyObject {
 }
 
 class CheckPlanViewController: UIViewController {
-    
     // MARK: - Outlets
     
     @IBOutlet var saveButtton: UIButton!
-    @IBOutlet var viewScore: UIView!
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var addButton: UIBarButtonItem!
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var score: UILabel!
-    
+    @IBOutlet var listOfProductsTV: UITableView!
+    @IBOutlet var totalBudgetInBottomLabel: UILabel!
     
     // MARK: - Properties
     
     static var delegate: reloadBudgetDelegate?
-    
     let idCell = "mainCell"
     var arrayCheckPlan:[CheckPlan] = []
     var sumArray: [Double] = []
-    var sumKolArray: [Int] = []
-    var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
-    var flag = true
+    var sumCountArray: [Int] = []
+    var remainedMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
+    var checkBudget = true
+    
+    // MARK: - Private properties
     
     private let dataStoreManager = DataStoreManager()
  
@@ -39,8 +38,8 @@ class CheckPlanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        listOfProductsTV.dataSource = self
+        listOfProductsTV.delegate = self
         settingsView()
     }
     
@@ -64,66 +63,66 @@ class CheckPlanViewController: UIViewController {
 
     // MARK: - Methods
     
-    func totalScore() -> (Void){
-        if flag == true {
+    func checkSum() {
+        if checkBudget == true {
             var sum = 0.0
             if sumArray.count == 0 {
-                score.text = "0"
+                totalBudgetInBottomLabel.text = "0"
             } else {
                 for index in sumArray.count-1...sumArray.count-1 { //0,1
-                sum = (Double(sumArray[index]) * Double(sumKolArray[index]))
-                if sum > mainMoney {
+                sum = (Double(sumArray[index]) * Double(sumCountArray[index]))
+                if sum > remainedMoney {
                     sumArray.removeLast()
                     arrayCheckPlan.removeLast()
-                    sumKolArray.removeLast()
+                    sumCountArray.removeLast()
                     sum = 0
                 }
             }
-                mainMoney = mainMoney - sum
-                if mainMoney == 0 {
-                    flag = false
+                remainedMoney = remainedMoney - sum
+                if remainedMoney == 0 {
+                    checkBudget = false
                 }
-                score.text = String( mainMoney)
+                totalBudgetInBottomLabel.text = String(remainedMoney)
             }
         } else {
             sumArray.removeLast()
             arrayCheckPlan.removeLast()
-            sumKolArray.removeLast()
+            sumCountArray.removeLast()
         }
     }
     
     func settingsView(){
-        score.text = String(mainMoney)
-        viewScore.layer.cornerRadius = 20
+        totalBudgetInBottomLabel.text = String(remainedMoney)
+        backgroundView.layer.cornerRadius = 20
         saveButtton.layer.cornerRadius = 20
-        viewScore.layer.masksToBounds = true;
-        viewScore.backgroundColor = UIColor(
+        backgroundView.layer.masksToBounds = true;
+        backgroundView.backgroundColor = UIColor(
             red: 104.0 / 255,
             green: 109.0 / 255,
             blue: 224.0 / 255,
-            alpha: 1.0)
+            alpha: 1.0
+        )
         saveButtton.backgroundColor = UIColor(
             red: 104.0 / 255,
             green: 109.0 / 255,
             blue: 224.0 / 255,
-            alpha: 1.0)
+            alpha: 1.0
+        )
     }
     
 }
-// MARK: - CheckPlanViewController extension TableView
     
 extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCheckPlan.count
     }
     
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? CheckPlanTableViewCell
-        else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? CheckPlanTableViewCell else { return UITableViewCell() }
         
         cell.nameOfItem.text = arrayCheckPlan[indexPath.row].object
         let ff = (arrayCheckPlan[indexPath.row].cost) * Double(arrayCheckPlan[indexPath.row].quantity)
@@ -135,14 +134,14 @@ extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle : UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            mainMoney += ((sumArray[indexPath.row]) * Double(sumKolArray[indexPath.row]))
-            if mainMoney >= 0 {
-                flag = true
+            remainedMoney += ((sumArray[indexPath.row]) * Double(sumCountArray[indexPath.row]))
+            if remainedMoney >= 0 {
+                checkBudget = true
             }
             arrayCheckPlan.remove(at: indexPath.row)
             sumArray.remove(at: indexPath.row)
-            sumKolArray.remove(at: indexPath.row)
-            score.text = String( mainMoney)
+            sumCountArray.remove(at: indexPath.row)
+            totalBudgetInBottomLabel.text = String( remainedMoney)
             tableView.deleteRows(at: [indexPath] , with: .fade)
             tableView.endUpdates()
         }
@@ -156,17 +155,17 @@ extension CheckPlanViewController: UITableViewDataSource, UITableViewDelegate {
 extension CheckPlanViewController: CreatePlanDelegate {
     func savePlan(for plan: CheckPlan) {
         itemsTrip.append(Item(itemName: plan.object, price: plan.cost))
-        
         arrayCheckPlan.append(plan)
         sumArray.append(plan.cost)
-        sumKolArray.append(plan.quantity)
-        totalScore()
-        DispatchQueue.main.async{ self.tableView.reloadData() }
+        sumCountArray.append(plan.quantity)
+        
+        checkSum()
+        
+        DispatchQueue.main.async { self.listOfProductsTV.reloadData() }
     }
 }
 
 class PlanNavigationController: UINavigationController {
-    
 }
 
 

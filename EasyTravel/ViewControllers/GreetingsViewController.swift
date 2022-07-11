@@ -36,22 +36,22 @@ class GreetingsViewController: UIViewController {
         }
     }
     
+    private func sendToNextView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
+        
+        navigationController?.pushViewController(mainVC, animated: true)
+    }
+    
     // MARK: - Actions
     
     @IBAction func selectMaleButtonDidTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
-        
         UserSettings.userGender = "Мужской"
-        navigationController?.pushViewController(mainVC, animated: true)
+        sendToNextView()
     }
     
     @IBAction func selectFemaleButtonDidTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as? MainMenuViewController else { return }
-        
         UserSettings.userGender = "Женский"
-        navigationController?.pushViewController(mainVC, animated: true)
+        sendToNextView()
     }
-
 }

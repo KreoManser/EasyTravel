@@ -12,19 +12,9 @@ class PackagePlanViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.dataSource = self
         
         setupFirstPage()
-        
-//        if let firstVC = viewControllersList.first {
-//            self.setViewControllers(
-//                [firstVC],
-//                direction: .forward,
-//                animated: true,
-//                completion: nil
-//            )
-//        }
     }
     
     // MARK: - Private methods

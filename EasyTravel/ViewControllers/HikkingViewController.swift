@@ -10,16 +10,6 @@ import UIKit
 // MARK: - HikkingViewController
 
 class HikkingViewController: UIViewController {
-    
-    var nameTrip: String?
-
-    // MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     // MARK: - IBActions
 
     @IBAction func goToPlan(_ sender: Any) {

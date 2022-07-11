@@ -8,17 +8,11 @@
 import UIKit
 
 class TripViewController: UIViewController {
-    
-    // MARK: - View life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    // MARK: - Properties
     
     var controller: UIViewController?
 
-    // MARK: - IBActions
+    // MARK: - Actions
     
     @IBAction func goToPlan(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CheckPlan", bundle: nil)

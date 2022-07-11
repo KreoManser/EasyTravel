@@ -7,11 +7,8 @@
 
 import UIKit
 
-// MARK: - ShowStoryViewController
-
 class ShowStoryViewController: UIViewController {
-
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet weak var imageBackgroundView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,22 +18,18 @@ class ShowStoryViewController: UIViewController {
     var titleText: String?
     var descriptionText: String?
     
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let backgroundImage = backgroundImage {
             imageBackgroundView.image = backgroundImage
         }
-        
         if let titleText = titleText {
             titleLabel.text = titleText
         }
-        
         if let descriptionText = descriptionText {
             descriptionLabel.text = descriptionText
         }
-        
     }
-    
-    
 }

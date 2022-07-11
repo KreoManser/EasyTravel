@@ -184,16 +184,16 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXx-Mc-tlO">
                             <color key="tintColor" name="accentColor-2"/>
                             <connections>
-                                <action selector="ClickAddButton:" destination="d9c-Z3-i4O" id="7qt-hs-rDF"/>
+                                <action selector="addButtonDidTap:" destination="d9c-Z3-i4O" id="LRr-Fd-koA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="AXx-Mc-tlO" id="bGd-iX-zO2"/>
+                        <outlet property="addButton" destination="AXx-Mc-tlO" id="cF8-bv-hwk"/>
+                        <outlet property="backgroundView" destination="zAq-Lt-PQR" id="1oP-Bj-2xM"/>
+                        <outlet property="listOfProductsTV" destination="Ygj-k1-xHs" id="3lc-Uj-izi"/>
                         <outlet property="saveButtton" destination="MHX-Ay-JdR" id="y3w-vO-Uwe"/>
-                        <outlet property="score" destination="8EW-F7-nPW" id="VL7-xg-zzz"/>
-                        <outlet property="tableView" destination="Ygj-k1-xHs" id="3lc-Uj-izi"/>
-                        <outlet property="viewScore" destination="zAq-Lt-PQR" id="1oP-Bj-2xM"/>
+                        <outlet property="totalBudgetInBottomLabel" destination="8EW-F7-nPW" id="VL7-xg-zzz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiH-dz-cYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

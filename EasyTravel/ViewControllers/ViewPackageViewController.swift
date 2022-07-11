@@ -10,7 +10,6 @@ import UIKit
 var typeOfTrip: String = packageList[0]
 
 class ViewPackageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     // MARK: - Outlets
     
     @IBOutlet weak var mainView: UIButton!
@@ -50,7 +49,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         ProductModel(label: "Зарядное устройство"),
         ProductModel(label: "Powerbank")
     ]
-    
     
     var visitProducts: [ProductModel] = [
         ProductModel(label: "Документы"),
@@ -107,7 +105,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         dismiss(animated: true)
     }
     
-    
     // MARK: - Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,7 +138,6 @@ class ViewPackageViewController: UIViewController, UITableViewDataSource, UITabl
         default:
             return UITableViewCell()
         }
-        
         return cell
     }
 }

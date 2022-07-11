@@ -8,15 +8,6 @@
 import UIKit
 
 class VisitViewController: UIViewController {
-
-    // MARK: - View life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
-
     // MARK: - IBActions
     
     @IBAction func goToPlan(_ sender: Any) {

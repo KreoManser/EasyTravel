@@ -7,11 +7,8 @@
 
 import UIKit
 
-// MARK: - SettingsViewController
-
 class SettingsViewController: UIViewController {
-    
-    // MARK: - IBOutlets
+    // MARK: - Outlets
     
     @IBOutlet var image1: UIImageView!
     @IBOutlet var image2: UIImageView!
@@ -26,10 +23,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var themeSwitch: UISwitch!
     @IBOutlet weak var themeLabel: UILabel!
     
+    // MARK: - Properties
+    
     let starIsNotHidden = "iconfinder_checked_favorite_star_favourite_rating_1564507 (1)"
     let starIsHidden = "iconfinder_checked_favorite_star_favourite_rating_1564507-1"
     
-    // MARK: - Life cycle
+    // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

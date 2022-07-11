@@ -8,7 +8,6 @@
 import UIKit
 
 class CreateNewTripViewController: UIViewController {
-    
     // MARK: - Outlets
     
     @IBOutlet weak var nameTripTF: UITextField!
@@ -41,7 +40,7 @@ class CreateNewTripViewController: UIViewController {
     
     // MARK: - Methods
     
-    func checker() {
+    func createAlert() {
         let alert = UIAlertController(title: "Ошибка", message: "Вы не ввели название поездки!", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
@@ -63,12 +62,10 @@ class CreateNewTripViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Plans", bundle: nil)
         guard let plansVC = storyboard.instantiateViewController(withIdentifier: "PackagePlanNavigationContoller") as? PackagePlanNavigationContoller else { return }
         plansVC.modalPresentationStyle = .fullScreen
-        
-        guard let text = nameTripTF.text, !text.isEmpty else { return checker() }
+        guard let text = nameTripTF.text, !text.isEmpty else { return createAlert() }
         
         nameTrip = text
 
-//        present(plansVC, animated: true)
         present(plansVC, animated: true)
     }
 }
