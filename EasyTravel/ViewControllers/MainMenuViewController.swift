@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - MainMenuViewController
 
+
 class MainMenuViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -30,17 +31,22 @@ class MainMenuViewController: UIViewController {
     // MARK: - Properties
     
     var totalBudgetText = "0"
-    var totalBudgetText2 = "0"
-    var totalBudgetText3 = "0"
+    var spentMoneyText = "0"
+    var remainedMoneyText = "0"
     var storiesItems = Stories.getStories()
     
     var totalBudgetMoney: Double = 0
-    var totalBudgetMoney2: Double = 0
-    var totalBudgetMoney3: Double = 0
+    var spentMoney: Double = 0
+    var remainedMoney: Double = 0
+    
+    static var controller = MainMenuViewController().self
+    
     
     // MARK: - Private Properties
     
     private var packageItems: [Plan] = Plan.getPlan()
+    
+    // MARK: - Delegate
     
     // MARK: - Life cycle
     
@@ -52,9 +58,10 @@ class MainMenuViewController: UIViewController {
         navigationItem.hidesBackButton = true
         setupGesture()
         
-        totalBudgetText3 = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+        MainMenuViewController.controller = MainMenuViewController().self
+        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
         totalBudgetText = UserDefaults.standard.string(forKey: "budgetForCreateTripFirstEl") ?? "0"
-        totalBudgetText2 = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
     }
     
     // MARK: - Private Methods
@@ -101,12 +108,14 @@ class MainMenuViewController: UIViewController {
 //        buttonRecomendation.showShadow()
     }
     
+
     // MARK: - IBActions
     
     @IBAction func addNewPackageButtonDidTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CreateNewTrip", bundle: nil)
         guard let createPlanVC = storyboard.instantiateViewController(withIdentifier: "CreateNewTripNavigationController") as? CreateNewTripNavigationController else { return }
-        
+
+        CheckPlanViewController.delegate = self
         createPlanVC.modalPresentationStyle = .fullScreen
         present(createPlanVC, animated: true)
     }
@@ -126,6 +135,7 @@ class MainMenuViewController: UIViewController {
         settingsVC.modalPresentationStyle = .fullScreen
         present(settingsVC, animated: true)
     }
+
 }
 
 // MARK: - MainMenuViewController extension for UICollection
@@ -186,21 +196,29 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "spentMoneyCell", for: indexPath) as? SpentCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 25
-                cell.spentMoneyLabel.text = totalBudgetText2
-                cell.spentMoney = totalBudgetMoney2
+                cell.spentMoneyLabel.text = spentMoneyText
+                cell.spentMoney = spentMoney
                 
                 return cell
             case 3:
                 guard let cell = financeCollectionView.dequeueReusableCell(withReuseIdentifier: "remainedMoneyCell", for: indexPath) as? RemainedCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.remainedMoneyLabel.text = totalBudgetText3
-                cell.remainedMoney = totalBudgetMoney3
+                cell.remainedMoneyLabel.text = remainedMoneyText
+                cell.remainedMoney = remainedMoney
                 cell.layer.cornerRadius = 25
                 
                 return cell
             default:
                 break
             }
+            
+            let indexPathTotal = IndexPath(item: 1, section: 0)
+            let indexPathSpent = IndexPath(item: 2, section: 0)
+            let indexPathRemained = IndexPath(item: 3, section: 0)
+            
+            
+            financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
+            
         default:
             break
         }
@@ -226,6 +244,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
             break
         }
     }
+    
 }
 
 // MARK: - MainMenuViewController extension popover
@@ -238,23 +257,43 @@ extension MainMenuViewController: UIPopoverPresentationControllerDelegate {
 
 // MARK: - MainMenuViewController extension delegate
 
-extension MainMenuViewController: changeBudgetDelegate {
-    func saveBudget(budget: Double) {
-
+extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
+    func reloadBudget(for mainMoney: Double) {
+        UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
+        remainedMoneyText = UserDefaults.standard.string(forKey: "budgetForCreateTrip") ?? "0"
+        spentMoneyText = String((UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip")))
+        
         let indexPathTotal = IndexPath(item: 1, section: 0)
+        let indexPathSpent = IndexPath(item: 2, section: 0)
         let indexPathRemained = IndexPath(item: 3, section: 0)
         
-        totalBudgetText = String(budget)
-        totalBudgetText3 = String(budget)
         
+        financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
+        
+    }
+    
+    func saveBudget(budget: Double) {
+        
+        spentMoney = (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip"))
         totalBudgetMoney = budget
-        totalBudgetMoney2 = 0.0
-        totalBudgetMoney3 = totalBudgetMoney
+        remainedMoney = totalBudgetMoney - spentMoney
         
-        financeCollectionView.reloadItems(at: [indexPathTotal, indexPathRemained])
-
+        
+        totalBudgetText = String(totalBudgetMoney)
+        remainedMoneyText = String(remainedMoney)
+        spentMoneyText = String(spentMoney)
+        
+        let indexPathTotal = IndexPath(item: 1, section: 0)
+        let indexPathSpent = IndexPath(item: 2, section: 0)
+        let indexPathRemained = IndexPath(item: 3, section: 0)
+        
+        
+        financeCollectionView.reloadItems(at: [indexPathTotal, indexPathSpent, indexPathRemained])
+        
+       
         UserDefaults.standard.set(budget,forKey: "budgetForCreateTripFirstEl")
         UserDefaults.standard.set(budget, forKey: "budgetForCreateTrip")
     }
+        
 }
 

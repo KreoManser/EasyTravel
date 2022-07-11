@@ -627,14 +627,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopTableViewCell" id="S6L-eo-nmL" customClass="PopTableViewCell" customModule="EasyTravel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="250" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="250" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6L-eo-nmL" id="fuL-n5-OTv">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-FO-2Z3">
-                                            <rect key="frame" x="36" y="11" width="178" height="21.5"/>
+                                            <rect key="frame" x="36" y="11" width="178" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
