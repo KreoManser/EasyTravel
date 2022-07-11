@@ -303,6 +303,11 @@
                         <outlet property="aboutButton" destination="Mzd-fw-nj1" id="hpS-MS-dHR"/>
                         <outlet property="changeSettingsButton" destination="nzG-hf-5xk" id="i2w-sF-EFN"/>
                         <outlet property="genderLabel" destination="9Ut-sE-Teq" id="NKK-1v-obq"/>
+                        <outlet property="image1" destination="gNV-5n-5kT" id="e67-du-LtA"/>
+                        <outlet property="image2" destination="Wej-yD-Xxi" id="hOY-nJ-CDY"/>
+                        <outlet property="image3" destination="dDV-Eg-UYs" id="2g6-Fr-e3j"/>
+                        <outlet property="image4" destination="UhB-M1-Ucr" id="2tU-im-O4D"/>
+                        <outlet property="image5" destination="bdP-0V-XzL" id="ESa-B0-UDs"/>
                         <outlet property="rateButton" destination="w5p-D6-6cH" id="mok-Xu-I4c"/>
                         <outlet property="themeLabel" destination="fJQ-6W-gsj" id="mj4-C8-1Bs"/>
                         <outlet property="themeSwitch" destination="a3R-f5-I5d" id="nXe-7t-OP7"/>

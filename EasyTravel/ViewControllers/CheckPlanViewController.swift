@@ -38,14 +38,14 @@ class CheckPlanViewController: UIViewController {
     
     @IBAction func clickSaveButton(_ sender: Any) {
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
-<<<<<<< HEAD
+
                 
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         
-=======
+
         
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
->>>>>>> develop_Sergey
+
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {

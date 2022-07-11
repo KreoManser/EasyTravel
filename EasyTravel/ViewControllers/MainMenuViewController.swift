@@ -245,13 +245,12 @@ extension MainMenuViewController: changeBudgetDelegate {
         let indexPathRemained = IndexPath(item: 3, section: 0)
         
         totalBudgetText = String(budget)
-<<<<<<< HEAD
+
         
         totalBudgetText3 = String(budget)
-       
-=======
+
         totalBudgetText3 = String(budget)
->>>>>>> develop_Sergey
+
         
         totalBudgetMoney = budget
         totalBudgetMoney2 = 0.0
