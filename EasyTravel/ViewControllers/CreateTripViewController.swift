@@ -56,7 +56,9 @@ class CreateTripViewController: UIViewController {
     @IBAction func clickButton(_ sender: Any) {
         guard let name = name.text, !name.isEmpty else { return checker(message: "Введите наименование") }
         guard let cost = cost.text, !cost.isEmpty else { return checker(message: "Введите цену") }
+        guard Double(cost) != nil else { return checker(message: "Введите корректную цену") }
         guard let kolvo = kolvo.text, !kolvo.isEmpty else { return checker(message: "Введите количество") }
+        guard Double(kolvo) != nil else { return checker(message: "Введите корректное количество") }
         
         let check = CheckPlan(object: name, cost: Double(cost)!, quantity: Int(kolvo)!)
             
