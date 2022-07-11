@@ -42,12 +42,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Путешествие – это нечто большее. Это постоянное движение вперед." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-ha-Qp9">
                                         <rect key="frame" x="4" y="306" width="280.5" height="79"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="accentColor-2"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="L1W-MR-VdL">
                                         <rect key="frame" x="86.5" y="418" width="115.5" height="26"/>
-                                        <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" name="accentColor-2"/>
                                         <color key="currentPageIndicatorTintColor" red="0.37647058820000001" green="0.41568627450000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-CQ-mvy">
@@ -95,12 +95,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поездка – это сравнительно короткое путешествие, с целью посещения кого-либо или чего-либо." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H7g-BR-GOl">
                                         <rect key="frame" x="1" y="253.5" width="286.5" height="131.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="accentColor-2"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="IU9-vS-rFq">
                                         <rect key="frame" x="86.5" y="418" width="115.5" height="26"/>
-                                        <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" name="accentColor-2"/>
                                         <color key="currentPageIndicatorTintColor" red="0.37647058820000001" green="0.41568627450000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nu-6h-VDC">
@@ -148,12 +148,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поход – это совместное путешествие группы людей по определенному маршруту и верный путь к обретению здоровья." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Nk-D3-r7E">
                                         <rect key="frame" x="0.0" y="253.5" width="288" height="131.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="accentColor-2"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="U4l-5u-BNw">
                                         <rect key="frame" x="86.5" y="418" width="115.5" height="26"/>
-                                        <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" name="accentColor-2"/>
                                         <color key="currentPageIndicatorTintColor" red="0.37647058820000001" green="0.41568627450000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-BD-rWr">
