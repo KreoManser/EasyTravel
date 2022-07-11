@@ -276,7 +276,6 @@ extension MainMenuViewController: changeBudgetDelegate, reloadBudgetDelegate {
     }
     
     func saveBudget(budget: Double) {
-        
         spentMoney = (UserDefaults.standard.double(forKey: "budgetForCreateTripFirstEl")) - (UserDefaults.standard.double(forKey: "budgetForCreateTrip"))
         totalBudgetMoney = budget
         remainedMoney = totalBudgetMoney - spentMoney
