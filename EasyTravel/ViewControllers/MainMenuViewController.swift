@@ -171,7 +171,8 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             guard let cell = storiesCollectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as? StoriesCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.storiesImage.image = storiesItems[indexPath.row].image
+            cell.storiesImage.image = storiesItems[indexPath.row].icon
+            
             cell.layer.cornerRadius = 25
         
             return cell
@@ -238,6 +239,9 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         case storiesCollectionView:
             let storyboardStories = UIStoryboard(name: "ShowStory", bundle: nil)
             guard let storiesVC = storyboardStories.instantiateViewController(withIdentifier: "ShowStoryViewController") as? ShowStoryViewController else { return }
+            storiesVC.backgroundImage = storiesItems[indexPath.row].backgroundImage
+            storiesVC.titleText = storiesItems[indexPath.row].titleText
+            storiesVC.descriptionText = storiesItems[indexPath.row].descriptionText
             navigationController?.pushViewController(storiesVC, animated: true)
         //case tripCollectionView: нажатие на активную поездку
         default:

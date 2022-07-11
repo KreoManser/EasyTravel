@@ -59,7 +59,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="7KH-17-EBf" id="0S2-wd-cn2"/>
                         <outlet property="imageBackgroundView" destination="NC5-IM-bgU" id="9aG-lZ-rgX"/>
+                        <outlet property="titleLabel" destination="uLt-0d-SgA" id="qVg-7s-Hxl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

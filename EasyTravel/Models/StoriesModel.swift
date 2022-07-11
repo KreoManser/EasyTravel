@@ -9,38 +9,53 @@ import Foundation
 import UIKit
 
 struct Stories {
-    let image: UIImage?
-    let storiesScreen: UIViewController?
-    
+    let icon: UIImage?
+    let storiesScreen: ShowStoryViewController
+    let backgroundImage: UIImage?
+    let titleText: String?
+    let descriptionText: String?
+        
     static func getStories() -> [Stories] {
         [
             Stories(
-                image: UIImage(named: "storiesImage"),
+                icon: UIImage(named: "storiesImage"),
                 storiesScreen: UIStoryboard(
                     name: "ShowStory",
                     bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                ).instantiateViewController(withIdentifier: "ShowStoryViewController") as! ShowStoryViewController,
+                backgroundImage: UIImage(named: "storyOne")!,
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             Stories(
-                image: UIImage(named: "storiesImage"),
+                icon: UIImage(named: "storiesImage"),
                 storiesScreen: UIStoryboard(
                     name: "ShowStory",
                     bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                ).instantiateViewController(withIdentifier: "ShowStoryViewController") as! ShowStoryViewController,
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             Stories(
-                image: UIImage(named: "storiesImage"),
+                icon: UIImage(named: "storiesImage"),
                 storiesScreen: UIStoryboard(
                     name: "ShowStory",
                     bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                ).instantiateViewController(withIdentifier: "ShowStoryViewController") as! ShowStoryViewController,
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
             Stories(
-                image: UIImage(named: "storiesImage"),
+                icon: UIImage(named: "storiesImage"),
                 storiesScreen: UIStoryboard(
                     name: "ShowStory",
                     bundle: nil
-                ).instantiateViewController(withIdentifier: "ShowStoryViewController")
+                ).instantiateViewController(withIdentifier: "ShowStoryViewController") as! ShowStoryViewController,
+                backgroundImage: UIImage(named: "storyOne"),
+                titleText: "Куда поехать отдыхать этим летом?",
+                descriptionText: "Первое и самое популярное направление — южный берег Крыма. Здесь замечательные горные пейзажи, тёплый климат, дворцы и замки, древние крепости и роскошные ботанические сады."
             ),
         ]
     }
