@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 // MARK: - CheckPlanViewController
 class CheckPlanViewController: UIViewController {
     
@@ -29,6 +27,8 @@ class CheckPlanViewController: UIViewController {
     var mainMoney: Double = UserDefaults.standard.double(forKey: "budgetForCreateTrip")
     var flag = true
  
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsView()
@@ -38,9 +38,14 @@ class CheckPlanViewController: UIViewController {
     
     @IBAction func clickSaveButton(_ sender: Any) {
         UserDefaults.standard.set(mainMoney, forKey: "budgetForCreateTrip")
+<<<<<<< HEAD
                 
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         
+=======
+        
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+>>>>>>> develop_Sergey
     }
     
     @IBAction func dismissCheckPlan(_ sender: Any) {
@@ -60,7 +65,7 @@ class CheckPlanViewController: UIViewController {
         if flag == true {
             var sum = 0.0
             if sumArray.count == 0 {
-                score.text = "0.0"
+                score.text = "0"
             } else {
                 for index in sumArray.count-1...sumArray.count-1 { //0,1
                 sum = (Double(sumArray[index]) * Double(sumKolArray[index]))
